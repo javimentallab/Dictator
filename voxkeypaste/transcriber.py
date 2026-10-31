@@ -41,18 +41,28 @@ class Transcriber:
             started = time.time()
             try:
                 self._model = WhisperModel(model, device=device, compute_type=compute)
+                if device != 'cpu':
+                    # On a PC with an NVIDIA card the model "loads" on the GPU even when the CUDA libraries
+                    # (cuBLAS/cuDNN) are missing, and only fails when transcribing. Find out now.
+                    self._warm_up()
             except Exception as e:
                 if device == 'cpu':
                     raise
-                config.log(f'Could not load it on {device} ({e}); trying the CPU.')
+                config.log(f'The model does not work on {device} ({e}); using the CPU.')
                 self._model = WhisperModel(model, device='cpu',
-                                           compute_type='int8' if compute in ('float16', 'int8_float16') else compute)
+                                           compute_type='int8' if compute in ('default', 'float16', 'int8_float16')
+                                           else compute)
             config.log(f'Model loaded in {time.time() - started:.1f} s.')
         except Exception as e:
             self._model_error = e
             config.log(f'Local model not available: {type(e).__name__}: {e}')
         finally:
             self._model_ready.set()
+
+    def _warm_up(self):
+        """Transcribe half a second of silence: raises if the device cannot really run the model."""
+        segments, _ = self._model.transcribe(np.zeros(8000, dtype=np.float32), language='en', vad_filter=False)
+        list(segments)
 
     def _transcribe_local(self, audio, sample_rate):
         self._model_ready.wait()

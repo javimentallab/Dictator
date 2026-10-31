@@ -37,7 +37,8 @@ It records while you hold or toggle a hotkey, transcribes with [Whisper](https:/
 
 ## Install
 
-You need **Python 3.11** (other 3.10+ versions should work) and Git.
+VoxKeyPaste is made and tested on **Windows 10/11**. It also runs on Linux with an X11 session, but that
+is not tested regularly. You need **Python 3.11** and Git.
 
 ```powershell
 git clone https://github.com/javimentallab/VoxKeyPaste.git
@@ -47,11 +48,15 @@ py -3.11 -m venv .venv
 .venv\Scripts\pythonw -m voxkeypaste
 ```
 
-On Linux/macOS use `python3.11 -m venv .venv`, `.venv/bin/pip install -r requirements.txt` and
+On Linux use `python3.11 -m venv .venv`, `.venv/bin/pip install -r requirements.txt` and
 `.venv/bin/python -m voxkeypaste`.
 
 The first time, the settings window opens. With the defaults it uses the local `base` model,
 which is downloaded once (about 150 MB). Pick your microphone, your language and a hotkey, and save.
+
+The local engine runs on the processor. To use an NVIDIA graphics card instead, install the CUDA 12
+and cuDNN 9 libraries [as faster-whisper explains](https://github.com/SYSTRAN/faster-whisper#gpu); if they
+are missing, VoxKeyPaste notices it and stays on the processor.
 
 ### Start with Windows
 
@@ -71,7 +76,6 @@ its explanation underneath. The settings are stored in a YAML file outside the p
 |---------|------|
 | Windows | `%APPDATA%\VoxKeyPaste\config.yaml` |
 | Linux   | `~/.config/voxkeypaste/config.yaml` |
-| macOS   | `~/Library/Application Support/VoxKeyPaste/config.yaml` |
 
 Use another file with `python -m voxkeypaste --config path\to\config.yaml`.
 List the audio devices with `python -m voxkeypaste --list-devices`.
@@ -115,7 +119,6 @@ dictation.
   `--list-devices` to see the exact names.
 - **Logs** — started without a console (`pythonw`), the app writes `voxkeypaste.log` next to `config.yaml`.
 - **Linux**: global hotkeys and simulated typing need an X11 session (Wayland blocks them).
-  **macOS**: allow the terminal/Python in *Privacy & Security → Accessibility* and *Input Monitoring*.
 
 ## Development
 

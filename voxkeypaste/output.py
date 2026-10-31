@@ -1,5 +1,4 @@
 """Write the text into the focused window: paste it at once, or type it key by key."""
-import sys
 import time
 
 from . import config
@@ -15,8 +14,7 @@ def _paste(text):
         previous = None
     pyperclip.copy(text)
     time.sleep(0.05)
-    modifier = Key.cmd if sys.platform == 'darwin' else Key.ctrl
-    with keyboard.pressed(modifier):
+    with keyboard.pressed(Key.ctrl):
         keyboard.press('v')
         keyboard.release('v')
     time.sleep(0.3)                     # let the target app read the clipboard before restoring it

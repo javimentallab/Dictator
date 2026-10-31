@@ -39,7 +39,8 @@ OpenAI) y pega el texto de golpe.
 
 ## Instalación
 
-Necesitas **Python 3.11** (otras 3.10+ deberían valer) y Git.
+VoxKeyPaste está hecho y probado en **Windows 10/11**. También funciona en Linux con sesión X11, pero ahí
+no se prueba habitualmente. Necesitas **Python 3.11** y Git.
 
 ```powershell
 git clone https://github.com/javimentallab/VoxKeyPaste.git
@@ -49,11 +50,15 @@ py -3.11 -m venv .venv
 .venv\Scripts\pythonw -m voxkeypaste
 ```
 
-En Linux/macOS: `python3.11 -m venv .venv`, `.venv/bin/pip install -r requirements.txt` y
+En Linux: `python3.11 -m venv .venv`, `.venv/bin/pip install -r requirements.txt` y
 `.venv/bin/python -m voxkeypaste`.
 
 La primera vez se abre la ventana de ajustes. Con lo predeterminado usa el modelo local `base`, que se
 descarga una sola vez (unos 150 MB). Elige micrófono, idioma y tecla, y guarda.
+
+El motor local funciona con el procesador. Para usar una tarjeta gráfica NVIDIA hay que instalar las
+librerías CUDA 12 y cuDNN 9 [como explica faster-whisper](https://github.com/SYSTRAN/faster-whisper#gpu); si
+no están, VoxKeyPaste lo detecta y sigue con el procesador.
 
 ### Arrancar con Windows
 
@@ -73,7 +78,6 @@ lleva su explicación debajo. Los ajustes se guardan en un fichero YAML fuera de
 |---------|---------|
 | Windows | `%APPDATA%\VoxKeyPaste\config.yaml` |
 | Linux   | `~/.config/voxkeypaste/config.yaml` |
-| macOS   | `~/Library/Application Support/VoxKeyPaste/config.yaml` |
 
 Para usar otro fichero: `python -m voxkeypaste --config ruta\al\config.yaml`.
 Para ver los dispositivos de audio: `python -m voxkeypaste --list-devices`.
@@ -117,8 +121,6 @@ dictado.
   nombres exactos.
 - **Registro**: arrancada sin consola (`pythonw`), la app escribe `voxkeypaste.log` junto a `config.yaml`.
 - **Linux**: la tecla global y el tecleo simulado necesitan una sesión X11 (Wayland los bloquea).
-  **macOS**: da permiso a la terminal/Python en *Privacidad y seguridad → Accesibilidad* y *Monitorización de
-  entrada*.
 
 ## Desarrollo
 

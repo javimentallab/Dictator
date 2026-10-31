@@ -3,7 +3,6 @@
 The user's settings live OUTSIDE the program folder, in a YAML file:
   Windows: %APPDATA%\\VoxKeyPaste\\config.yaml
   Linux:   ~/.config/voxkeypaste/config.yaml   (or $XDG_CONFIG_HOME)
-  macOS:   ~/Library/Application Support/VoxKeyPaste/config.yaml
 It can be overridden with the VOXKEYPASTE_CONFIG environment variable or --config.
 
 Labels and help texts are not here: they are translated in locales/<lang>.json
@@ -101,8 +100,6 @@ def config_dir():
     if sys.platform == 'win32':
         base = os.environ.get('APPDATA') or os.path.expanduser('~')
         return os.path.join(base, 'VoxKeyPaste')
-    if sys.platform == 'darwin':
-        return os.path.expanduser('~/Library/Application Support/VoxKeyPaste')
     base = os.environ.get('XDG_CONFIG_HOME') or os.path.expanduser('~/.config')
     return os.path.join(base, 'voxkeypaste')
 
