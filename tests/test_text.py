@@ -83,3 +83,11 @@ def test_short_clips_are_not_saved(cfg, tmp_path):
     cfg.set('clips', 'folder', str(tmp_path / 'clips'))
     clip_saver._save(np.zeros(4000, dtype=np.int16), 16000, 'hola')     # 0.25 s < 1 s
     assert not (tmp_path / 'clips').exists()
+
+
+def test_list_models_rejects_bad_urls():
+    import pytest
+    from voxkeypaste.transcriber import TranscriptionError, list_models
+    for url in ('', 'ftp://x', 'file:///etc/passwd', '192.168.1.10:8000/v1'):
+        with pytest.raises(TranscriptionError):
+            list_models(url)

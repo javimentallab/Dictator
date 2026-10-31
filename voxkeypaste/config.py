@@ -58,8 +58,8 @@ SCHEMA = [
         Setting('local_device', 'choice', 'auto', ['auto', 'cuda', 'cpu']),
         Setting('local_compute_type', 'choice', 'default', ['default', 'float16', 'int8_float16', 'int8', 'float32']),
         Setting('local_vad_filter', 'bool', False),
-        Setting('api_base_url', 'str', 'https://api.openai.com/v1'),
-        Setting('api_model', 'str', 'whisper-1'),
+        Setting('api_base_url', 'url', 'https://api.openai.com/v1'),
+        Setting('api_model', 'server_model', 'whisper-1'),
         Setting('api_key', 'secret', ''),
     ]),
     ('output', [

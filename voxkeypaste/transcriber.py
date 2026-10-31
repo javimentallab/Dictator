@@ -100,6 +100,21 @@ class Transcriber:
         return self._transcribe_local(audio, sample_rate)
 
 
+def list_models(base_url, api_key=''):
+    """Model ids offered by an OpenAI-compatible server (GET /models). Raises on any failure."""
+    import httpx
+    base_url = (base_url or '').strip().rstrip('/')
+    if not base_url.lower().startswith(('http://', 'https://')):
+        raise TranscriptionError('the URL must start with http:// or https://')
+    key = api_key or os.environ.get('OPENAI_API_KEY', '') or 'not-needed'
+    response = httpx.get(base_url + '/models', headers={'Authorization': f'Bearer {key}'},
+                         timeout=httpx.Timeout(8.0, connect=5.0))
+    if response.status_code != 200:
+        raise TranscriptionError(f'HTTP {response.status_code}: {response.text[:200]}')
+    data = response.json().get('data', [])
+    return sorted({m.get('id') for m in data if isinstance(m, dict) and m.get('id')})
+
+
 def post_process(text, cfg):
     text = (text or '').strip()
     if not text:

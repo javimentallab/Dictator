@@ -3,9 +3,9 @@ import os
 
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QPalette
-from PySide6.QtWidgets import (QCheckBox, QComboBox, QDialog, QDialogButtonBox, QDoubleSpinBox, QFileDialog,
-                               QGridLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QScrollArea,
-                               QSizePolicy, QSpinBox, QTabWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog, QDialogButtonBox, QDoubleSpinBox,
+                               QFileDialog, QGridLayout, QHBoxLayout, QLabel, QLineEdit, QMessageBox, QPushButton,
+                               QScrollArea, QSizePolicy, QSpinBox, QTabWidget, QVBoxLayout, QWidget)
 
 from . import config, i18n
 
@@ -38,6 +38,7 @@ class SettingsWindow(QDialog):
         super().__init__(None, Qt.Window)
         self.cfg = cfg
         self.widgets = {}
+        self.rows = {}
         self.setWindowTitle(i18n.tr('ui.settings.title'))
         self.resize(760, 640)
         self.setMinimumSize(560, 420)
@@ -50,6 +51,8 @@ class SettingsWindow(QDialog):
             if section == 'ducking' and os.name != 'nt':
                 continue
             self.tabs.addTab(self._build_tab(section, settings), i18n.tr(f'section.{section}'))
+        self.widgets[('transcription', 'backend')][1].currentIndexChanged.connect(self._update_backend_rows)
+        self._update_backend_rows()
 
         hint = QLabel(i18n.tr('ui.settings.file', path=cfg.path))
         hint.setTextInteractionFlags(Qt.TextSelectableByMouse)
@@ -96,12 +99,13 @@ class SettingsWindow(QDialog):
             small.setPointSizeF(max(7.5, small.pointSizeF() - 0.5))
             description.setFont(small)
             description.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Minimum)
+            description.setContentsMargins(0, 0, 0, 12)   # space before the next setting (collapses when hidden)
             grid.addWidget(label, row, 0, Qt.AlignLeft | Qt.AlignVCenter)
             grid.addWidget(widget, row, 1)
             grid.addWidget(description, row + 1, 1)
-            grid.setRowMinimumHeight(row + 2, 10)
-            row += 3
+            row += 2
             self.widgets[(section, setting.key)] = (setting, widget)
+            self.rows[(section, setting.key)] = (label, widget, description)
         grid.setRowStretch(row, 1)
         scroll = QScrollArea()
         scroll.setWidgetResizable(True)
@@ -142,6 +146,21 @@ class SettingsWindow(QDialog):
             widget.setCurrentText(str(value or ''))
             widget.lineEdit().setPlaceholderText(i18n.tr('ui.settings.default_device'))
             widget.view().setMinimumWidth(widget.view().sizeHintForColumn(0) + 30)   # full names in the list
+        elif kind == 'url':
+            widget = QWidget()
+            row = QHBoxLayout(widget)
+            row.setContentsMargins(0, 0, 0, 0)
+            edit = QLineEdit(str(value or ''))
+            edit.setPlaceholderText('http://192.168.1.10:8000/v1')
+            test = QPushButton(i18n.tr('ui.settings.test_server'))
+            test.clicked.connect(self._test_server)
+            row.addWidget(edit, 1)
+            row.addWidget(test)
+            widget.edit = edit
+        elif kind == 'server_model':
+            widget = QComboBox()
+            widget.setEditable(True)
+            widget.setCurrentText(str(value or ''))
         elif kind == 'path':
             widget = QWidget()
             row = QHBoxLayout(widget)
@@ -158,6 +177,42 @@ class SettingsWindow(QDialog):
                 widget.setEchoMode(QLineEdit.Password)
         return widget
 
+    def _update_backend_rows(self, *_):
+        """Show only the settings of the chosen engine (local model or API server)."""
+        backend = self.widgets[('transcription', 'backend')][1].currentData()
+        for (section, key), parts in self.rows.items():
+            if section != 'transcription':
+                continue
+            if key.startswith('local_'):
+                visible = backend == 'local'
+            elif key.startswith('api_'):
+                visible = backend == 'api'
+            else:
+                continue
+            for part in parts:
+                part.setVisible(visible)
+
+    def _test_server(self):
+        """Ask the server for its models; fill the model list with them."""
+        from .transcriber import list_models
+        url = self.widgets[('transcription', 'api_base_url')][1].edit.text().strip()
+        key = self.widgets[('transcription', 'api_key')][1].text().strip()
+        QApplication.setOverrideCursor(Qt.WaitCursor)
+        try:
+            models = list_models(url, key)
+        except Exception as e:
+            QApplication.restoreOverrideCursor()
+            QMessageBox.warning(self, 'VoxKeyPaste', i18n.tr('ui.settings.server_error', error=str(e)[:300]))
+            return
+        QApplication.restoreOverrideCursor()
+        combo = self.widgets[('transcription', 'api_model')][1]
+        current = combo.currentText()
+        combo.clear()
+        combo.addItems(models)
+        combo.setCurrentText(current or (models[0] if models else ''))
+        QMessageBox.information(self, 'VoxKeyPaste',
+                                i18n.tr('ui.settings.server_ok', models=', '.join(models) if models else '—'))
+
     def _browse(self, edit):
         path, _ = QFileDialog.getOpenFileName(self, i18n.tr('ui.settings.browse'), edit.text())
         if path:
@@ -171,9 +226,9 @@ class SettingsWindow(QDialog):
             return widget.value()
         if setting.kind == 'choice':
             return widget.currentData()
-        if setting.kind in ('input_device', 'output_device'):
+        if setting.kind in ('input_device', 'output_device', 'server_model'):
             return widget.currentText().strip()
-        if setting.kind == 'path':
+        if setting.kind in ('path', 'url'):
             return widget.edit.text().strip()
         return widget.text().strip()
 
