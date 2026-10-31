@@ -1,10 +1,11 @@
 # Changelog
 
-## 1.0.0 — 2026-11
+## 1.0.0 — 2026-10-31
 
 First public version.
 
-- Global hotkey with three modes: toggle, hold to talk, stop after a pause.
+- Global hotkey with three modes: toggle, hold to talk, stop after a pause. A single-key hotkey such as F8
+  is kept away from the program you type in (including its auto-repeat).
 - Local transcription (faster-whisper) or any OpenAI-compatible API.
 - Paste the whole text at once (clipboard, restored afterwards) or type it.
 - Start, stop and "done" sounds through one persistent output stream; output device by name.
