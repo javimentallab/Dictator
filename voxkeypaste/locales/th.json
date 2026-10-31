@@ -15,7 +15,6 @@
   "ui.settings.browse": "เรียกดู…",
   "ui.settings.default_device": "(อุปกรณ์เริ่มต้น)",
   "ui.settings.restart_question": "บันทึกการตั้งค่าแล้ว เริ่ม VoxKeyPaste ใหม่ตอนนี้เพื่อใช้การตั้งค่าเลยไหม",
-
   "section.general": "ทั่วไป",
   "section.recording": "การบันทึก",
   "section.transcription": "การถอดความ",
@@ -23,7 +22,6 @@
   "section.sounds": "เสียง",
   "section.ducking": "ปิดเสียง",
   "section.clips": "เก็บการบันทึก",
-
   "setting.general.language.label": "ภาษาของหน้าจอ",
   "setting.general.language.help": "ภาษาของเมนูและหน้าต่าง อัตโนมัติจะใช้ภาษาของระบบ",
   "setting.general.start_listening.label": "รอรับเมื่อเปิดแอป",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "แสดงหน้าต่างเล็กๆ ที่ด้านล่างของจอขณะบันทึกและถอดความ ไอคอนในถาดระบบจะเปลี่ยนสีอยู่แล้ว",
   "setting.general.log_to_console.label": "บันทึกลงคอนโซล",
   "setting.general.log_to_console.help": "แสดงสิ่งที่แอปกำลังทำในเทอร์มินัล (มีประโยชน์เวลาหาสาเหตุปัญหา)",
-
   "setting.recording.hotkey.label": "ปุ่มลัด",
   "setting.recording.hotkey.help": "ปุ่มหรือชุดปุ่มที่เริ่มและหยุดการพูดพิมพ์ เชื่อมปุ่มด้วย + ตัวอย่าง: f8, ctrl+shift+space, alt+d",
   "setting.recording.mode.label": "โหมด",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "เฉพาะโหมดตรวจจับเสียงพูด: เงียบนานเท่านี้แล้วการบันทึกจะหยุดเอง",
   "setting.recording.min_duration_ms.label": "ความยาวขั้นต่ำ (ms)",
   "setting.recording.min_duration_ms.help": "การบันทึกที่สั้นกว่านี้จะถูกทิ้งโดยไม่ถอดความ",
-
   "setting.transcription.backend.label": "เอนจิน",
   "setting.transcription.backend.help": "ในเครื่อง: โมเดล Whisper บนคอมพิวเตอร์นี้ (เป็นส่วนตัว ฟรี ดาวน์โหลดครั้งแรก) API: เซิร์ฟเวอร์ที่เข้ากันได้กับ OpenAI (ของ OpenAI หรือของคุณเอง)",
   "setting.transcription.language.label": "ภาษาที่พูด",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "ชื่อโมเดลที่เซิร์ฟเวอร์ต้องการ (whisper-1 สำหรับ OpenAI; เซิร์ฟเวอร์ของคุณใช้โมเดลที่มันให้บริการ)",
   "setting.transcription.api_key.label": "คีย์ API",
   "setting.transcription.api_key.help": "จำเป็นสำหรับ OpenAI เซิร์ฟเวอร์ของคุณเองมักไม่สนใจคีย์นี้ ถ้าเว้นว่างจะใช้ตัวแปรสภาพแวดล้อม OPENAI_API_KEY",
-
   "setting.output.method.label": "วิธีพิมพ์",
   "setting.output.method.help": "วาง: ใส่ข้อความทั้งหมดทีเดียวผ่านคลิปบอร์ด (แล้วคืนเนื้อหาเดิม) พิมพ์: ทีละปุ่ม",
   "setting.output.type_delay_ms.label": "หน่วงระหว่างปุ่ม (ms)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "แปลงข้อความทั้งหมดเป็นตัวพิมพ์เล็ก",
   "setting.output.dictionary_file.label": "ไฟล์แก้คำ",
   "setting.output.dictionary_file.help": "ไฟล์ข้อความที่มี 'ผิด=ถูก' บรรทัดละหนึ่งคู่ ใช้แก้คำที่มักถอดผิด (# = หมายเหตุ) เทียบทั้งคำและคงตัวพิมพ์ใหญ่ อ่านใหม่ทุกครั้งที่พูดพิมพ์",
-
   "setting.sounds.start_sound.label": "เสียงเริ่ม",
   "setting.sounds.start_sound.help": "ดังก่อนไมโครโฟนเปิด: เป็นสัญญาณให้เริ่มพูด",
   "setting.sounds.stop_sound.label": "เสียงหยุด",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "ไฟล์ WAV 16 บิตของคุณสำหรับเสียงหยุด เว้นว่าง = เสียงในตัว",
   "setting.sounds.output_device_name.label": "ลำโพงสำหรับเสียง",
   "setting.sounds.output_device_name.help": "อุปกรณ์เสียงออกสำหรับเสียงแจ้ง ระบุด้วยชื่อ เว้นว่าง = อุปกรณ์เริ่มต้น",
-
   "setting.ducking.enabled.label": "ปิดเสียงขณะพูดพิมพ์",
-  "setting.ducking.enabled.help": "ลดเสียงโปรแกรมด้านล่างขณะพูดพิมพ์ และคืนเสียงเมื่อหยุด ถ้า VoxKeyPaste ปิดกลางคัน จะคืนเสียงเมื่อเปิดครั้งถัดไป",
-  "setting.ducking.media_apps.label": "โปรแกรมที่จะลดเสียง",
-  "setting.ducking.media_apps.help": "ชื่อโปรเซสคั่นด้วยจุลภาค (ตามที่แสดงในรายละเอียดของตัวจัดการงาน)",
-  "setting.ducking.ducked_volume.label": "ระดับเสียงขณะพูดพิมพ์ (%)",
-  "setting.ducking.ducked_volume.help": "เปอร์เซ็นต์ของระดับเสียงปกติ 0 = เงียบ",
+  "setting.ducking.enabled.help": "ปิดเสียงคอมพิวเตอร์ขณะพูดพิมพ์ เพื่อไม่ให้ไมโครโฟนรับเสียงเพลงหรือวิดีโอ และคืนเสียงทันทีที่หยุด ไม่แตะระดับเสียงของแต่ละโปรแกรมเลย ถ้า VoxKeyPaste ปิดกลางคัน จะคืนเสียงเมื่อเปิดครั้งถัดไป",
+  "setting.ducking.mute_system_output.label": "ปิดเสียงเอาต์พุตของระบบ",
+  "setting.ducking.mute_system_output.help": "ปิดเสียงอุปกรณ์เสียงออกเริ่มต้น (ปุ่มปิดเสียงของ Windows) ขณะพูดพิมพ์",
   "setting.ducking.voicemeeter_mute_strips.label": "ช่อง Voicemeeter ที่จะปิดเสียง",
   "setting.ducking.voicemeeter_mute_strips.help": "สำหรับผู้ใช้ Voicemeeter: หมายเลขช่องคั่นด้วยจุลภาค (เช่น 5, 6, 7 สำหรับอินพุตเสมือนของ Voicemeeter Potato) จะเปิดเสียงคืนทันทีที่คุณหยุด เว้นว่าง = ไม่แตะ Voicemeeter",
   "setting.ducking.voicemeeter_dll.label": "ไลบรารี Voicemeeter",
   "setting.ducking.voicemeeter_dll.help": "ที่อยู่ของ VoicemeeterRemote64.dll",
   "setting.ducking.max_duration_s.label": "ขีดจำกัดเพื่อความปลอดภัย (วินาที)",
   "setting.ducking.max_duration_s.help": "ถ้าการบันทึกนานกว่านี้ จะคืนระดับเสียงอยู่ดี 0 = ไม่จำกัด",
-
   "setting.clips.enabled.label": "เก็บทุกการพูดพิมพ์",
   "setting.clips.enabled.help": "เก็บเสียง (FLAC) และข้อความ (.txt) ของทุกการพูดพิมพ์ เช่น เพื่อฝึกเสียง ทำงานเบื้องหลังและไม่ทำให้การพูดพิมพ์ช้าลง",
   "setting.clips.folder.label": "โฟลเดอร์",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "การพูดพิมพ์ที่สั้นกว่านี้จะไม่ถูกเก็บ",
   "setting.clips.upload_command.label": "คำสั่งส่งไฟล์",
   "setting.clips.upload_command.help": "คำสั่งเสริมที่รันสำหรับการบันทึกแต่ละรายการ โดยแทน {audio} และ {text} ด้วยไฟล์ ตัวอย่าง: scp -q -B {audio} {text} user@server:/clips/ — ถ้าสำเร็จจะลบไฟล์ในเครื่อง ถ้าไม่สำเร็จจะลองใหม่ภายหลัง",
-
   "option.auto": "อัตโนมัติ",
   "option.toggle": "กดเพื่อเริ่ม / กดเพื่อหยุด",
   "option.hold": "กดค้างไว้เพื่อพูด",

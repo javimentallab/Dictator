@@ -15,7 +15,6 @@
   "ui.settings.browse": "चुनें…",
   "ui.settings.default_device": "(डिफ़ॉल्ट डिवाइस)",
   "ui.settings.restart_question": "सेटिंग्स सहेज ली गईं। इन्हें लागू करने के लिए VoxKeyPaste अभी फिर से शुरू करें?",
-
   "section.general": "सामान्य",
   "section.recording": "रिकॉर्डिंग",
   "section.transcription": "लिप्यंतरण",
@@ -23,7 +22,6 @@
   "section.sounds": "ध्वनियाँ",
   "section.ducking": "आवाज़ बंद",
   "section.clips": "रिकॉर्डिंग सहेजें",
-
   "setting.general.language.label": "इंटरफ़ेस की भाषा",
   "setting.general.language.help": "मेनू और विंडो की भाषा। स्वचालित सिस्टम की भाषा इस्तेमाल करता है।",
   "setting.general.start_listening.label": "शुरू होते ही सुनें",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "रिकॉर्डिंग और लिप्यंतरण के दौरान स्क्रीन के नीचे एक छोटी विंडो दिखाएँ। ट्रे आइकन का रंग वैसे भी बदलता है।",
   "setting.general.log_to_console.label": "कंसोल में लॉग",
   "setting.general.log_to_console.help": "ऐप क्या कर रही है, यह टर्मिनल में दिखाएँ (समस्या खोजने में उपयोगी)।",
-
   "setting.recording.hotkey.label": "शॉर्टकट",
   "setting.recording.hotkey.help": "बोलकर लिखना शुरू और बंद करने वाली कुंजी या संयोजन, कुंजियाँ + से जोड़ें। उदाहरण: f8, ctrl+shift+space, alt+d।",
   "setting.recording.mode.label": "मोड",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "केवल आवाज़-गतिविधि मोड में: इतनी चुप्पी के बाद रिकॉर्डिंग अपने आप रुक जाती है।",
   "setting.recording.min_duration_ms.label": "न्यूनतम अवधि (ms)",
   "setting.recording.min_duration_ms.help": "इससे छोटी रिकॉर्डिंग बिना लिखे हटा दी जाती है।",
-
   "setting.transcription.backend.label": "इंजन",
   "setting.transcription.backend.help": "लोकल: इसी कंप्यूटर पर Whisper मॉडल (निजी, मुफ़्त; पहली बार डाउनलोड होता है)। API: OpenAI-संगत सर्वर (OpenAI या आपका अपना)।",
   "setting.transcription.language.label": "बोली जाने वाली भाषा",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "सर्वर जिस मॉडल का नाम चाहता है (OpenAI के लिए whisper-1; अपने सर्वर पर वह जो वह देता है)।",
   "setting.transcription.api_key.label": "API कुंजी",
   "setting.transcription.api_key.help": "OpenAI के लिए ज़रूरी। आपका अपना सर्वर आमतौर पर इसे अनदेखा करता है। खाली हो तो OPENAI_API_KEY पर्यावरण चर इस्तेमाल होता है।",
-
   "setting.output.method.label": "कैसे लिखें",
   "setting.output.method.help": "पेस्ट: क्लिपबोर्ड से पूरा टेक्स्ट एक साथ (पिछली सामग्री वापस रख दी जाती है)। टाइप: एक-एक कुंजी।",
   "setting.output.type_delay_ms.label": "कुंजियों के बीच ठहराव (ms)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "पूरा टेक्स्ट छोटे अक्षरों में बदलें।",
   "setting.output.dictionary_file.label": "सुधार फ़ाइल",
   "setting.output.dictionary_file.help": "टेक्स्ट फ़ाइल जिसकी हर पंक्ति में एक 'ग़लत=सही' हो, ताकि अक्सर ग़लत सुने जाने वाले शब्द सुधरें (# = टिप्पणी)। पूरे शब्द, बड़े अक्षर बने रहते हैं। हर डिक्टेशन पर दोबारा पढ़ी जाती है।",
-
   "setting.sounds.start_sound.label": "शुरुआत की ध्वनि",
   "setting.sounds.start_sound.help": "माइक्रोफ़ोन खुलने से पहले बजती है: यह बोलना शुरू करने का संकेत है।",
   "setting.sounds.stop_sound.label": "समाप्ति की ध्वनि",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "समाप्ति के लिए आपकी अपनी 16-बिट WAV। खाली = अंतर्निहित ध्वनि।",
   "setting.sounds.output_device_name.label": "ध्वनियों के स्पीकर",
   "setting.sounds.output_device_name.help": "ध्वनियों के लिए ऑडियो आउटपुट, नाम से। खाली = डिफ़ॉल्ट आउटपुट।",
-
   "setting.ducking.enabled.label": "बोलते समय आवाज़ बंद करें",
-  "setting.ducking.enabled.help": "बोलकर लिखते समय नीचे दिए प्रोग्रामों की आवाज़ कम करें और रोकने पर वापस करें। अगर VoxKeyPaste बीच में बंद हो जाए, तो अगली बार शुरू होने पर वापस करती है।",
-  "setting.ducking.media_apps.label": "धीमे करने वाले प्रोग्राम",
-  "setting.ducking.media_apps.help": "अल्पविराम से अलग प्रोसेस नाम (जैसे टास्क मैनेजर के विवरण में दिखते हैं)।",
-  "setting.ducking.ducked_volume.label": "बोलते समय वॉल्यूम (%)",
-  "setting.ducking.ducked_volume.help": "सामान्य वॉल्यूम का प्रतिशत। 0 = शांत।",
+  "setting.ducking.enabled.help": "बोलकर लिखते समय कंप्यूटर की आवाज़ बंद करें, ताकि माइक्रोफ़ोन संगीत या वीडियो न पकड़े, और रोकते ही आवाज़ वापस करें। किसी प्रोग्राम का अपना वॉल्यूम कभी नहीं बदला जाता। अगर VoxKeyPaste बीच में बंद हो जाए, तो अगली बार शुरू होने पर आवाज़ वापस करती है।",
+  "setting.ducking.mute_system_output.label": "सिस्टम आउटपुट बंद करें",
+  "setting.ducking.mute_system_output.help": "बोलकर लिखते समय डिफ़ॉल्ट आउटपुट डिवाइस की आवाज़ बंद करें (Windows का म्यूट)।",
   "setting.ducking.voicemeeter_mute_strips.label": "बंद करने वाले Voicemeeter चैनल",
   "setting.ducking.voicemeeter_mute_strips.help": "Voicemeeter उपयोगकर्ताओं के लिए: अल्पविराम से अलग चैनल नंबर (जैसे Voicemeeter Potato के वर्चुअल इनपुट के लिए 5, 6, 7)। रोकते ही फिर चालू हो जाते हैं। खाली = Voicemeeter को न छुएँ।",
   "setting.ducking.voicemeeter_dll.label": "Voicemeeter लाइब्रेरी",
   "setting.ducking.voicemeeter_dll.help": "VoicemeeterRemote64.dll का पथ।",
   "setting.ducking.max_duration_s.label": "सुरक्षा सीमा (सेकंड)",
   "setting.ducking.max_duration_s.help": "अगर रिकॉर्डिंग इससे लंबी चले, तब भी वॉल्यूम वापस कर दिया जाता है। 0 = कोई सीमा नहीं।",
-
   "setting.clips.enabled.label": "हर डिक्टेशन सहेजें",
   "setting.clips.enabled.help": "हर डिक्टेशन का ऑडियो (FLAC) और टेक्स्ट (.txt) रखें, जैसे आवाज़ प्रशिक्षित करने के लिए। पृष्ठभूमि में होता है; डिक्टेशन को कभी धीमा नहीं करता।",
   "setting.clips.folder.label": "फ़ोल्डर",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "इससे छोटे डिक्टेशन सहेजे नहीं जाते।",
   "setting.clips.upload_command.label": "भेजने का कमांड",
   "setting.clips.upload_command.help": "हर सहेजी गई रिकॉर्डिंग पर चलने वाला वैकल्पिक कमांड, जिसमें {audio} और {text} फ़ाइलों से बदल जाते हैं। उदाहरण: scp -q -B {audio} {text} user@server:/clips/ — सफल होने पर लोकल फ़ाइलें हटा दी जाती हैं; नहीं तो बाद में फिर कोशिश होती है।",
-
   "option.auto": "स्वचालित",
   "option.toggle": "शुरू करने को दबाएँ / रोकने को दबाएँ",
   "option.hold": "बोलने के लिए दबाए रखें",

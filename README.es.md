@@ -21,8 +21,9 @@ OpenAI) y pega el texto de golpe.
 - **Pega todo el texto de golpe** por el portapapeles (y devuelve lo que hubiera), o lo teclea tecla a tecla.
 - **Sonidos de inicio y fin** para saber cuándo hablar; el de fin suena en el momento de pulsar, sin esperar a
   la transcripción.
-- **Calla la música mientras dictas** (Windows): baja el volumen de los programas que elijas y lo devuelve
-  después, aunque la app se haya cerrado a medias. Compatible con Voicemeeter (opcional).
+- **Calla el ordenador mientras dictas** (Windows) para que el micrófono no recoja música ni vídeos: silencia la
+  salida del sistema y/o canales de Voicemeeter, y los devuelve en cuanto paras, aunque la app se haya cerrado a
+  medias. Nunca toca el volumen de cada programa.
 - **No se come palabras**: recorta el clic de la tecla al principio y sigue grabando unos cientos de
   milisegundos tras parar, para no perder la última sílaba.
 - **Micrófono por nombre**: sigue funcionando aunque Windows renumere los dispositivos de audio al reiniciar o

@@ -20,8 +20,9 @@ It records while you hold or toggle a hotkey, transcribes with [Whisper](https:/
 - **Pastes the whole text at once** through the clipboard (and puts back what you had there), or types it key by key.
 - **Start and stop sounds** so you know when to speak — the stop sound plays the moment you press the key,
   without waiting for the transcription.
-- **Mutes your music while you dictate** (Windows): lowers the volume of the apps you choose and restores it
-  afterwards, even if the app crashed in the middle. Optional Voicemeeter support.
+- **Silences the computer while you dictate** (Windows) so the microphone does not pick up music or videos:
+  mutes the system output and/or Voicemeeter strips, and unmutes them the moment you stop — even after a crash.
+  Programs' own volumes are never touched.
 - **Doesn't cut your words**: trims the key click at the start and keeps recording a few hundred milliseconds
   after you stop, so the last syllable is not lost.
 - **Robust microphone selection by name**: keeps working when Windows renumbers the audio devices

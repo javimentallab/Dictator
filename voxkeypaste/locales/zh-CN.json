@@ -15,7 +15,6 @@
   "ui.settings.browse": "浏览…",
   "ui.settings.default_device": "（默认设备）",
   "ui.settings.restart_question": "设置已保存。现在重新启动 VoxKeyPaste 以应用设置吗？",
-
   "section.general": "常规",
   "section.recording": "录音",
   "section.transcription": "转写",
@@ -23,7 +22,6 @@
   "section.sounds": "提示音",
   "section.ducking": "静音",
   "section.clips": "保存录音",
-
   "setting.general.language.label": "界面语言",
   "setting.general.language.help": "菜单和窗口的语言。“自动”使用系统语言。",
   "setting.general.start_listening.label": "启动时开始监听",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "录音和转写时在屏幕底部显示一个小窗口。托盘图标无论如何都会变色。",
   "setting.general.log_to_console.label": "在控制台输出日志",
   "setting.general.log_to_console.help": "在终端中显示程序正在做什么（便于排查问题）。",
-
   "setting.recording.hotkey.label": "快捷键",
   "setting.recording.hotkey.help": "开始和结束听写的按键或组合键，各键用 + 连接。例如：f8、ctrl+shift+space、alt+d。",
   "setting.recording.mode.label": "模式",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "仅用于语音活动模式：静音持续这么久后录音自动停止。",
   "setting.recording.min_duration_ms.label": "最短时长 (毫秒)",
   "setting.recording.min_duration_ms.help": "更短的录音会被丢弃，不做转写。",
-
   "setting.transcription.backend.label": "引擎",
   "setting.transcription.backend.help": "本地：在这台电脑上运行 Whisper 模型（私密、免费；首次使用时下载）。API：兼容 OpenAI 的服务器（OpenAI 或你自己的）。",
   "setting.transcription.language.label": "说话语言",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "服务器所需的模型名称（OpenAI 为 whisper-1；自建服务器则填它提供的模型）。",
   "setting.transcription.api_key.label": "API 密钥",
   "setting.transcription.api_key.help": "使用 OpenAI 时必需。自建服务器通常会忽略它。留空时使用环境变量 OPENAI_API_KEY。",
-
   "setting.output.method.label": "输入方式",
   "setting.output.method.help": "粘贴：通过剪贴板一次输入全部文本（之后恢复原剪贴板内容）。键入：逐个按键输入。",
   "setting.output.type_delay_ms.label": "按键间隔 (毫秒)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "把全部文本转换为小写。",
   "setting.output.dictionary_file.label": "更正文件",
   "setting.output.dictionary_file.help": "文本文件，每行一条“错误=正确”，用于更正常被听错的词（# 开头为注释）。按整词匹配，保留首字母大写。每次听写时重新读取。",
-
   "setting.sounds.start_sound.label": "开始提示音",
   "setting.sounds.start_sound.help": "在麦克风打开前播放：这是开始说话的信号。",
   "setting.sounds.stop_sound.label": "结束提示音",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "自定义的 16 位 WAV 结束提示音。留空 = 内置提示音。",
   "setting.sounds.output_device_name.label": "提示音扬声器",
   "setting.sounds.output_device_name.help": "按名称选择播放提示音的输出设备。留空 = 默认输出。",
-
   "setting.ducking.enabled.label": "听写时静音",
-  "setting.ducking.enabled.help": "听写时降低下列程序的音量，停止后恢复。如果 VoxKeyPaste 中途关闭，下次启动时会恢复音量。",
-  "setting.ducking.media_apps.label": "要降低音量的程序",
-  "setting.ducking.media_apps.help": "用逗号分隔的进程名（与任务管理器“详细信息”中显示的一致）。",
-  "setting.ducking.ducked_volume.label": "听写时音量 (%)",
-  "setting.ducking.ducked_volume.help": "正常音量的百分比。0 = 静音。",
+  "setting.ducking.enabled.help": "听写时让电脑静音，避免麦克风录进音乐或视频，一停止就恢复声音。绝不改动各个程序自己的音量。如果 VoxKeyPaste 中途关闭，下次启动时会恢复声音。",
+  "setting.ducking.mute_system_output.label": "静音系统输出",
+  "setting.ducking.mute_system_output.help": "听写时将默认输出设备静音（即 Windows 的音量静音）。",
   "setting.ducking.voicemeeter_mute_strips.label": "要静音的 Voicemeeter 通道",
   "setting.ducking.voicemeeter_mute_strips.help": "供 Voicemeeter 用户使用：用逗号分隔的通道编号（例如 Voicemeeter Potato 的虚拟输入为 5, 6, 7）。一停止就会取消静音。留空 = 不操作 Voicemeeter。",
   "setting.ducking.voicemeeter_dll.label": "Voicemeeter 库",
   "setting.ducking.voicemeeter_dll.help": "VoicemeeterRemote64.dll 的路径。",
   "setting.ducking.max_duration_s.label": "安全上限 (秒)",
   "setting.ducking.max_duration_s.help": "录音时长超过此值时也会恢复音量。0 = 不限制。",
-
   "setting.clips.enabled.label": "保存每次听写",
   "setting.clips.enabled.help": "保存每次听写的音频（FLAC）和文本（.txt），例如用于训练语音。在后台进行，绝不会拖慢听写。",
   "setting.clips.folder.label": "文件夹",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "更短的听写不会被保存。",
   "setting.clips.upload_command.label": "发送命令",
   "setting.clips.upload_command.help": "可选命令，对每个保存的录音执行一次，{audio} 和 {text} 会被替换为文件路径。例如：scp -q -B {audio} {text} user@server:/clips/ — 成功后删除本地文件；失败则稍后重试。",
-
   "option.auto": "自动",
   "option.toggle": "按一下开始 / 再按停止",
   "option.hold": "按住说话",

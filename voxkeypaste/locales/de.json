@@ -15,7 +15,6 @@
   "ui.settings.browse": "Durchsuchen…",
   "ui.settings.default_device": "(Standardgerät)",
   "ui.settings.restart_question": "Einstellungen gespeichert. VoxKeyPaste jetzt neu starten, um sie zu übernehmen?",
-
   "section.general": "Allgemein",
   "section.recording": "Aufnahme",
   "section.transcription": "Transkription",
@@ -23,7 +22,6 @@
   "section.sounds": "Töne",
   "section.ducking": "Ton stumm",
   "section.clips": "Diktate speichern",
-
   "setting.general.language.label": "Sprache der Oberfläche",
   "setting.general.language.help": "Sprache der Menüs und Fenster. Automatisch verwendet die Systemsprache.",
   "setting.general.start_listening.label": "Beim Start zuhören",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "Während Aufnahme und Transkription ein kleines Fenster unten am Bildschirm zeigen. Das Symbol im Infobereich ändert ohnehin die Farbe.",
   "setting.general.log_to_console.label": "Protokoll in der Konsole",
   "setting.general.log_to_console.help": "Im Terminal anzeigen, was die App gerade tut (hilfreich bei der Fehlersuche).",
-
   "setting.recording.hotkey.label": "Tastenkürzel",
   "setting.recording.hotkey.help": "Taste oder Kombination, die das Diktat startet und beendet, Tasten mit + verbunden. Beispiele: f8, ctrl+shift+space, alt+d.",
   "setting.recording.mode.label": "Modus",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "Nur im Sprachaktivitätsmodus: Stille, nach der die Aufnahme von selbst stoppt.",
   "setting.recording.min_duration_ms.label": "Mindestlänge (ms)",
   "setting.recording.min_duration_ms.help": "Kürzere Aufnahmen werden ohne Transkription verworfen.",
-
   "setting.transcription.backend.label": "Engine",
   "setting.transcription.backend.help": "Lokal: ein Whisper-Modell auf diesem Computer (privat, kostenlos; beim ersten Mal heruntergeladen). API: ein OpenAI-kompatibler Server (OpenAI oder ein eigener).",
   "setting.transcription.language.label": "Gesprochene Sprache",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "Modellname, den der Server erwartet (whisper-1 bei OpenAI; beim eigenen Server das bereitgestellte Modell).",
   "setting.transcription.api_key.label": "API-Schlüssel",
   "setting.transcription.api_key.help": "Für OpenAI nötig. Ein eigener Server ignoriert ihn meist. Wenn leer, wird die Umgebungsvariable OPENAI_API_KEY verwendet.",
-
   "setting.output.method.label": "Schreibweise",
   "setting.output.method.help": "Einfügen: der ganze Text auf einmal über die Zwischenablage (deren alter Inhalt wird wiederhergestellt). Tippen: Taste für Taste.",
   "setting.output.type_delay_ms.label": "Pause zwischen Tasten (ms)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "Den ganzen Text in Kleinbuchstaben umwandeln.",
   "setting.output.dictionary_file.label": "Korrekturdatei",
   "setting.output.dictionary_file.help": "Textdatei mit einem 'falsch=richtig' pro Zeile, um oft falsch verstandene Wörter zu korrigieren (# = Kommentar). Ganze Wörter, Großschreibung bleibt. Wird bei jedem Diktat neu gelesen.",
-
   "setting.sounds.start_sound.label": "Startton",
   "setting.sounds.start_sound.help": "Ertönt, bevor das Mikrofon öffnet: das Zeichen, mit dem Sprechen zu beginnen.",
   "setting.sounds.stop_sound.label": "Stoppton",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "Eigene 16-Bit-WAV-Datei für das Ende. Leer = der mitgelieferte Ton.",
   "setting.sounds.output_device_name.label": "Lautsprecher für die Töne",
   "setting.sounds.output_device_name.help": "Audioausgabe für die Töne, nach Namen. Leer = Standardausgabe.",
-
   "setting.ducking.enabled.label": "Beim Diktieren stummschalten",
-  "setting.ducking.enabled.help": "Die Lautstärke der Programme unten beim Diktieren senken und danach wiederherstellen. Schließt VoxKeyPaste mittendrin, wird sie beim nächsten Start wiederhergestellt.",
-  "setting.ducking.media_apps.label": "Leiser zu stellende Programme",
-  "setting.ducking.media_apps.help": "Prozessnamen, durch Kommas getrennt (wie in den Details des Task-Managers).",
-  "setting.ducking.ducked_volume.label": "Lautstärke beim Diktieren (%)",
-  "setting.ducking.ducked_volume.help": "Prozent der normalen Lautstärke. 0 = stumm.",
+  "setting.ducking.enabled.help": "Den Computer beim Diktieren stumm schalten, damit das Mikrofon keine Musik oder Videos aufnimmt, und den Ton sofort beim Stoppen zurückgeben. Die Lautstärke einzelner Programme wird nie verändert. Schließt VoxKeyPaste mittendrin, wird der Ton beim nächsten Start wiederhergestellt.",
+  "setting.ducking.mute_system_output.label": "Systemausgabe stumm",
+  "setting.ducking.mute_system_output.help": "Das Standard-Ausgabegerät (die Windows-Stummschaltung) beim Diktieren stumm schalten.",
   "setting.ducking.voicemeeter_mute_strips.label": "Stumme Voicemeeter-Kanäle",
   "setting.ducking.voicemeeter_mute_strips.help": "Für Voicemeeter-Nutzer: Kanalnummern durch Kommas getrennt (z. B. 5, 6, 7 für die virtuellen Eingänge von Voicemeeter Potato). Sofort beim Stoppen wieder an. Leer = Voicemeeter nicht anfassen.",
   "setting.ducking.voicemeeter_dll.label": "Voicemeeter-Bibliothek",
   "setting.ducking.voicemeeter_dll.help": "Pfad zu VoicemeeterRemote64.dll.",
   "setting.ducking.max_duration_s.label": "Sicherheitsgrenze (s)",
   "setting.ducking.max_duration_s.help": "Dauert eine Aufnahme länger, wird die Lautstärke trotzdem wiederhergestellt. 0 = keine Grenze.",
-
   "setting.clips.enabled.label": "Jedes Diktat speichern",
   "setting.clips.enabled.help": "Audio (FLAC) und Text (.txt) jedes Diktats aufbewahren, etwa um eine Stimme zu trainieren. Läuft im Hintergrund und bremst das Diktat nie.",
   "setting.clips.folder.label": "Ordner",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "Kürzere Diktate werden nicht gespeichert.",
   "setting.clips.upload_command.label": "Befehl zum Senden",
   "setting.clips.upload_command.help": "Optionaler Befehl für jede gespeicherte Aufnahme, {audio} und {text} werden durch die Dateien ersetzt. Beispiel: scp -q -B {audio} {text} benutzer@server:/clips/ — bei Erfolg werden die lokalen Dateien gelöscht, sonst später erneut versucht.",
-
   "option.auto": "Automatisch",
   "option.toggle": "Drücken zum Starten / zum Stoppen",
   "option.hold": "Zum Sprechen gedrückt halten",

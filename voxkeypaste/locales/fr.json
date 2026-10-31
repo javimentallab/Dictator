@@ -15,7 +15,6 @@
   "ui.settings.browse": "Parcourir…",
   "ui.settings.default_device": "(périphérique par défaut)",
   "ui.settings.restart_question": "Paramètres enregistrés. Redémarrer VoxKeyPaste maintenant pour les appliquer ?",
-
   "section.general": "Général",
   "section.recording": "Enregistrement",
   "section.transcription": "Transcription",
@@ -23,7 +22,6 @@
   "section.sounds": "Sons",
   "section.ducking": "Couper le son",
   "section.clips": "Garder les dictées",
-
   "setting.general.language.label": "Langue de l'interface",
   "setting.general.language.help": "Langue des menus et des fenêtres. Automatique utilise la langue du système.",
   "setting.general.start_listening.label": "Écouter au démarrage",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "Afficher une petite fenêtre en bas de l'écran pendant l'enregistrement et la transcription. L'icône de notification change de couleur de toute façon.",
   "setting.general.log_to_console.label": "Journal dans la console",
   "setting.general.log_to_console.help": "Afficher dans le terminal ce que fait l'application (utile pour diagnostiquer un problème).",
-
   "setting.recording.hotkey.label": "Raccourci",
   "setting.recording.hotkey.help": "Touche ou combinaison qui démarre et arrête la dictée, touches reliées par +. Exemples : f8, ctrl+shift+space, alt+d.",
   "setting.recording.mode.label": "Mode",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "Uniquement en mode activité vocale : silence après lequel l'enregistrement s'arrête seul.",
   "setting.recording.min_duration_ms.label": "Durée minimale (ms)",
   "setting.recording.min_duration_ms.help": "Les enregistrements plus courts sont ignorés sans être transcrits.",
-
   "setting.transcription.backend.label": "Moteur",
   "setting.transcription.backend.help": "Local : un modèle Whisper sur cet ordinateur (privé et gratuit ; téléchargé la première fois). API : un serveur compatible OpenAI (celui d'OpenAI ou le vôtre).",
   "setting.transcription.language.label": "Langue parlée",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "Nom du modèle attendu par le serveur (whisper-1 chez OpenAI ; sur votre serveur, celui qu'il fournit).",
   "setting.transcription.api_key.label": "Clé d'API",
   "setting.transcription.api_key.help": "Nécessaire pour OpenAI. Votre propre serveur l'ignore en général. Si elle est vide, la variable d'environnement OPENAI_API_KEY est utilisée.",
-
   "setting.output.method.label": "Manière d'écrire",
   "setting.output.method.help": "Coller : tout le texte d'un coup via le presse-papiers (son contenu précédent est rétabli). Taper : touche par touche.",
   "setting.output.type_delay_ms.label": "Délai entre touches (ms)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "Convertir tout le texte en minuscules.",
   "setting.output.dictionary_file.label": "Fichier de corrections",
   "setting.output.dictionary_file.help": "Fichier texte avec un 'faux=juste' par ligne pour corriger les mots souvent mal compris (# = commentaire). Mots entiers, garde les majuscules. Relu à chaque dictée.",
-
   "setting.sounds.start_sound.label": "Son de début",
   "setting.sounds.start_sound.help": "Joué avant l'ouverture du micro : c'est le signal pour commencer à parler.",
   "setting.sounds.stop_sound.label": "Son de fin",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "Votre propre WAV 16 bits pour la fin. Vide = celui fourni.",
   "setting.sounds.output_device_name.label": "Haut-parleurs des sons",
   "setting.sounds.output_device_name.help": "Sortie audio pour les sons, par son nom. Vide = la sortie par défaut.",
-
   "setting.ducking.enabled.label": "Couper le son pendant la dictée",
-  "setting.ducking.enabled.help": "Baisser le volume des programmes ci-dessous pendant la dictée et le rétablir à l'arrêt. Si VoxKeyPaste se ferme en cours de route, il le rétablit au démarrage suivant.",
-  "setting.ducking.media_apps.label": "Programmes à baisser",
-  "setting.ducking.media_apps.help": "Noms de processus séparés par des virgules (tels qu'affichés dans les détails du Gestionnaire des tâches).",
-  "setting.ducking.ducked_volume.label": "Volume pendant la dictée (%)",
-  "setting.ducking.ducked_volume.help": "Pourcentage de leur volume normal. 0 = silence.",
+  "setting.ducking.enabled.help": "Faire taire l'ordinateur pendant la dictée pour que le micro ne capte ni musique ni vidéo, et rétablir le son dès l'arrêt. Le volume de chaque programme n'est jamais modifié. Si VoxKeyPaste se ferme en cours de route, il rétablit le son au démarrage suivant.",
+  "setting.ducking.mute_system_output.label": "Couper la sortie du système",
+  "setting.ducking.mute_system_output.help": "Couper le périphérique de sortie par défaut (la sourdine du volume de Windows) pendant la dictée.",
   "setting.ducking.voicemeeter_mute_strips.label": "Voies Voicemeeter à couper",
   "setting.ducking.voicemeeter_mute_strips.help": "Pour les utilisateurs de Voicemeeter : numéros de voie séparés par des virgules (ex. 5, 6, 7 pour les entrées virtuelles de Voicemeeter Potato). Rétablies dès que vous arrêtez. Vide = ne pas toucher à Voicemeeter.",
   "setting.ducking.voicemeeter_dll.label": "Bibliothèque Voicemeeter",
   "setting.ducking.voicemeeter_dll.help": "Chemin de VoicemeeterRemote64.dll.",
   "setting.ducking.max_duration_s.label": "Limite de sécurité (s)",
   "setting.ducking.max_duration_s.help": "Si un enregistrement dure plus longtemps, le volume est rétabli quand même. 0 = sans limite.",
-
   "setting.clips.enabled.label": "Garder chaque dictée",
   "setting.clips.enabled.help": "Conserver l'audio (FLAC) et le texte (.txt) de chaque dictée, par exemple pour entraîner une voix. Fait en arrière-plan ; ne ralentit jamais la dictée.",
   "setting.clips.folder.label": "Dossier",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "Les dictées plus courtes ne sont pas gardées.",
   "setting.clips.upload_command.label": "Commande d'envoi",
   "setting.clips.upload_command.help": "Commande facultative lancée pour chaque enregistrement gardé, {audio} et {text} étant remplacés par les fichiers. Exemple : scp -q -B {audio} {text} utilisateur@serveur:/clips/ — en cas de succès les fichiers locaux sont supprimés ; sinon, nouvel essai plus tard.",
-
   "option.auto": "Automatique",
   "option.toggle": "Appuyer pour commencer / pour arrêter",
   "option.hold": "Maintenir pour parler",

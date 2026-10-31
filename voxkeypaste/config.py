@@ -80,8 +80,7 @@ SCHEMA = [
     ]),
     ('ducking', [
         Setting('enabled', 'bool', False),
-        Setting('media_apps', 'str', 'brave.exe, chrome.exe, firefox.exe, msedge.exe, spotify.exe, vlc.exe, mpv.exe'),
-        Setting('ducked_volume', 'int', 0, minimum=0, maximum=100),
+        Setting('mute_system_output', 'bool', True),
         Setting('voicemeeter_mute_strips', 'str', ''),
         Setting('voicemeeter_dll', 'path', r'C:\Program Files (x86)\VB\Voicemeeter\VoicemeeterRemote64.dll'),
         Setting('max_duration_s', 'int', 300, minimum=0, maximum=3600),

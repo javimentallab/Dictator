@@ -9,7 +9,6 @@ webrtcvad-wheels==2.0.14
 faster-whisper==1.2.1
 httpx==0.28.1
 PyYAML==6.0.3
-# Windows only: lowering other apps' volume while dictating
+# Windows only: muting the audio while dictating
 pycaw==20251023; sys_platform == "win32"
 comtypes==1.4.16; sys_platform == "win32"
-psutil==7.2.2; sys_platform == "win32"

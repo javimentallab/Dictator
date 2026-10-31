@@ -15,7 +15,6 @@
   "ui.settings.browse": "찾아보기…",
   "ui.settings.default_device": "(기본 장치)",
   "ui.settings.restart_question": "설정을 저장했습니다. 적용하려면 지금 VoxKeyPaste를 다시 시작할까요?",
-
   "section.general": "일반",
   "section.recording": "녹음",
   "section.transcription": "변환",
@@ -23,7 +22,6 @@
   "section.sounds": "소리",
   "section.ducking": "소리 줄이기",
   "section.clips": "녹음 저장",
-
   "setting.general.language.label": "인터페이스 언어",
   "setting.general.language.help": "메뉴와 창의 언어입니다. 자동은 시스템 언어를 사용합니다.",
   "setting.general.start_listening.label": "시작 시 대기",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "녹음 및 변환 중 화면 아래쪽에 작은 창을 표시합니다. 트레이 아이콘 색은 어차피 바뀝니다.",
   "setting.general.log_to_console.label": "콘솔에 로그 출력",
   "setting.general.log_to_console.help": "앱이 하는 일을 터미널에 표시합니다(문제 진단에 유용).",
-
   "setting.recording.hotkey.label": "단축키",
   "setting.recording.hotkey.help": "받아쓰기를 시작하고 끝내는 키 또는 조합이며, 키는 +로 연결합니다. 예: f8, ctrl+shift+space, alt+d.",
   "setting.recording.mode.label": "모드",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "음성 감지 모드에서만: 이만큼 조용하면 녹음이 저절로 멈춥니다.",
   "setting.recording.min_duration_ms.label": "최소 길이 (ms)",
   "setting.recording.min_duration_ms.help": "이보다 짧은 녹음은 변환하지 않고 버립니다.",
-
   "setting.transcription.backend.label": "엔진",
   "setting.transcription.backend.help": "로컬: 이 컴퓨터에서 실행하는 Whisper 모델(비공개, 무료, 처음에 내려받음). API: OpenAI 호환 서버(OpenAI 또는 직접 운영하는 서버).",
   "setting.transcription.language.label": "말하는 언어",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "서버가 기대하는 모델 이름(OpenAI는 whisper-1, 직접 운영하는 서버는 그 서버가 제공하는 모델).",
   "setting.transcription.api_key.label": "API 키",
   "setting.transcription.api_key.help": "OpenAI에는 필요합니다. 직접 운영하는 서버는 보통 무시합니다. 비워 두면 환경 변수 OPENAI_API_KEY를 씁니다.",
-
   "setting.output.method.label": "입력 방법",
   "setting.output.method.help": "붙여넣기: 클립보드로 전체 텍스트를 한 번에 입력(이전 내용은 복원). 타이핑: 키를 하나씩 입력.",
   "setting.output.type_delay_ms.label": "키 사이 간격 (ms)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "텍스트 전체를 소문자로 바꿉니다.",
   "setting.output.dictionary_file.label": "교정 파일",
   "setting.output.dictionary_file.help": "자주 잘못 알아듣는 단어를 고치는 텍스트 파일로, 한 줄에 '틀림=맞음' 하나씩(#은 주석). 단어 단위이며 대문자를 유지합니다. 받아쓰기마다 다시 읽습니다.",
-
   "setting.sounds.start_sound.label": "시작 소리",
   "setting.sounds.start_sound.help": "마이크가 열리기 전에 울립니다. 말하기 시작하라는 신호입니다.",
   "setting.sounds.stop_sound.label": "종료 소리",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "종료용 16비트 WAV 파일. 비워 두면 내장 소리.",
   "setting.sounds.output_device_name.label": "소리용 스피커",
   "setting.sounds.output_device_name.help": "소리를 낼 출력 장치를 이름으로 지정합니다. 비워 두면 기본 출력.",
-
-  "setting.ducking.enabled.label": "받아쓰기 중 소리 줄이기",
-  "setting.ducking.enabled.help": "받아쓰는 동안 아래 프로그램의 볼륨을 낮추고 멈추면 되돌립니다. VoxKeyPaste가 도중에 종료되면 다음 시작 때 되돌립니다.",
-  "setting.ducking.media_apps.label": "소리를 줄일 프로그램",
-  "setting.ducking.media_apps.help": "쉼표로 구분한 프로세스 이름(작업 관리자의 '세부 정보'에 표시되는 이름).",
-  "setting.ducking.ducked_volume.label": "받아쓰기 중 볼륨 (%)",
-  "setting.ducking.ducked_volume.help": "평소 볼륨에 대한 비율. 0 = 무음.",
+  "setting.ducking.enabled.label": "받아쓰기 중 소리 끄기",
+  "setting.ducking.enabled.help": "받아쓰는 동안 컴퓨터 소리를 꺼서 마이크에 음악이나 영상이 들어가지 않게 하고, 멈추는 즉시 되돌립니다. 각 프로그램의 볼륨은 절대 건드리지 않습니다. VoxKeyPaste가 도중에 종료되면 다음 시작 때 소리를 되돌립니다.",
+  "setting.ducking.mute_system_output.label": "시스템 출력 음소거",
+  "setting.ducking.mute_system_output.help": "받아쓰는 동안 기본 출력 장치를 음소거합니다(Windows 볼륨 음소거).",
   "setting.ducking.voicemeeter_mute_strips.label": "음소거할 Voicemeeter 채널",
   "setting.ducking.voicemeeter_mute_strips.help": "Voicemeeter 사용자용: 쉼표로 구분한 채널 번호(예: Voicemeeter Potato의 가상 입력은 5, 6, 7). 멈추는 즉시 음소거를 해제합니다. 비워 두면 Voicemeeter를 건드리지 않습니다.",
   "setting.ducking.voicemeeter_dll.label": "Voicemeeter 라이브러리",
   "setting.ducking.voicemeeter_dll.help": "VoicemeeterRemote64.dll 경로.",
   "setting.ducking.max_duration_s.label": "안전 한도 (초)",
   "setting.ducking.max_duration_s.help": "녹음이 이보다 길어지면 그래도 볼륨을 되돌립니다. 0 = 제한 없음.",
-
   "setting.clips.enabled.label": "받아쓰기마다 저장",
   "setting.clips.enabled.help": "받아쓰기마다 오디오(FLAC)와 텍스트(.txt)를 보관합니다(예: 음성 학습용). 백그라운드에서 처리하며 받아쓰기를 느리게 하지 않습니다.",
   "setting.clips.folder.label": "폴더",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "이보다 짧은 받아쓰기는 저장하지 않습니다.",
   "setting.clips.upload_command.label": "전송 명령",
   "setting.clips.upload_command.help": "저장한 녹음마다 실행하는 선택 명령으로, {audio}와 {text}는 파일로 바뀝니다. 예: scp -q -B {audio} {text} user@server:/clips/ — 성공하면 로컬 파일을 지우고, 실패하면 나중에 다시 시도합니다.",
-
   "option.auto": "자동",
   "option.toggle": "눌러서 시작 / 눌러서 멈춤",
   "option.hold": "누르고 있는 동안 말하기",

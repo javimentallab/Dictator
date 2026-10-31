@@ -15,7 +15,6 @@
   "ui.settings.browse": "Обзор…",
   "ui.settings.default_device": "(устройство по умолчанию)",
   "ui.settings.restart_question": "Настройки сохранены. Перезапустить VoxKeyPaste сейчас, чтобы применить их?",
-
   "section.general": "Общие",
   "section.recording": "Запись",
   "section.transcription": "Распознавание",
@@ -23,7 +22,6 @@
   "section.sounds": "Звуки",
   "section.ducking": "Приглушение",
   "section.clips": "Сохранение",
-
   "setting.general.language.label": "Язык интерфейса",
   "setting.general.language.help": "Язык меню и окон. «Автоматически» — язык системы.",
   "setting.general.start_listening.label": "Слушать при запуске",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "Показывать маленькое окно внизу экрана во время записи и распознавания. Значок в трее в любом случае меняет цвет.",
   "setting.general.log_to_console.label": "Журнал в консоли",
   "setting.general.log_to_console.help": "Выводить в терминал, что делает приложение (полезно для поиска проблем).",
-
   "setting.recording.hotkey.label": "Клавиша",
   "setting.recording.hotkey.help": "Клавиша или сочетание, которое начинает и заканчивает диктовку; клавиши соединяются знаком +. Примеры: f8, ctrl+shift+space, alt+d.",
   "setting.recording.mode.label": "Режим",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "Только в режиме голосовой активности: тишина, после которой запись останавливается сама.",
   "setting.recording.min_duration_ms.label": "Минимальная длина (мс)",
   "setting.recording.min_duration_ms.help": "Более короткие записи отбрасываются без распознавания.",
-
   "setting.transcription.backend.label": "Движок",
   "setting.transcription.backend.help": "Локально: модель Whisper на этом компьютере (приватно и бесплатно; скачивается при первом запуске). API: сервер, совместимый с OpenAI (OpenAI или собственный).",
   "setting.transcription.language.label": "Язык речи",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "Имя модели, которое ждёт сервер (whisper-1 у OpenAI; на своём сервере — та, что он предоставляет).",
   "setting.transcription.api_key.label": "Ключ API",
   "setting.transcription.api_key.help": "Нужен для OpenAI. Собственный сервер обычно его игнорирует. Если пусто, берётся переменная окружения OPENAI_API_KEY.",
-
   "setting.output.method.label": "Способ ввода",
   "setting.output.method.help": "Вставка: весь текст сразу через буфер обмена (прежнее содержимое восстанавливается). Набор: клавиша за клавишей.",
   "setting.output.type_delay_ms.label": "Пауза между клавишами (мс)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "Переводить весь текст в нижний регистр.",
   "setting.output.dictionary_file.label": "Файл исправлений",
   "setting.output.dictionary_file.help": "Текстовый файл с парой 'неверно=верно' в каждой строке для исправления часто неверно распознаваемых слов (# = комментарий). Целые слова, регистр сохраняется. Перечитывается при каждой диктовке.",
-
   "setting.sounds.start_sound.label": "Звук начала",
   "setting.sounds.start_sound.help": "Звучит до открытия микрофона: это сигнал начинать говорить.",
   "setting.sounds.stop_sound.label": "Звук окончания",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "Свой 16-битный WAV для окончания. Пусто = встроенный.",
   "setting.sounds.output_device_name.label": "Колонки для звуков",
   "setting.sounds.output_device_name.help": "Аудиовыход для звуков — по имени. Пусто = выход по умолчанию.",
-
   "setting.ducking.enabled.label": "Приглушать звук при диктовке",
-  "setting.ducking.enabled.help": "Уменьшать громкость программ ниже, пока вы диктуете, и возвращать её после остановки. Если VoxKeyPaste закроется посередине, громкость вернётся при следующем запуске.",
-  "setting.ducking.media_apps.label": "Какие программы приглушать",
-  "setting.ducking.media_apps.help": "Имена процессов через запятую (как на вкладке «Подробности» диспетчера задач).",
-  "setting.ducking.ducked_volume.label": "Громкость при диктовке (%)",
-  "setting.ducking.ducked_volume.help": "Процент от обычной громкости. 0 = тишина.",
+  "setting.ducking.enabled.help": "Отключать звук компьютера во время диктовки, чтобы микрофон не ловил музыку и видео, и возвращать его сразу после остановки. Громкость отдельных программ никогда не меняется. Если VoxKeyPaste закроется посередине, звук вернётся при следующем запуске.",
+  "setting.ducking.mute_system_output.label": "Отключать системный вывод",
+  "setting.ducking.mute_system_output.help": "Отключать звук устройства вывода по умолчанию (кнопка «без звука» в Windows) во время диктовки.",
   "setting.ducking.voicemeeter_mute_strips.label": "Каналы Voicemeeter для отключения",
   "setting.ducking.voicemeeter_mute_strips.help": "Для пользователей Voicemeeter: номера каналов через запятую (например, 5, 6, 7 для виртуальных входов Voicemeeter Potato). Включаются снова сразу после остановки. Пусто = не трогать Voicemeeter.",
   "setting.ducking.voicemeeter_dll.label": "Библиотека Voicemeeter",
   "setting.ducking.voicemeeter_dll.help": "Путь к VoicemeeterRemote64.dll.",
   "setting.ducking.max_duration_s.label": "Предел безопасности (с)",
   "setting.ducking.max_duration_s.help": "Если запись длится дольше, громкость всё равно возвращается. 0 = без ограничения.",
-
   "setting.clips.enabled.label": "Сохранять каждую диктовку",
   "setting.clips.enabled.help": "Сохранять звук (FLAC) и текст (.txt) каждой диктовки, например для обучения голоса. Делается в фоне и никогда не замедляет диктовку.",
   "setting.clips.folder.label": "Папка",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "Более короткие диктовки не сохраняются.",
   "setting.clips.upload_command.label": "Команда отправки",
   "setting.clips.upload_command.help": "Необязательная команда для каждой сохранённой записи; {audio} и {text} заменяются файлами. Пример: scp -q -B {audio} {text} user@server:/clips/ — при успехе локальные файлы удаляются, иначе попытка повторяется позже.",
-
   "option.auto": "Автоматически",
   "option.toggle": "Нажать — начать / нажать — стоп",
   "option.hold": "Удерживать, чтобы говорить",

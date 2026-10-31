@@ -34,7 +34,6 @@ def controller(cfg, monkeypatch):
     monkeypatch.setattr(cues, 'play', lambda kind, wait=False: played.append(kind))
     monkeypatch.setattr(ducking, 'start', lambda: None)
     monkeypatch.setattr(ducking, 'stop', lambda: None)
-    monkeypatch.setattr(ducking, 'release_voicemeeter', lambda: None)
     c = app_module.Controller(cfg)
     c.transcriber.transcribe = lambda audio, sr: 'hola mundo'
     c.written, c.played = written, played

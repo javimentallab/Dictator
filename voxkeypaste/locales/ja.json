@@ -15,7 +15,6 @@
   "ui.settings.browse": "参照…",
   "ui.settings.default_device": "（既定のデバイス）",
   "ui.settings.restart_question": "設定を保存しました。反映するために今すぐ VoxKeyPaste を再起動しますか？",
-
   "section.general": "全般",
   "section.recording": "録音",
   "section.transcription": "文字起こし",
@@ -23,7 +22,6 @@
   "section.sounds": "サウンド",
   "section.ducking": "音声ミュート",
   "section.clips": "録音の保存",
-
   "setting.general.language.label": "表示言語",
   "setting.general.language.help": "メニューとウィンドウの言語。「自動」はシステムの言語を使います。",
   "setting.general.start_listening.label": "起動時に待ち受け",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "録音中と文字起こし中に画面下部へ小さなウィンドウを表示します。トレイアイコンの色はどちらにしても変わります。",
   "setting.general.log_to_console.label": "コンソールにログ出力",
   "setting.general.log_to_console.help": "アプリの動作をターミナルに表示します（問題の調査に便利）。",
-
   "setting.recording.hotkey.label": "ショートカット",
   "setting.recording.hotkey.help": "音声入力を開始・終了するキーまたは組み合わせ。キーは + でつなぎます。例: f8、ctrl+shift+space、alt+d。",
   "setting.recording.mode.label": "モード",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "音声検出モードのみ: この長さの無音で録音が自動停止します。",
   "setting.recording.min_duration_ms.label": "最短の長さ (ms)",
   "setting.recording.min_duration_ms.help": "これより短い録音は文字起こしせずに破棄します。",
-
   "setting.transcription.backend.label": "エンジン",
   "setting.transcription.backend.help": "ローカル: このPCで動く Whisper モデル（プライベート・無料。初回にダウンロード）。API: OpenAI 互換サーバー（OpenAI または自前）。",
   "setting.transcription.language.label": "話す言語",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "サーバーが受け付けるモデル名（OpenAI は whisper-1、自前サーバーなら提供しているモデル）。",
   "setting.transcription.api_key.label": "API キー",
   "setting.transcription.api_key.help": "OpenAI では必須です。自前のサーバーは通常無視します。空欄なら環境変数 OPENAI_API_KEY を使います。",
-
   "setting.output.method.label": "入力方法",
   "setting.output.method.help": "貼り付け: クリップボード経由で全文を一度に入力（元の内容は戻します）。タイプ: 1キーずつ入力。",
   "setting.output.type_delay_ms.label": "キー間隔 (ms)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "テキスト全体を小文字に変換します。",
   "setting.output.dictionary_file.label": "修正ファイル",
   "setting.output.dictionary_file.help": "よく聞き間違える語を直すテキストファイル。1行に「誤=正」を1つ（# はコメント）。単語単位で、先頭の大文字は保持。音声入力のたびに読み直します。",
-
   "setting.sounds.start_sound.label": "開始音",
   "setting.sounds.start_sound.help": "マイクが開く前に鳴ります。話し始めの合図です。",
   "setting.sounds.stop_sound.label": "終了音",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "終了用の自前の 16 ビット WAV。空欄 = 内蔵の音。",
   "setting.sounds.output_device_name.label": "効果音のスピーカー",
   "setting.sounds.output_device_name.help": "効果音を鳴らす出力デバイスを名前で指定。空欄 = 既定の出力。",
-
   "setting.ducking.enabled.label": "音声入力中はミュート",
-  "setting.ducking.enabled.help": "音声入力中は下記アプリの音量を下げ、停止したら元に戻します。途中で VoxKeyPaste が終了した場合は、次回起動時に戻します。",
-  "setting.ducking.media_apps.label": "音量を下げるアプリ",
-  "setting.ducking.media_apps.help": "カンマ区切りのプロセス名（タスクマネージャーの「詳細」に表示される名前）。",
-  "setting.ducking.ducked_volume.label": "音声入力中の音量 (%)",
-  "setting.ducking.ducked_volume.help": "通常音量に対する割合。0 = 無音。",
+  "setting.ducking.enabled.help": "音声入力中はPCの音を消し、マイクが音楽や動画を拾わないようにします。停止したらすぐに戻します。各アプリの音量は一切変更しません。途中で VoxKeyPaste が終了した場合は、次回起動時に戻します。",
+  "setting.ducking.mute_system_output.label": "システム出力をミュート",
+  "setting.ducking.mute_system_output.help": "音声入力中は既定の出力デバイスをミュートします（Windows の音量ミュート）。",
   "setting.ducking.voicemeeter_mute_strips.label": "ミュートする Voicemeeter チャンネル",
   "setting.ducking.voicemeeter_mute_strips.help": "Voicemeeter 利用者向け: カンマ区切りのチャンネル番号（例: Voicemeeter Potato の仮想入力なら 5, 6, 7）。停止するとすぐミュート解除します。空欄 = Voicemeeter に触れない。",
   "setting.ducking.voicemeeter_dll.label": "Voicemeeter ライブラリ",
   "setting.ducking.voicemeeter_dll.help": "VoicemeeterRemote64.dll のパス。",
   "setting.ducking.max_duration_s.label": "安全上限 (秒)",
   "setting.ducking.max_duration_s.help": "録音がこれより長くなっても音量は戻します。0 = 上限なし。",
-
   "setting.clips.enabled.label": "音声入力を毎回保存",
   "setting.clips.enabled.help": "音声入力ごとに音声（FLAC）とテキスト（.txt）を保存します（例: 声の学習用）。バックグラウンドで行い、音声入力を遅くしません。",
   "setting.clips.folder.label": "フォルダー",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "これより短い音声入力は保存しません。",
   "setting.clips.upload_command.label": "送信コマンド",
   "setting.clips.upload_command.help": "保存した録音ごとに実行する任意のコマンド。{audio} と {text} はファイルに置き換わります。例: scp -q -B {audio} {text} user@server:/clips/ — 成功するとローカルのファイルを削除し、失敗したら後で再試行します。",
-
   "option.auto": "自動",
   "option.toggle": "押して開始／押して停止",
   "option.hold": "押している間だけ話す",

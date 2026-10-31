@@ -15,7 +15,6 @@
   "ui.settings.browse": "Огляд…",
   "ui.settings.default_device": "(пристрій за замовчуванням)",
   "ui.settings.restart_question": "Налаштування збережено. Перезапустити VoxKeyPaste зараз, щоб застосувати їх?",
-
   "section.general": "Загальні",
   "section.recording": "Запис",
   "section.transcription": "Розпізнавання",
@@ -23,7 +22,6 @@
   "section.sounds": "Звуки",
   "section.ducking": "Приглушення",
   "section.clips": "Збереження",
-
   "setting.general.language.label": "Мова інтерфейсу",
   "setting.general.language.help": "Мова меню та вікон. «Автоматично» — мова системи.",
   "setting.general.start_listening.label": "Слухати під час запуску",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "Показувати маленьке вікно внизу екрана під час запису та розпізнавання. Значок у треї однаково змінює колір.",
   "setting.general.log_to_console.label": "Журнал у консолі",
   "setting.general.log_to_console.help": "Виводити в термінал, що робить застосунок (корисно для пошуку проблем).",
-
   "setting.recording.hotkey.label": "Клавіша",
   "setting.recording.hotkey.help": "Клавіша або сполучення, що починає й закінчує диктування; клавіші з'єднуються знаком +. Приклади: f8, ctrl+shift+space, alt+d.",
   "setting.recording.mode.label": "Режим",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "Лише в режимі голосової активності: тиша, після якої запис зупиняється сам.",
   "setting.recording.min_duration_ms.label": "Мінімальна довжина (мс)",
   "setting.recording.min_duration_ms.help": "Коротші записи відкидаються без розпізнавання.",
-
   "setting.transcription.backend.label": "Рушій",
   "setting.transcription.backend.help": "Локально: модель Whisper на цьому комп'ютері (приватно й безкоштовно; завантажується першого разу). API: сервер, сумісний з OpenAI (OpenAI або власний).",
   "setting.transcription.language.label": "Мова мовлення",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "Назва моделі, яку очікує сервер (whisper-1 в OpenAI; на власному сервері — та, що він надає).",
   "setting.transcription.api_key.label": "Ключ API",
   "setting.transcription.api_key.help": "Потрібен для OpenAI. Власний сервер зазвичай його ігнорує. Якщо порожньо, береться змінна середовища OPENAI_API_KEY.",
-
   "setting.output.method.label": "Спосіб введення",
   "setting.output.method.help": "Вставлення: увесь текст одразу через буфер обміну (попередній вміст відновлюється). Набір: клавіша за клавішею.",
   "setting.output.type_delay_ms.label": "Пауза між клавішами (мс)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "Перетворювати весь текст на малі літери.",
   "setting.output.dictionary_file.label": "Файл виправлень",
   "setting.output.dictionary_file.help": "Текстовий файл із парою 'хибно=правильно' в кожному рядку для виправлення слів, які часто розпізнаються неправильно (# = коментар). Цілі слова, регістр зберігається. Перечитується під час кожного диктування.",
-
   "setting.sounds.start_sound.label": "Звук початку",
   "setting.sounds.start_sound.help": "Лунає до відкриття мікрофона: це сигнал починати говорити.",
   "setting.sounds.stop_sound.label": "Звук завершення",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "Власний 16-бітний WAV для завершення. Порожньо = вбудований.",
   "setting.sounds.output_device_name.label": "Колонки для звуків",
   "setting.sounds.output_device_name.help": "Аудіовихід для звуків — за назвою. Порожньо = вихід за замовчуванням.",
-
   "setting.ducking.enabled.label": "Приглушувати звук під час диктування",
-  "setting.ducking.enabled.help": "Зменшувати гучність програм нижче, поки ви диктуєте, і повертати її після зупинки. Якщо VoxKeyPaste закриється посередині, гучність повернеться під час наступного запуску.",
-  "setting.ducking.media_apps.label": "Які програми приглушувати",
-  "setting.ducking.media_apps.help": "Назви процесів через кому (як на вкладці «Подробиці» диспетчера завдань).",
-  "setting.ducking.ducked_volume.label": "Гучність під час диктування (%)",
-  "setting.ducking.ducked_volume.help": "Відсоток від звичайної гучності. 0 = тиша.",
+  "setting.ducking.enabled.help": "Вимикати звук комп'ютера під час диктування, щоб мікрофон не ловив музику й відео, і повертати його одразу після зупинки. Гучність окремих програм ніколи не змінюється. Якщо VoxKeyPaste закриється посередині, звук повернеться під час наступного запуску.",
+  "setting.ducking.mute_system_output.label": "Вимикати системний вивід",
+  "setting.ducking.mute_system_output.help": "Вимикати звук пристрою виводу за замовчуванням (кнопка «без звуку» у Windows) під час диктування.",
   "setting.ducking.voicemeeter_mute_strips.label": "Канали Voicemeeter для вимкнення",
   "setting.ducking.voicemeeter_mute_strips.help": "Для користувачів Voicemeeter: номери каналів через кому (наприклад, 5, 6, 7 для віртуальних входів Voicemeeter Potato). Вмикаються знову одразу після зупинки. Порожньо = не чіпати Voicemeeter.",
   "setting.ducking.voicemeeter_dll.label": "Бібліотека Voicemeeter",
   "setting.ducking.voicemeeter_dll.help": "Шлях до VoicemeeterRemote64.dll.",
   "setting.ducking.max_duration_s.label": "Межа безпеки (с)",
   "setting.ducking.max_duration_s.help": "Якщо запис триває довше, гучність однаково повертається. 0 = без обмеження.",
-
   "setting.clips.enabled.label": "Зберігати кожне диктування",
   "setting.clips.enabled.help": "Зберігати звук (FLAC) і текст (.txt) кожного диктування, наприклад для навчання голосу. Виконується у фоні й ніколи не сповільнює диктування.",
   "setting.clips.folder.label": "Тека",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "Коротші диктування не зберігаються.",
   "setting.clips.upload_command.label": "Команда надсилання",
   "setting.clips.upload_command.help": "Необов'язкова команда для кожного збереженого запису; {audio} і {text} замінюються файлами. Приклад: scp -q -B {audio} {text} user@server:/clips/ — у разі успіху локальні файли видаляються, інакше спроба повториться пізніше.",
-
   "option.auto": "Автоматично",
   "option.toggle": "Натиснути — почати / натиснути — стоп",
   "option.hold": "Утримувати, щоб говорити",

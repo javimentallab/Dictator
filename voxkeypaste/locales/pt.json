@@ -15,7 +15,6 @@
   "ui.settings.browse": "Procurar…",
   "ui.settings.default_device": "(dispositivo predefinido)",
   "ui.settings.restart_question": "Definições guardadas. Reiniciar o VoxKeyPaste agora para as aplicar?",
-
   "section.general": "Geral",
   "section.recording": "Gravação",
   "section.transcription": "Transcrição",
@@ -23,7 +22,6 @@
   "section.sounds": "Sons",
   "section.ducking": "Silenciar áudio",
   "section.clips": "Guardar gravações",
-
   "setting.general.language.label": "Idioma da interface",
   "setting.general.language.help": "Idioma dos menus e janelas. Automático usa o idioma do sistema.",
   "setting.general.start_listening.label": "Ouvir ao iniciar",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "Mostrar uma pequena janela no fundo do ecrã enquanto grava e transcreve. O ícone da bandeja muda de cor de qualquer forma.",
   "setting.general.log_to_console.label": "Registo na consola",
   "setting.general.log_to_console.help": "Mostrar no terminal o que a aplicação está a fazer (útil para diagnosticar problemas).",
-
   "setting.recording.hotkey.label": "Tecla",
   "setting.recording.hotkey.help": "Tecla ou combinação que inicia e termina o ditado, com as teclas unidas por +. Exemplos: f8, ctrl+shift+space, alt+d.",
   "setting.recording.mode.label": "Modo",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "Só no modo por atividade de voz: silêncio após o qual a gravação para sozinha.",
   "setting.recording.min_duration_ms.label": "Duração mínima (ms)",
   "setting.recording.min_duration_ms.help": "Gravações mais curtas são descartadas sem as transcrever.",
-
   "setting.transcription.backend.label": "Motor",
   "setting.transcription.backend.help": "Local: um modelo Whisper neste computador (privado e grátis; descarregado na primeira vez). API: um servidor compatível com OpenAI (o da OpenAI ou um próprio).",
   "setting.transcription.language.label": "Idioma falado",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "Nome do modelo que o servidor espera (whisper-1 na OpenAI; num servidor próprio, o que ele serve).",
   "setting.transcription.api_key.label": "Chave da API",
   "setting.transcription.api_key.help": "Necessária para a OpenAI. Um servidor próprio normalmente ignora-a. Se estiver vazia, usa-se a variável de ambiente OPENAI_API_KEY.",
-
   "setting.output.method.label": "Como escrever",
   "setting.output.method.help": "Colar: o texto todo de uma vez pela área de transferência (o conteúdo anterior é reposto). Teclar: tecla a tecla.",
   "setting.output.type_delay_ms.label": "Pausa entre teclas (ms)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "Converter todo o texto para minúsculas.",
   "setting.output.dictionary_file.label": "Ficheiro de correções",
   "setting.output.dictionary_file.help": "Ficheiro de texto com um 'errado=certo' por linha para corrigir palavras mal percebidas (# = comentário). Palavras inteiras, mantém as maiúsculas. É relido em cada ditado.",
-
   "setting.sounds.start_sound.label": "Som de início",
   "setting.sounds.start_sound.help": "Toca antes de o microfone abrir: é o sinal para começar a falar.",
   "setting.sounds.stop_sound.label": "Som de fim",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "Um WAV próprio de 16 bits para o fim. Vazio = o incluído.",
   "setting.sounds.output_device_name.label": "Colunas para os sons",
   "setting.sounds.output_device_name.help": "Saída de áudio para os sons, pelo nome. Vazio = a saída predefinida.",
-
   "setting.ducking.enabled.label": "Silenciar o áudio ao ditar",
-  "setting.ducking.enabled.help": "Baixar o volume dos programas abaixo enquanto dita e repô-lo ao parar. Se o VoxKeyPaste fechar a meio, repõe-no no arranque seguinte.",
-  "setting.ducking.media_apps.label": "Programas a baixar",
-  "setting.ducking.media_apps.help": "Nomes de processo separados por vírgulas (como aparecem nos detalhes do Gestor de Tarefas).",
-  "setting.ducking.ducked_volume.label": "Volume ao ditar (%)",
-  "setting.ducking.ducked_volume.help": "Percentagem do volume normal. 0 = em silêncio.",
+  "setting.ducking.enabled.help": "Calar o computador enquanto dita para o microfone não apanhar música nem vídeos, e repor o som logo que para. O volume de cada programa nunca é alterado. Se o VoxKeyPaste fechar a meio, repõe o som no arranque seguinte.",
+  "setting.ducking.mute_system_output.label": "Silenciar a saída do sistema",
+  "setting.ducking.mute_system_output.help": "Silenciar o dispositivo de saída predefinido (o silêncio do volume do Windows) enquanto dita.",
   "setting.ducking.voicemeeter_mute_strips.label": "Canais do Voicemeeter a silenciar",
   "setting.ducking.voicemeeter_mute_strips.help": "Para quem usa Voicemeeter: números de canal separados por vírgulas (p. ex. 5, 6, 7 para as entradas virtuais do Voicemeeter Potato). Voltam a ser ativados logo que para. Vazio = não mexer no Voicemeeter.",
   "setting.ducking.voicemeeter_dll.label": "Biblioteca do Voicemeeter",
   "setting.ducking.voicemeeter_dll.help": "Caminho de VoicemeeterRemote64.dll.",
   "setting.ducking.max_duration_s.label": "Limite de segurança (s)",
   "setting.ducking.max_duration_s.help": "Se uma gravação durar mais do que isto, o volume é reposto na mesma. 0 = sem limite.",
-
   "setting.clips.enabled.label": "Guardar cada ditado",
   "setting.clips.enabled.help": "Guardar o áudio (FLAC) e o texto (.txt) de cada ditado, por exemplo para treinar uma voz. Feito em segundo plano; nunca atrasa o ditado.",
   "setting.clips.folder.label": "Pasta",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "Ditados mais curtos não são guardados.",
   "setting.clips.upload_command.label": "Comando para as enviar",
   "setting.clips.upload_command.help": "Comando opcional executado para cada gravação guardada, com {audio} e {text} substituídos pelos ficheiros. Exemplo: scp -q -B {audio} {text} utilizador@servidor:/clips/ — se correr bem, os ficheiros locais são apagados; se não, tenta-se de novo mais tarde.",
-
   "option.auto": "Automático",
   "option.toggle": "Premir para começar / premir para parar",
   "option.hold": "Manter premida para falar",

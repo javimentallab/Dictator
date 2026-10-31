@@ -26,7 +26,6 @@ uses the following packages, each under its own licence:
   PyYAML                               MIT                                 https://pyyaml.org
   pycaw (Windows)                      MIT                                 https://github.com/AndreMiras/pycaw
   comtypes (Windows)                   MIT                                 https://github.com/enthought/comtypes
-  psutil (Windows)                     BSD-3-Clause                        https://github.com/giampaolo/psutil
 
 The Whisper models downloaded by faster-whisper are released by OpenAI under the MIT
 License (https://github.com/openai/whisper).

@@ -90,7 +90,7 @@ class Controller(QObject):
             if self._stop_feedback_done:
                 return
             self._stop_feedback_done = True
-        ducking.release_voicemeeter()
+        ducking.stop()                                 # audio back before the stop sound
         cues.play('stop')
 
     # --- worker ------------------------------------------------------------------------------

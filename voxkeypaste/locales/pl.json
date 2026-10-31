@@ -15,7 +15,6 @@
   "ui.settings.browse": "Przeglądaj…",
   "ui.settings.default_device": "(urządzenie domyślne)",
   "ui.settings.restart_question": "Ustawienia zapisane. Uruchomić ponownie VoxKeyPaste, aby je zastosować?",
-
   "section.general": "Ogólne",
   "section.recording": "Nagrywanie",
   "section.transcription": "Transkrypcja",
@@ -23,7 +22,6 @@
   "section.sounds": "Dźwięki",
   "section.ducking": "Wyciszanie",
   "section.clips": "Zapis nagrań",
-
   "setting.general.language.label": "Język interfejsu",
   "setting.general.language.help": "Język menu i okien. Automatyczny używa języka systemu.",
   "setting.general.start_listening.label": "Nasłuchuj po uruchomieniu",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "Pokazywać małe okno na dole ekranu podczas nagrywania i transkrypcji. Ikona w zasobniku i tak zmienia kolor.",
   "setting.general.log_to_console.label": "Dziennik w konsoli",
   "setting.general.log_to_console.help": "Wypisywać w terminalu, co robi aplikacja (przydatne przy szukaniu problemów).",
-
   "setting.recording.hotkey.label": "Skrót klawiszowy",
   "setting.recording.hotkey.help": "Klawisz lub kombinacja, która rozpoczyna i kończy dyktowanie, klawisze połączone znakiem +. Przykłady: f8, ctrl+shift+space, alt+d.",
   "setting.recording.mode.label": "Tryb",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "Tylko w trybie aktywności głosowej: cisza, po której nagranie kończy się samo.",
   "setting.recording.min_duration_ms.label": "Minimalna długość (ms)",
   "setting.recording.min_duration_ms.help": "Krótsze nagrania są odrzucane bez transkrypcji.",
-
   "setting.transcription.backend.label": "Silnik",
   "setting.transcription.backend.help": "Lokalny: model Whisper na tym komputerze (prywatnie i za darmo; pobierany za pierwszym razem). API: serwer zgodny z OpenAI (OpenAI lub własny).",
   "setting.transcription.language.label": "Język mowy",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "Nazwa modelu oczekiwana przez serwer (whisper-1 w OpenAI; na własnym serwerze ten, który udostępnia).",
   "setting.transcription.api_key.label": "Klucz API",
   "setting.transcription.api_key.help": "Wymagany dla OpenAI. Własny serwer zwykle go ignoruje. Jeśli puste, używana jest zmienna środowiskowa OPENAI_API_KEY.",
-
   "setting.output.method.label": "Sposób pisania",
   "setting.output.method.help": "Wklej: cały tekst naraz przez schowek (poprzednia zawartość jest przywracana). Pisz: klawisz po klawiszu.",
   "setting.output.type_delay_ms.label": "Przerwa między klawiszami (ms)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "Zamienić cały tekst na małe litery.",
   "setting.output.dictionary_file.label": "Plik poprawek",
   "setting.output.dictionary_file.help": "Plik tekstowy z jedną parą 'źle=dobrze' w wierszu, poprawiający często źle rozpoznawane słowa (# = komentarz). Całe słowa, zachowuje wielkie litery. Czytany na nowo przy każdym dyktowaniu.",
-
   "setting.sounds.start_sound.label": "Dźwięk startu",
   "setting.sounds.start_sound.help": "Odtwarzany przed otwarciem mikrofonu: to sygnał, by zacząć mówić.",
   "setting.sounds.stop_sound.label": "Dźwięk końca",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "Własny 16-bitowy plik WAV na koniec. Puste = wbudowany.",
   "setting.sounds.output_device_name.label": "Głośniki dla dźwięków",
   "setting.sounds.output_device_name.help": "Wyjście audio dla dźwięków, według nazwy. Puste = wyjście domyślne.",
-
   "setting.ducking.enabled.label": "Wyciszaj dźwięk podczas dyktowania",
-  "setting.ducking.enabled.help": "Ściszać poniższe programy podczas dyktowania i przywracać głośność po zatrzymaniu. Jeśli VoxKeyPaste zamknie się w trakcie, przywróci ją przy następnym uruchomieniu.",
-  "setting.ducking.media_apps.label": "Programy do ściszenia",
-  "setting.ducking.media_apps.help": "Nazwy procesów oddzielone przecinkami (tak jak w szczegółach Menedżera zadań).",
-  "setting.ducking.ducked_volume.label": "Głośność podczas dyktowania (%)",
-  "setting.ducking.ducked_volume.help": "Procent ich normalnej głośności. 0 = cisza.",
+  "setting.ducking.enabled.help": "Wyciszać komputer podczas dyktowania, aby mikrofon nie łapał muzyki ani filmów, i przywracać dźwięk zaraz po zatrzymaniu. Głośność poszczególnych programów nigdy nie jest zmieniana. Jeśli VoxKeyPaste zamknie się w trakcie, przywróci dźwięk przy następnym uruchomieniu.",
+  "setting.ducking.mute_system_output.label": "Wycisz wyjście systemowe",
+  "setting.ducking.mute_system_output.help": "Wyciszać domyślne urządzenie wyjściowe (wyciszenie głośności Windows) podczas dyktowania.",
   "setting.ducking.voicemeeter_mute_strips.label": "Kanały Voicemeeter do wyciszenia",
   "setting.ducking.voicemeeter_mute_strips.help": "Dla użytkowników Voicemeeter: numery kanałów oddzielone przecinkami (np. 5, 6, 7 dla wejść wirtualnych Voicemeeter Potato). Włączane z powrotem zaraz po zatrzymaniu. Puste = nie ruszać Voicemeeter.",
   "setting.ducking.voicemeeter_dll.label": "Biblioteka Voicemeeter",
   "setting.ducking.voicemeeter_dll.help": "Ścieżka do VoicemeeterRemote64.dll.",
   "setting.ducking.max_duration_s.label": "Limit bezpieczeństwa (s)",
   "setting.ducking.max_duration_s.help": "Jeśli nagranie trwa dłużej, głośność i tak zostanie przywrócona. 0 = bez limitu.",
-
   "setting.clips.enabled.label": "Zapisuj każde dyktowanie",
   "setting.clips.enabled.help": "Zachowywać dźwięk (FLAC) i tekst (.txt) każdego dyktowania, np. do trenowania głosu. Dzieje się w tle i nigdy nie spowalnia dyktowania.",
   "setting.clips.folder.label": "Folder",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "Krótsze dyktowania nie są zapisywane.",
   "setting.clips.upload_command.label": "Polecenie wysyłania",
   "setting.clips.upload_command.help": "Opcjonalne polecenie uruchamiane dla każdego zapisanego nagrania, z {audio} i {text} zastąpionymi plikami. Przykład: scp -q -B {audio} {text} uzytkownik@serwer:/clips/ — jeśli się uda, pliki lokalne są usuwane; jeśli nie, próba zostanie ponowiona później.",
-
   "option.auto": "Automatycznie",
   "option.toggle": "Naciśnij, by zacząć / by zakończyć",
   "option.hold": "Przytrzymaj, aby mówić",

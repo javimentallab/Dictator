@@ -15,7 +15,6 @@
   "ui.settings.browse": "Bladeren…",
   "ui.settings.default_device": "(standaardapparaat)",
   "ui.settings.restart_question": "Instellingen opgeslagen. VoxKeyPaste nu herstarten om ze toe te passen?",
-
   "section.general": "Algemeen",
   "section.recording": "Opname",
   "section.transcription": "Transcriptie",
@@ -23,7 +22,6 @@
   "section.sounds": "Geluiden",
   "section.ducking": "Geluid dempen",
   "section.clips": "Opnames bewaren",
-
   "setting.general.language.label": "Taal van de interface",
   "setting.general.language.help": "Taal van menu's en vensters. Automatisch gebruikt de systeemtaal.",
   "setting.general.start_listening.label": "Luisteren bij start",
@@ -32,7 +30,6 @@
   "setting.general.show_status_window.help": "Tijdens opnemen en transcriberen een klein venster onderaan het scherm tonen. Het pictogram in het systeemvak verandert hoe dan ook van kleur.",
   "setting.general.log_to_console.label": "Logboek in de console",
   "setting.general.log_to_console.help": "In de terminal tonen wat de app doet (handig om problemen op te sporen).",
-
   "setting.recording.hotkey.label": "Sneltoets",
   "setting.recording.hotkey.help": "Toets of combinatie die het dictaat start en stopt, toetsen verbonden met +. Voorbeelden: f8, ctrl+shift+space, alt+d.",
   "setting.recording.mode.label": "Modus",
@@ -51,7 +48,6 @@
   "setting.recording.silence_ms.help": "Alleen in de spraakactiviteitsmodus: stilte waarna de opname vanzelf stopt.",
   "setting.recording.min_duration_ms.label": "Minimale lengte (ms)",
   "setting.recording.min_duration_ms.help": "Kortere opnames worden zonder transcriptie weggegooid.",
-
   "setting.transcription.backend.label": "Engine",
   "setting.transcription.backend.help": "Lokaal: een Whisper-model op deze computer (privé en gratis; de eerste keer gedownload). API: een OpenAI-compatibele server (die van OpenAI of je eigen).",
   "setting.transcription.language.label": "Gesproken taal",
@@ -74,7 +70,6 @@
   "setting.transcription.api_model.help": "Modelnaam die de server verwacht (whisper-1 bij OpenAI; op je eigen server het model dat die aanbiedt).",
   "setting.transcription.api_key.label": "API-sleutel",
   "setting.transcription.api_key.help": "Nodig voor OpenAI. Je eigen server negeert hem meestal. Indien leeg wordt de omgevingsvariabele OPENAI_API_KEY gebruikt.",
-
   "setting.output.method.label": "Hoe schrijven",
   "setting.output.method.help": "Plakken: de hele tekst in één keer via het klembord (de vorige inhoud wordt teruggezet). Typen: toets voor toets.",
   "setting.output.type_delay_ms.label": "Pauze tussen toetsen (ms)",
@@ -87,7 +82,6 @@
   "setting.output.lowercase.help": "De hele tekst omzetten naar kleine letters.",
   "setting.output.dictionary_file.label": "Correctiebestand",
   "setting.output.dictionary_file.help": "Tekstbestand met één 'fout=goed' per regel om vaak verkeerd verstane woorden te verbeteren (# = commentaar). Hele woorden, hoofdletters blijven behouden. Bij elk dictaat opnieuw gelezen.",
-
   "setting.sounds.start_sound.label": "Startgeluid",
   "setting.sounds.start_sound.help": "Klinkt voordat de microfoon opent: het teken om te beginnen met praten.",
   "setting.sounds.stop_sound.label": "Stopgeluid",
@@ -100,20 +94,16 @@
   "setting.sounds.stop_sound_file.help": "Eigen 16-bits WAV voor het einde. Leeg = het meegeleverde geluid.",
   "setting.sounds.output_device_name.label": "Luidsprekers voor de geluiden",
   "setting.sounds.output_device_name.help": "Audio-uitgang voor de geluiden, op naam. Leeg = de standaarduitgang.",
-
   "setting.ducking.enabled.label": "Geluid dempen tijdens dicteren",
-  "setting.ducking.enabled.help": "Het volume van de programma's hieronder verlagen terwijl je dicteert en het herstellen als je stopt. Sluit VoxKeyPaste halverwege af, dan herstelt het dit bij de volgende start.",
-  "setting.ducking.media_apps.label": "Programma's om zachter te zetten",
-  "setting.ducking.media_apps.help": "Procesnamen gescheiden door komma's (zoals in de details van Taakbeheer).",
-  "setting.ducking.ducked_volume.label": "Volume tijdens dicteren (%)",
-  "setting.ducking.ducked_volume.help": "Percentage van hun normale volume. 0 = stil.",
+  "setting.ducking.enabled.help": "De computer stil zetten terwijl je dicteert, zodat de microfoon geen muziek of video's oppikt, en het geluid terugzetten zodra je stopt. Het volume van afzonderlijke programma's wordt nooit aangeraakt. Sluit VoxKeyPaste halverwege af, dan zet het het geluid bij de volgende start terug.",
+  "setting.ducking.mute_system_output.label": "Systeemuitvoer dempen",
+  "setting.ducking.mute_system_output.help": "Het standaard-uitvoerapparaat dempen (de Windows-volumedemping) tijdens het dicteren.",
   "setting.ducking.voicemeeter_mute_strips.label": "Voicemeeter-kanalen om te dempen",
   "setting.ducking.voicemeeter_mute_strips.help": "Voor Voicemeeter-gebruikers: kanaalnummers gescheiden door komma's (bv. 5, 6, 7 voor de virtuele ingangen van Voicemeeter Potato). Ze gaan weer aan zodra je stopt. Leeg = Voicemeeter niet aanraken.",
   "setting.ducking.voicemeeter_dll.label": "Voicemeeter-bibliotheek",
   "setting.ducking.voicemeeter_dll.help": "Pad naar VoicemeeterRemote64.dll.",
   "setting.ducking.max_duration_s.label": "Veiligheidslimiet (s)",
   "setting.ducking.max_duration_s.help": "Duurt een opname langer, dan wordt het volume toch hersteld. 0 = geen limiet.",
-
   "setting.clips.enabled.label": "Elk dictaat bewaren",
   "setting.clips.enabled.help": "De audio (FLAC) en tekst (.txt) van elk dictaat bewaren, bijvoorbeeld om een stem te trainen. Gebeurt op de achtergrond en vertraagt het dicteren nooit.",
   "setting.clips.folder.label": "Map",
@@ -122,7 +112,6 @@
   "setting.clips.min_duration_s.help": "Kortere dictaten worden niet bewaard.",
   "setting.clips.upload_command.label": "Commando om te versturen",
   "setting.clips.upload_command.help": "Optioneel commando dat voor elke bewaarde opname wordt uitgevoerd, met {audio} en {text} vervangen door de bestanden. Voorbeeld: scp -q -B {audio} {text} gebruiker@server:/clips/ — lukt het, dan worden de lokale bestanden verwijderd; zo niet, dan later opnieuw.",
-
   "option.auto": "Automatisch",
   "option.toggle": "Druk om te starten / om te stoppen",
   "option.hold": "Ingedrukt houden om te praten",

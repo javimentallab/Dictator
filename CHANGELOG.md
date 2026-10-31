@@ -8,7 +8,7 @@ First public version.
 - Local transcription (faster-whisper) or any OpenAI-compatible API.
 - Paste the whole text at once (clipboard, restored afterwards) or type it.
 - Start, stop and "done" sounds through one persistent output stream; output device by name.
-- Mutes media apps (and optionally Voicemeeter strips) while dictating; restores them after a crash.
+- Silences the system output and/or Voicemeeter strips while dictating (never per-app volumes); undone after a crash.
 - Lead-in trim and trailing time so the first and last syllables are clean.
 - Microphone by name, robust to Windows renumbering the audio devices; PortAudio refreshed when
   devices are plugged in or out.
