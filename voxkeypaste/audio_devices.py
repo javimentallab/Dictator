@@ -53,6 +53,60 @@ def find_device(name, kind='input'):
         return None
 
 
+def find_device_by_full_name(full_name, kind='output'):
+    """Index of the device Windows calls `full_name`. MME cuts names to 31 characters, so a device
+    matches when its name is the whole name or the start of it; the longest match wins and MME is
+    preferred. None if there is no match."""
+    if not full_name or not str(full_name).strip():
+        return None
+    full = str(full_name).strip().lower()
+    channels_key = 'max_input_channels' if kind == 'input' else 'max_output_channels'
+    try:
+        devices = sd.query_devices()
+        preferred = _preferred_hostapi_index()
+        candidates = [i for i, d in enumerate(devices)
+                      if d[channels_key] > 0 and d['name'].strip() and full.startswith(d['name'].strip().lower())]
+        if not candidates:
+            return None
+        if preferred is not None and any(devices[i]['hostapi'] == preferred for i in candidates):
+            candidates = [i for i in candidates if devices[i]['hostapi'] == preferred]
+        return max(candidates, key=lambda i: len(devices[i]['name'].strip()))
+    except Exception:
+        return None
+
+
+def _windows_default_output_name():
+    """Friendly name of the Windows default playback device (Core Audio, multimedia role), or None.
+    Runs in its own thread with COM initialised (the calling thread may not have it)."""
+    result = {}
+
+    def runner():
+        try:
+            import comtypes
+            from pycaw.pycaw import AudioUtilities
+            comtypes.CoInitialize()
+            try:
+                result['name'] = AudioUtilities.GetSpeakers().FriendlyName
+            finally:
+                comtypes.CoUninitialize()
+        except Exception:
+            pass
+
+    t = threading.Thread(target=runner, name='default-output', daemon=True)
+    t.start()
+    t.join(timeout=2)
+    return result.get('name')
+
+
+def default_output_device():
+    """Index of the device Windows uses as its default output right now, or None (= PortAudio's default).
+    PortAudio's own MME default is not the Windows default: it can point at a device another program
+    holds (e.g. a Voicemeeter bus) and does not follow later changes."""
+    if not _IS_WINDOWS:
+        return None
+    return find_device_by_full_name(_windows_default_output_name(), 'output')
+
+
 def resolve_input_device(name, configured=None):
     """Device to record from: by name if configured and found, else the numeric index, else default."""
     try:

@@ -8,6 +8,10 @@
   the dictation and the start sound still played, so it looked like it was recording but nothing was. The
   device list is now watched in the background while idle, sounds wait for the refresh instead of failing,
   and a dictation cancelled while starting plays no start sound and is logged.
+- With no output device set for the sounds, they went to PortAudio's own MME default, which is not the
+  Windows default output: it could point at a device another program holds (e.g. a Voicemeeter bus), so
+  the sounds failed with "Device unavailable". They now use the current Windows default output and
+  follow it when it changes.
 
 ### Changed
 - CI: actions/checkout v5, actions/setup-python v6, codeql-action/upload-sarif v4.

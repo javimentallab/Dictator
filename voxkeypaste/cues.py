@@ -3,7 +3,8 @@
 Opening and closing an output device for every sound competed with the
 recording stream and caused random gaps and delays, so the stream is opened
 once and its callback outputs the requested sound (and silence otherwise).
-The output device can be chosen by name (sounds.output_device_name).
+The output device can be chosen by name (sounds.output_device_name); empty = the
+Windows default output, followed when it changes.
 """
 import os
 import threading
@@ -23,6 +24,7 @@ _data = None          # int16 array (N, _CH) being played, or None
 _pos = 0
 _done = threading.Event()
 _stream = None
+_stream_device = None  # device index _stream was opened on (None = PortAudio's default)
 _cache = {}
 
 
@@ -43,19 +45,28 @@ def _callback(outdata, frames, time_info, status):
             _pos += n
 
 
+def _wanted_device():
+    """The configured output by name; with no name, the CURRENT Windows default output."""
+    name = config.get('sounds', 'output_device_name')
+    if name:
+        return audio_devices.find_device(name, 'output')
+    return audio_devices.default_output_device()
+
+
 def _ensure_stream():
-    global _stream
-    if _stream is not None:
-        return _stream
+    """The persistent stream on the wanted device; reopened if that device changed (e.g. a new
+    Windows default output)."""
+    global _stream, _stream_device
     with audio_devices.refresh_lock:               # never open it while PortAudio is being re-initialised
-        if _stream is not None:
+        device = _wanted_device()
+        if _stream is not None and device == _stream_device:
             return _stream
+        close()
         try:
-            name = config.get('sounds', 'output_device_name')
-            device = audio_devices.find_device(name, 'output') if name else None
             _stream = sd.OutputStream(samplerate=_SR, channels=_CH, dtype='int16',
                                       device=device, callback=_callback)
             _stream.start()
+            _stream_device = device
         except Exception as e:
             config.log(f'Sounds disabled: could not open the output device ({e}).')
             _stream = None
