@@ -39,6 +39,7 @@ class Controller(QObject):
         self.hotkey = HotkeyListener(cfg.get('recording', 'hotkey'), self._on_press, self._on_release,
                                      swallow=cfg.get('recording', 'swallow_hotkey'))
         threading.Thread(target=self._worker, name='dictation', daemon=True).start()
+        threading.Thread(target=self._device_watch, name='device-watch', daemon=True).start()
 
     @property
     def state(self):
@@ -94,6 +95,18 @@ class Controller(QObject):
         ducking.stop()                                 # audio back before the stop sound
         cues.play('stop')
 
+    # --- device watcher ----------------------------------------------------------------------
+    DEVICE_WATCH_SECONDS = 2.0
+
+    def _device_watch(self):
+        """Re-initialise PortAudio while idle when the device list changes (e.g. Voicemeeter starting
+        after logon), so the hotkey does not have to do it: that took long enough for a second press
+        to cancel the dictation before the start sound."""
+        while True:
+            time.sleep(self.DEVICE_WATCH_SECONDS)
+            if self._state == IDLE:
+                audio_devices.refresh_if_changed(only_if=lambda: self._state == IDLE)
+
     # --- worker ------------------------------------------------------------------------------
     def _worker(self):
         while True:
@@ -110,9 +123,13 @@ class Controller(QObject):
 
     def _dictate(self):
         self.state_changed.emit(STARTING)
-        audio_devices.refresh_if_changed()
+        audio_devices.refresh_if_changed()             # normally already done by _device_watch
+        if self._stop.is_set():                        # cancelled while starting: no start sound
+            config.log('Dictation cancelled before recording (hotkey pressed again while starting).')
+            return
         cues.play('start', wait=True)                  # before the microphone opens: "you can speak now"
         if self._stop.is_set():
+            config.log('Dictation cancelled during the start sound (hotkey pressed again).')
             return
         rec_cfg = lambda key: self.cfg.get('recording', key)
         device = audio_devices.resolve_input_device(rec_cfg('input_device_name'), rec_cfg('input_device_index'))

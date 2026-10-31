@@ -18,6 +18,7 @@ from . import config
 _IS_WINDOWS = sys.platform == 'win32'
 _refresh_callbacks = []
 _lock = threading.Lock()
+refresh_lock = _lock   # held while PortAudio is re-initialised: open streams only outside it
 
 
 def _preferred_hostapi_index():
@@ -110,11 +111,14 @@ def on_refresh(callback):
     _refresh_callbacks.append(callback)
 
 
-def refresh_if_changed():
+def refresh_if_changed(only_if=None):
     """Re-initialise PortAudio if the system device list changed. Call only with no recording open.
+    only_if: optional callable checked under the lock (e.g. "still idle"); False skips the refresh.
     Returns True if it refreshed. Never raises."""
     global _signature
     with _lock:
+        if only_if is not None and not only_if():
+            return False
         sig = _device_signature()
         if sig is None or sig == _signature:
             return False

@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+- Right after logon (or whenever the audio device list changes, e.g. Voicemeeter starting late), the first
+  hotkey press re-initialised PortAudio before the start sound; a second press during that delay cancelled
+  the dictation and the start sound still played, so it looked like it was recording but nothing was. The
+  device list is now watched in the background while idle, sounds wait for the refresh instead of failing,
+  and a dictation cancelled while starting plays no start sound and is logged.
+
+### Changed
+- CI: actions/checkout v5, actions/setup-python v6, codeql-action/upload-sarif v4.
+
 ## 1.0.0 — 2026-10-31
 
 First public version.

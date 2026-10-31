@@ -92,3 +92,23 @@ def test_stop_during_start_sound_cancels(controller, monkeypatch):
     assert wait_for(lambda: controller.state == app_module.IDLE)
     time.sleep(0.4)
     assert controller.written == [] and FakeRecorder.instances == []
+
+
+def test_cancel_while_starting_skips_start_sound(controller, monkeypatch):
+    gate = threading.Event()
+    monkeypatch.setattr(app_module.audio_devices, 'refresh_if_changed', lambda only_if=None: gate.wait(timeout=5))
+    controller._on_press()
+    assert wait_for(lambda: controller.state == app_module.STARTING)
+    controller._on_press()                                     # second press during a slow device refresh
+    gate.set()
+    assert wait_for(lambda: controller.state == app_module.IDLE)
+    time.sleep(0.1)
+    assert 'start' not in controller.played and FakeRecorder.instances == []
+
+
+def test_device_refresh_skipped_unless_idle(monkeypatch):
+    from voxkeypaste import audio_devices
+    calls = []
+    monkeypatch.setattr(audio_devices, '_device_signature', lambda: calls.append(1) or ('changed',))
+    assert audio_devices.refresh_if_changed(only_if=lambda: False) is False
+    assert calls == []

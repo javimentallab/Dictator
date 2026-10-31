@@ -47,15 +47,18 @@ def _ensure_stream():
     global _stream
     if _stream is not None:
         return _stream
-    try:
-        name = config.get('sounds', 'output_device_name')
-        device = audio_devices.find_device(name, 'output') if name else None
-        _stream = sd.OutputStream(samplerate=_SR, channels=_CH, dtype='int16',
-                                  device=device, callback=_callback)
-        _stream.start()
-    except Exception as e:
-        config.log(f'Sounds disabled: could not open the output device ({e}).')
-        _stream = None
+    with audio_devices.refresh_lock:               # never open it while PortAudio is being re-initialised
+        if _stream is not None:
+            return _stream
+        try:
+            name = config.get('sounds', 'output_device_name')
+            device = audio_devices.find_device(name, 'output') if name else None
+            _stream = sd.OutputStream(samplerate=_SR, channels=_CH, dtype='int16',
+                                      device=device, callback=_callback)
+            _stream.start()
+        except Exception as e:
+            config.log(f'Sounds disabled: could not open the output device ({e}).')
+            _stream = None
     return _stream
 
 
