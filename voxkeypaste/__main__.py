@@ -3,7 +3,17 @@ import argparse
 import sys
 
 
+def _utf8_console():
+    """Transcriptions can be in any script; never let printing them fail on a cp1252 console."""
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding='utf-8', errors='replace')
+        except Exception:          # pythonw has no console (stream is None)
+            pass
+
+
 def main():
+    _utf8_console()
     parser = argparse.ArgumentParser(prog='voxkeypaste', description='Dictate anywhere with a hotkey.')
     parser.add_argument('--config', help='settings file to use instead of the default one')
     parser.add_argument('--list-devices', action='store_true', help='list the audio devices and exit')

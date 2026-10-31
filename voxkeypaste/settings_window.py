@@ -2,6 +2,7 @@
 import os
 
 from PySide6.QtCore import Qt, Signal
+from PySide6.QtGui import QPalette
 from PySide6.QtWidgets import (QCheckBox, QComboBox, QDialog, QDialogButtonBox, QDoubleSpinBox, QFileDialog,
                                QGridLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QScrollArea,
                                QSizePolicy, QSpinBox, QTabWidget, QVBoxLayout, QWidget)
@@ -14,10 +15,13 @@ def device_names(kind):
     try:
         import sounddevice as sd
         channels = 'max_input_channels' if kind == 'input' else 'max_output_channels'
+        mme = [i for i, api in enumerate(sd.query_hostapis()) if 'MME' in api['name']] if os.name == 'nt' else []
         names = []
         for d in sd.query_devices():
             name = d['name'].strip()
-            if d[channels] > 0 and name not in names:
+            if mme and d['hostapi'] not in mme:      # Windows: the names Windows itself shows
+                continue
+            if d[channels] > 0 and name not in names and '@System32' not in name:
                 names.append(name)
         return names
     except Exception:
@@ -49,7 +53,7 @@ class SettingsWindow(QDialog):
 
         hint = QLabel(i18n.tr('ui.settings.file', path=cfg.path))
         hint.setTextInteractionFlags(Qt.TextSelectableByMouse)
-        hint.setStyleSheet('color: gray;')
+        hint.setForegroundRole(QPalette.PlaceholderText)
         hint.setWordWrap(True)
         layout.addWidget(hint)
 
@@ -86,7 +90,10 @@ class SettingsWindow(QDialog):
                 widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
             description = QLabel(help_text)
             description.setWordWrap(True)
-            description.setStyleSheet('color: #666; font-size: 8.5pt;')
+            description.setForegroundRole(QPalette.PlaceholderText)   # secondary text, light and dark themes
+            small = description.font()
+            small.setPointSizeF(max(7.5, small.pointSizeF() - 0.5))
+            description.setFont(small)
             description.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.MinimumExpanding)
             grid.addWidget(label, row, 0, Qt.AlignLeft | Qt.AlignVCenter)
             grid.addWidget(widget, row, 1)
@@ -133,6 +140,7 @@ class SettingsWindow(QDialog):
             widget.addItems(device_names('input' if kind == 'input_device' else 'output'))
             widget.setCurrentText(str(value or ''))
             widget.lineEdit().setPlaceholderText(i18n.tr('ui.settings.default_device'))
+            widget.view().setMinimumWidth(widget.view().sizeHintForColumn(0) + 30)   # full names in the list
         elif kind == 'path':
             widget = QWidget()
             row = QHBoxLayout(widget)
