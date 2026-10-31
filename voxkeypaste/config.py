@@ -39,6 +39,7 @@ SCHEMA = [
     ]),
     ('recording', [
         Setting('hotkey', 'str', 'ctrl+shift+space'),
+        Setting('swallow_hotkey', 'bool', True),
         Setting('mode', 'choice', 'toggle', ['toggle', 'hold', 'voice_activity']),
         Setting('input_device_name', 'input_device', ''),
         Setting('input_device_index', 'str', ''),

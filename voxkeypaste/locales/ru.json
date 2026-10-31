@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "Выводить в терминал, что делает приложение (полезно для поиска проблем).",
   "setting.recording.hotkey.label": "Клавиша",
   "setting.recording.hotkey.help": "Клавиша или сочетание, которое начинает и заканчивает диктовку; клавиши соединяются знаком +. Примеры: f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "Перехватывать клавишу",
+  "setting.recording.swallow_hotkey.help": "Клавиша не попадает в программу, где вы пишете (никаких лишних F8 и мигания при удержании или автоповторе). Только для одной обычной клавиши, например f8; сочетания и Ctrl/Alt/Shift/Win проходят всегда.",
   "setting.recording.mode.label": "Режим",
   "setting.recording.mode.help": "Нажать, чтобы начать, и нажать снова, чтобы остановить; держать клавишу во время речи; или остановиться самому после паузы в речи.",
   "setting.recording.input_device_name.label": "Микрофон",

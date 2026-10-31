@@ -9,6 +9,7 @@ Two rules learnt the hard way:
 * Only ONE listener is ever created; start() is idempotent.
 """
 import queue
+import sys
 import threading
 
 from . import config
@@ -82,8 +83,36 @@ class ChordState:
         self.active = False
 
 
+_WM_KEYDOWN, _WM_SYSKEYDOWN = 0x0100, 0x0104
+
+
+def windows_vk(name):
+    """Virtual-key code of a single key name ('f8', 'd', '5', 'pause'...), or None if unknown."""
+    if name.startswith('f') and name[1:].isdigit() and 1 <= int(name[1:]) <= 24:
+        return 0x70 + int(name[1:]) - 1
+    if len(name) == 1 and name.isalnum():
+        return ord(name.upper())
+    try:
+        from pynput.keyboard import Key
+        return getattr(Key, name).value.vk
+    except Exception:
+        return None
+
+
+def swallowable_vk(chord):
+    """The key to keep away from the other programs: only a hotkey made of ONE ordinary key.
+    Modifiers are never swallowed (a lost Ctrl/Alt/Shift/Win release leaves the key 'stuck' for the
+    whole system), and neither are keys of a combination (Ctrl+Shift alone switches the keyboard layout)."""
+    if len(chord) != 1:
+        return None
+    name = next(iter(chord))
+    if name in MODIFIERS:
+        return None
+    return windows_vk(name)
+
+
 class HotkeyListener:
-    def __init__(self, hotkey, on_press, on_release):
+    def __init__(self, hotkey, on_press, on_release, swallow=False):
         self.state = ChordState(parse(hotkey))
         self.on_press = on_press
         self.on_release = on_release
@@ -91,17 +120,31 @@ class HotkeyListener:
         self._listener = None
         self._worker = None
         self.paused = False
+        self._swallow_vk = swallowable_vk(self.state.chord) if swallow else None
 
     def start(self):
         if self._listener is not None:
             return
         from pynput import keyboard
-        self._listener = keyboard.Listener(on_press=lambda k: self._queue.put((k, True)),
-                                           on_release=lambda k: self._queue.put((k, False)))
+        options = {}
+        if self._swallow_vk is not None and sys.platform == 'win32':
+            options['win32_event_filter'] = self._win32_filter
+        self._listener = keyboard.Listener(on_press=lambda k: self._queue.put((key_name(k), True)),
+                                           on_release=lambda k: self._queue.put((key_name(k), False)),
+                                           **options)
         self._listener.daemon = True
         self._listener.start()
         self._worker = threading.Thread(target=self._loop, name='hotkey', daemon=True)
         self._worker.start()
+
+    def _win32_filter(self, msg, data):
+        """Runs inside the Windows keyboard hook: must be instant. Keeps the hotkey (and its auto-repeat)
+        away from the focused program, while still telling VoxKeyPaste about it."""
+        if data.vkCode != self._swallow_vk or self.paused:
+            return True
+        name = next(iter(self.state.chord))
+        self._queue.put((name, msg in (_WM_KEYDOWN, _WM_SYSKEYDOWN)))
+        self._listener.suppress_event()
 
     def stop(self):
         if self._listener is not None:
@@ -114,9 +157,9 @@ class HotkeyListener:
             item = self._queue.get()
             if item is None:
                 return
-            key, is_press = item
+            name, is_press = item
             try:
-                edge = self.state.update(key_name(key), is_press)
+                edge = self.state.update(name, is_press)
                 if self.paused or edge is None:
                     continue
                 (self.on_press if edge == 'press' else self.on_release)()

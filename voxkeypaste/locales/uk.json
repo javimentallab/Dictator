@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "Виводити в термінал, що робить застосунок (корисно для пошуку проблем).",
   "setting.recording.hotkey.label": "Клавіша",
   "setting.recording.hotkey.help": "Клавіша або сполучення, що починає й закінчує диктування; клавіші з'єднуються знаком +. Приклади: f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "Перехоплювати клавішу",
+  "setting.recording.swallow_hotkey.help": "Клавіша не потрапляє до програми, де ви пишете (жодних зайвих F8 і блимання під час утримання чи автоповтору). Лише для однієї звичайної клавіші, наприклад f8; сполучення та Ctrl/Alt/Shift/Win проходять завжди.",
   "setting.recording.mode.label": "Режим",
   "setting.recording.mode.help": "Натиснути, щоб почати, і натиснути знову, щоб зупинити; тримати клавішу під час мовлення; або зупинитися самому після паузи в мовленні.",
   "setting.recording.input_device_name.label": "Мікрофон",

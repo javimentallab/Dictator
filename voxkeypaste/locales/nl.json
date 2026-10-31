@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "In de terminal tonen wat de app doet (handig om problemen op te sporen).",
   "setting.recording.hotkey.label": "Sneltoets",
   "setting.recording.hotkey.help": "Toets of combinatie die het dictaat start en stopt, toetsen verbonden met +. Voorbeelden: f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "Toets zelf houden",
+  "setting.recording.swallow_hotkey.help": "De toets bereikt het programma waarin je typt niet (geen losse F8, geen geknipper bij ingedrukt houden of herhalen). Alleen voor één gewone toets zoals f8; combinaties en Ctrl/Alt/Shift/Win gaan altijd door.",
   "setting.recording.mode.label": "Modus",
   "setting.recording.mode.help": "Druk om te beginnen en nogmaals om te stoppen; houd de toets ingedrukt tijdens het praten; of stop vanzelf na een pauze in het spreken.",
   "setting.recording.input_device_name.label": "Microfoon",

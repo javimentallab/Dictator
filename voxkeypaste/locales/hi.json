@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "ऐप क्या कर रही है, यह टर्मिनल में दिखाएँ (समस्या खोजने में उपयोगी)।",
   "setting.recording.hotkey.label": "शॉर्टकट",
   "setting.recording.hotkey.help": "बोलकर लिखना शुरू और बंद करने वाली कुंजी या संयोजन, कुंजियाँ + से जोड़ें। उदाहरण: f8, ctrl+shift+space, alt+d।",
+  "setting.recording.swallow_hotkey.label": "कुंजी अपने पास रखें",
+  "setting.recording.swallow_hotkey.help": "शॉर्टकट कुंजी उस प्रोग्राम तक नहीं पहुँचती जिसमें आप लिख रहे हैं (न अलग से F8, न दबाए रखने या दोहराने पर टिमटिमाहट)। केवल f8 जैसी एक सामान्य कुंजी के लिए; संयोजन और Ctrl/Alt/Shift/Win हमेशा आगे जाते हैं।",
   "setting.recording.mode.label": "मोड",
   "setting.recording.mode.help": "शुरू करने के लिए दबाएँ और रोकने के लिए फिर दबाएँ; बोलते समय कुंजी दबाए रखें; या बोलने में ठहराव के बाद अपने आप रुकें।",
   "setting.recording.input_device_name.label": "माइक्रोफ़ोन",

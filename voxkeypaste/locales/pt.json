@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "Mostrar no terminal o que a aplicação está a fazer (útil para diagnosticar problemas).",
   "setting.recording.hotkey.label": "Tecla",
   "setting.recording.hotkey.help": "Tecla ou combinação que inicia e termina o ditado, com as teclas unidas por +. Exemplos: f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "Ficar com a tecla",
+  "setting.recording.swallow_hotkey.help": "A tecla não chega ao programa onde escreve (nem F8 soltos nem cintilação ao mantê-la ou repetir-se). Só com uma tecla normal e única, como f8; combinações e Ctrl/Alt/Shift/Win passam sempre.",
   "setting.recording.mode.label": "Modo",
   "setting.recording.mode.help": "Premir para começar e premir de novo para parar; manter a tecla enquanto fala; ou parar sozinho após uma pausa na fala.",
   "setting.recording.input_device_name.label": "Microfone",

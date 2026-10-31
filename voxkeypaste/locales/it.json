@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "Mostrare nel terminale cosa sta facendo l'app (utile per diagnosticare problemi).",
   "setting.recording.hotkey.label": "Scorciatoia",
   "setting.recording.hotkey.help": "Tasto o combinazione che avvia e ferma la dettatura, tasti uniti da +. Esempi: f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "Trattieni il tasto",
+  "setting.recording.swallow_hotkey.help": "Il tasto non arriva al programma in cui scrivi (niente F8 vaganti né sfarfallio quando lo tieni premuto o si ripete). Solo per un singolo tasto normale come f8; le combinazioni e Ctrl/Alt/Maiusc/Win passano sempre.",
   "setting.recording.mode.label": "Modalità",
   "setting.recording.mode.help": "Premi per iniziare e premi di nuovo per fermare; tieni premuto il tasto mentre parli; oppure fermati da solo dopo una pausa nel parlato.",
   "setting.recording.input_device_name.label": "Microfono",

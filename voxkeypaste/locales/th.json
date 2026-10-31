@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "แสดงสิ่งที่แอปกำลังทำในเทอร์มินัล (มีประโยชน์เวลาหาสาเหตุปัญหา)",
   "setting.recording.hotkey.label": "ปุ่มลัด",
   "setting.recording.hotkey.help": "ปุ่มหรือชุดปุ่มที่เริ่มและหยุดการพูดพิมพ์ เชื่อมปุ่มด้วย + ตัวอย่าง: f8, ctrl+shift+space, alt+d",
+  "setting.recording.swallow_hotkey.label": "เก็บปุ่มไว้เอง",
+  "setting.recording.swallow_hotkey.help": "ปุ่มลัดจะไม่ส่งไปยังโปรแกรมที่คุณกำลังพิมพ์ (ไม่มี F8 หลุดไปและไม่กะพริบเมื่อกดค้างหรือปุ่มซ้ำ) ใช้ได้เฉพาะปุ่มธรรมดาปุ่มเดียว เช่น f8 ส่วนชุดปุ่มและ Ctrl/Alt/Shift/Win จะผ่านเสมอ",
   "setting.recording.mode.label": "โหมด",
   "setting.recording.mode.help": "กดเพื่อเริ่มและกดอีกครั้งเพื่อหยุด, กดปุ่มค้างไว้ขณะพูด หรือหยุดเองเมื่อเว้นช่วงการพูด",
   "setting.recording.input_device_name.label": "ไมโครโฟน",

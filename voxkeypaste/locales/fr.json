@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "Afficher dans le terminal ce que fait l'application (utile pour diagnostiquer un problème).",
   "setting.recording.hotkey.label": "Raccourci",
   "setting.recording.hotkey.help": "Touche ou combinaison qui démarre et arrête la dictée, touches reliées par +. Exemples : f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "Garder la touche pour soi",
+  "setting.recording.swallow_hotkey.help": "La touche n'atteint pas le programme où vous écrivez (pas de F8 parasite ni de clignotement quand elle est maintenue ou répétée). Seulement pour une touche simple comme f8 ; les combinaisons et Ctrl/Alt/Maj/Win passent toujours.",
   "setting.recording.mode.label": "Mode",
   "setting.recording.mode.help": "Appuyer pour commencer et appuyer à nouveau pour arrêter ; maintenir la touche pendant que vous parlez ; ou arrêter seul après une pause.",
   "setting.recording.input_device_name.label": "Micro",

@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "在终端中显示程序正在做什么（便于排查问题）。",
   "setting.recording.hotkey.label": "快捷键",
   "setting.recording.hotkey.help": "开始和结束听写的按键或组合键，各键用 + 连接。例如：f8、ctrl+shift+space、alt+d。",
+  "setting.recording.swallow_hotkey.label": "拦截快捷键",
+  "setting.recording.swallow_hotkey.help": "快捷键不会传给你正在输入的程序（不会多出 F8，按住或自动重复时也不会闪烁）。仅适用于像 f8 这样的单个普通键；组合键以及 Ctrl/Alt/Shift/Win 总是会传递。",
   "setting.recording.mode.label": "模式",
   "setting.recording.mode.help": "按一下开始、再按一下停止；说话时按住按键；或在说话停顿后自动停止。",
   "setting.recording.input_device_name.label": "麦克风",

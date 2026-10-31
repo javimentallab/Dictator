@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "Wypisywać w terminalu, co robi aplikacja (przydatne przy szukaniu problemów).",
   "setting.recording.hotkey.label": "Skrót klawiszowy",
   "setting.recording.hotkey.help": "Klawisz lub kombinacja, która rozpoczyna i kończy dyktowanie, klawisze połączone znakiem +. Przykłady: f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "Zatrzymaj klawisz",
+  "setting.recording.swallow_hotkey.help": "Klawisz nie trafia do programu, w którym piszesz (żadnych zbłąkanych F8 ani migania przy przytrzymaniu lub powtarzaniu). Tylko dla pojedynczego zwykłego klawisza, np. f8; kombinacje i Ctrl/Alt/Shift/Win przechodzą zawsze.",
   "setting.recording.mode.label": "Tryb",
   "setting.recording.mode.help": "Naciśnij, aby zacząć, i ponownie, aby zakończyć; przytrzymaj klawisz podczas mówienia; albo zatrzymaj samoczynnie po przerwie w mowie.",
   "setting.recording.input_device_name.label": "Mikrofon",

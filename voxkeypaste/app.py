@@ -36,7 +36,8 @@ class Controller(QObject):
         self._stop_feedback_done = False
         self._recorder = None
         self._jobs = queue.Queue()
-        self.hotkey = HotkeyListener(cfg.get('recording', 'hotkey'), self._on_press, self._on_release)
+        self.hotkey = HotkeyListener(cfg.get('recording', 'hotkey'), self._on_press, self._on_release,
+                                     swallow=cfg.get('recording', 'swallow_hotkey'))
         threading.Thread(target=self._worker, name='dictation', daemon=True).start()
 
     @property

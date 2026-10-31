@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "Print what the app is doing in the terminal (useful to diagnose problems).",
   "setting.recording.hotkey.label": "Hotkey",
   "setting.recording.hotkey.help": "Key or combination that starts and stops dictation, with keys joined by +. Examples: f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "Keep the key to itself",
+  "setting.recording.swallow_hotkey.help": "The hotkey does not reach the program you are typing in (no stray F8, no flickering while it is held or auto-repeated). Only for a single ordinary key like f8; key combinations and Ctrl/Alt/Shift/Win always pass through.",
   "setting.recording.mode.label": "Mode",
   "setting.recording.mode.help": "Press to start and press again to stop; hold the key while speaking; or stop by itself after a pause in your speech.",
   "setting.recording.input_device_name.label": "Microphone",

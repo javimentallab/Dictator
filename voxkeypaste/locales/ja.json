@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "アプリの動作をターミナルに表示します（問題の調査に便利）。",
   "setting.recording.hotkey.label": "ショートカット",
   "setting.recording.hotkey.help": "音声入力を開始・終了するキーまたは組み合わせ。キーは + でつなぎます。例: f8、ctrl+shift+space、alt+d。",
+  "setting.recording.swallow_hotkey.label": "キーを横取りする",
+  "setting.recording.swallow_hotkey.help": "ショートカットキーを入力中のアプリに渡しません（余計な F8 や、押し続け・キーリピート時のちらつきが出ません）。f8 のような単独の通常キーのみ。組み合わせや Ctrl/Alt/Shift/Win は常に通します。",
   "setting.recording.mode.label": "モード",
   "setting.recording.mode.help": "押して開始し、もう一度押して停止／話している間キーを押し続ける／話の間（ま）で自動停止。",
   "setting.recording.input_device_name.label": "マイク",

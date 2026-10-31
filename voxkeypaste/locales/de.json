@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "Im Terminal anzeigen, was die App gerade tut (hilfreich bei der Fehlersuche).",
   "setting.recording.hotkey.label": "Tastenkürzel",
   "setting.recording.hotkey.help": "Taste oder Kombination, die das Diktat startet und beendet, Tasten mit + verbunden. Beispiele: f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "Taste abfangen",
+  "setting.recording.swallow_hotkey.help": "Die Taste erreicht das Programm, in dem Sie schreiben, nicht (kein verirrtes F8, kein Flackern beim Halten oder Wiederholen). Nur für eine einzelne normale Taste wie f8; Kombinationen und Strg/Alt/Umschalt/Win gehen immer durch.",
   "setting.recording.mode.label": "Modus",
   "setting.recording.mode.help": "Drücken zum Starten und erneut drücken zum Beenden; Taste beim Sprechen gedrückt halten; oder nach einer Sprechpause von selbst stoppen.",
   "setting.recording.input_device_name.label": "Mikrofon",

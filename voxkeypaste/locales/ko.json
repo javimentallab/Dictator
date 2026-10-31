@@ -35,6 +35,8 @@
   "setting.general.log_to_console.help": "앱이 하는 일을 터미널에 표시합니다(문제 진단에 유용).",
   "setting.recording.hotkey.label": "단축키",
   "setting.recording.hotkey.help": "받아쓰기를 시작하고 끝내는 키 또는 조합이며, 키는 +로 연결합니다. 예: f8, ctrl+shift+space, alt+d.",
+  "setting.recording.swallow_hotkey.label": "키 가로채기",
+  "setting.recording.swallow_hotkey.help": "단축키가 입력 중인 프로그램으로 전달되지 않습니다(F8이 따로 들어가거나 누르고 있을 때 깜박이지 않음). f8 같은 단일 일반 키에만 해당하며, 조합 키와 Ctrl/Alt/Shift/Win은 항상 전달됩니다.",
   "setting.recording.mode.label": "모드",
   "setting.recording.mode.help": "눌러서 시작하고 다시 눌러서 멈춤, 말하는 동안 키를 누르고 있기, 또는 말이 멈추면 자동으로 멈춤.",
   "setting.recording.input_device_name.label": "마이크",
