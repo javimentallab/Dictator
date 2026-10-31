@@ -90,11 +90,12 @@ class SettingsWindow(QDialog):
                 widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
             description = QLabel(help_text)
             description.setWordWrap(True)
+            description.setAlignment(Qt.AlignLeft | Qt.AlignTop)
             description.setForegroundRole(QPalette.PlaceholderText)   # secondary text, light and dark themes
             small = description.font()
             small.setPointSizeF(max(7.5, small.pointSizeF() - 0.5))
             description.setFont(small)
-            description.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.MinimumExpanding)
+            description.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Minimum)
             grid.addWidget(label, row, 0, Qt.AlignLeft | Qt.AlignVCenter)
             grid.addWidget(widget, row, 1)
             grid.addWidget(description, row + 1, 1)

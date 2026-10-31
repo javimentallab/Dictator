@@ -1,0 +1,35 @@
+VoxKeyPaste
+Copyright (c) 2026 javimentallab
+Licensed under the MIT License (see LICENSE).
+
+VoxKeyPaste was inspired by WhisperWriter (https://github.com/savbell/whisper-writer,
+GPL-3.0) by savbell. It is an independent implementation written from scratch and
+contains no code from WhisperWriter.
+
+The built-in sounds (voxkeypaste/assets/*.wav) are synthesised by tools/make_sounds.py
+and the icons by tools/make_icons.py; both are part of this project (MIT).
+
+Third-party software
+--------------------
+VoxKeyPaste does not include third-party code in this repository. At install time it
+uses the following packages, each under its own licence:
+
+  PySide6-Essentials (Qt for Python)  LGPL-3.0-only / GPL-2.0 / GPL-3.0   https://pyside.org
+  pynput                               LGPL-3.0                            https://github.com/moses-palmer/pynput
+  faster-whisper                       MIT                                 https://github.com/SYSTRAN/faster-whisper
+  numpy                                BSD-3-Clause                        https://numpy.org
+  sounddevice (bundles PortAudio, MIT) MIT                                 https://github.com/spatialaudio/python-sounddevice
+  soundfile (bundles libsndfile, LGPL) BSD-3-Clause                        https://github.com/bastibe/python-soundfile
+  pyperclip                            BSD-3-Clause                        https://github.com/asweigart/pyperclip
+  webrtcvad-wheels                     MIT                                 https://github.com/daanzu/py-webrtcvad-wheels
+  httpx                                BSD-3-Clause                        https://www.python-httpx.org
+  PyYAML                               MIT                                 https://pyyaml.org
+  pycaw (Windows)                      MIT                                 https://github.com/AndreMiras/pycaw
+  comtypes (Windows)                   MIT                                 https://github.com/enthought/comtypes
+  psutil (Windows)                     BSD-3-Clause                        https://github.com/giampaolo/psutil
+
+The Whisper models downloaded by faster-whisper are released by OpenAI under the MIT
+License (https://github.com/openai/whisper).
+
+PySide6 and pynput are used as unmodified, dynamically imported libraries, as the LGPL
+allows; you can replace them with any compatible version.

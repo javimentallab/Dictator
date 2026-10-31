@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest==9.1.1
+# only to regenerate the icons (tools/make_icons.py)
+Pillow==12.3.0
