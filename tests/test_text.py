@@ -41,8 +41,16 @@ def test_api_key_placeholder_for_own_servers(cfg, monkeypatch):
 
 
 def test_build_command_does_not_use_a_shell():
-    cmd = clip_saver.build_command('scp -q {audio} {text} "user@host:/my clips/"', r'C:\a b\x.flac', 'x.txt')
-    assert cmd == ['scp', '-q', r'C:\a b\x.flac', 'x.txt', 'user@host:/my clips/']
+    for windows in (True, False):
+        cmd = clip_saver.build_command('scp -q {audio} {text} "user@host:/my clips/"', r'C:\a b\x.flac', 'x.txt',
+                                       windows=windows)
+        assert cmd == ['scp', '-q', r'C:\a b\x.flac', 'x.txt', 'user@host:/my clips/']
+
+
+def test_windows_paths_keep_their_backslashes():
+    template = r'C:\Windows\System32\OpenSSH\scp.exe -B {audio} "C:\Program Files\x" u@h:/c/'
+    assert clip_saver.build_command(template, 'a', 't', windows=True) == [
+        r'C:\Windows\System32\OpenSSH\scp.exe', '-B', 'a', r'C:\Program Files\x', 'u@h:/c/']
 
 
 def _save_now(cfg, tmp_path, command):

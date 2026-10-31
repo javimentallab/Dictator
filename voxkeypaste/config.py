@@ -216,11 +216,23 @@ def get(section, key):
     return current().get(section, key)
 
 
+LOG_MAX_BYTES = 1_000_000
+
+
 def log(message):
+    """Print to the console; without one (pythonw) append to voxkeypaste.log next to the settings."""
     try:
         if _current is not None and not _current.values['general']['log_to_console']:
             return
         with _log_lock:
-            print(message, flush=True)
+            if sys.stdout is not None:
+                print(message, flush=True)
+                return
+            path = os.path.join(current().directory, 'voxkeypaste.log')
+            if os.path.exists(path) and os.path.getsize(path) > LOG_MAX_BYTES:
+                os.replace(path, path + '.1')
+            import time
+            with open(path, 'a', encoding='utf-8') as f:
+                f.write(time.strftime('%Y-%m-%d %H:%M:%S ') + str(message) + '\n')
     except Exception:
         pass

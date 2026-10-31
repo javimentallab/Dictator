@@ -52,10 +52,22 @@ def _save(audio_data, sample_rate, text):
         config.log(f'clip_saving: could not save the clip ({type(e).__name__}: {e})')
 
 
-def build_command(template, audio, text):
-    """Split the template like a shell would and substitute the placeholders (no shell is used)."""
-    parts = shlex.split(template, posix=True)
-    return [p.replace('{audio}', audio).replace('{text}', text) for p in parts]
+def split_command(template, windows=None):
+    """Split a command line into arguments. On Windows backslashes are path separators, not escapes."""
+    windows = sys.platform == 'win32' if windows is None else windows
+    if not windows:
+        return shlex.split(template, posix=True)
+    parts = []
+    for part in shlex.split(template, posix=False):
+        if len(part) >= 2 and part[0] == part[-1] and part[0] in '"\'':
+            part = part[1:-1]
+        parts.append(part)
+    return parts
+
+
+def build_command(template, audio, text, windows=None):
+    """Split the template and substitute the placeholders (no shell is used)."""
+    return [p.replace('{audio}', audio).replace('{text}', text) for p in split_command(template, windows)]
 
 
 def upload_pending():

@@ -100,7 +100,7 @@ class Controller(QObject):
             try:
                 self._dictate()
             except Exception as e:
-                traceback.print_exc()
+                config.log(traceback.format_exc())
                 self.failed.emit(f'{type(e).__name__}: {e}')
             finally:
                 ducking.stop()

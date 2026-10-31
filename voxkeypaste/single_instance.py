@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 _handle = None
-_NAME = 'WhisperWriterSingleton'
+_NAME = 'VoxKeyPasteSingleton'
 
 
 def acquire():
