@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "Ещё немного писать после остановки, чтобы не обрезать последний слог.",
   "setting.recording.silence_ms.label": "Пауза для окончания (мс)",
   "setting.recording.silence_ms.help": "Только в режиме голосовой активности: тишина, после которой запись останавливается сама.",
+  "setting.recording.no_voice_stop_s.label": "Стоп без голоса (с)",
+  "setting.recording.no_voice_stop_s.help": "Если голоса не слышно столько времени (в начале или после того, как вы договорили), запись останавливается сама и звук возвращается. Сказанное всё равно распознаётся. 0 = никогда.",
   "setting.recording.min_duration_ms.label": "Минимальная длина (мс)",
   "setting.recording.min_duration_ms.help": "Более короткие записи отбрасываются без распознавания.",
   "setting.transcription.backend.label": "Движок",

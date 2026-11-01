@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "Nach dem Stoppen noch kurz weiter aufnehmen, damit die letzte Silbe nicht abgeschnitten wird.",
   "setting.recording.silence_ms.label": "Pause zum Beenden (ms)",
   "setting.recording.silence_ms.help": "Nur im Sprachaktivitätsmodus: Stille, nach der die Aufnahme von selbst stoppt.",
+  "setting.recording.no_voice_stop_s.label": "Stopp ohne Sprache (s)",
+  "setting.recording.no_voice_stop_s.help": "Ist so lange keine Stimme zu hören (am Anfang oder nach dem Sprechen), stoppt die Aufnahme von selbst und der Ton kommt zurück. Das Gesagte wird trotzdem transkribiert. 0 = nie.",
   "setting.recording.min_duration_ms.label": "Mindestlänge (ms)",
   "setting.recording.min_duration_ms.help": "Kürzere Aufnahmen werden ohne Transkription verworfen.",
   "setting.transcription.backend.label": "Engine",

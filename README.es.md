@@ -15,7 +15,8 @@ OpenAI) y pega el texto de golpe.
 ## Qué hace
 
 - **Tecla global** (`f8`, `ctrl+shift+space`…) en tres modos: pulsar para empezar / pulsar para parar,
-  mantener pulsada para hablar, o parar sola tras una pausa.
+  mantener pulsada para hablar, o parar sola tras una pausa. En cualquier modo, si nadie habla en 15 segundos
+  la grabación termina sola, así que una pulsación sin la segunda no deja el ordenador silenciado.
 - **Transcripción local o en servidor**: [faster-whisper](https://github.com/SYSTRAN/faster-whisper) en tu
   CPU/GPU, OpenAI o tu propio servidor compatible con OpenAI (p. ej. [Speaches](https://github.com/speaches-ai/speaches)).
 - **Pega todo el texto de golpe** por el portapapeles (y devuelve lo que hubiera), o lo teclea tecla a tecla.

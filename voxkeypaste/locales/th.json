@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "บันทึกต่ออีกเล็กน้อยหลังหยุด เพื่อไม่ให้พยางค์สุดท้ายขาด",
   "setting.recording.silence_ms.label": "ช่วงเงียบที่ทำให้หยุด (ms)",
   "setting.recording.silence_ms.help": "เฉพาะโหมดตรวจจับเสียงพูด: เงียบนานเท่านี้แล้วการบันทึกจะหยุดเอง",
+  "setting.recording.no_voice_stop_s.label": "หยุดเมื่อไม่มีเสียงพูด (วินาที)",
+  "setting.recording.no_voice_stop_s.help": "ถ้าไม่ได้ยินเสียงพูดนานเท่านี้ (ตอนเริ่มหรือหลังพูดจบ) การบันทึกจะหยุดเองและเสียงจะกลับมา สิ่งที่พูดไปแล้วยังถอดความตามปกติ 0 = ไม่ใช้",
   "setting.recording.min_duration_ms.label": "ความยาวขั้นต่ำ (ms)",
   "setting.recording.min_duration_ms.help": "การบันทึกที่สั้นกว่านี้จะถูกทิ้งโดยไม่ถอดความ",
   "setting.transcription.backend.label": "เอนจิน",

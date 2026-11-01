@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "रोकने के बाद भी थोड़ी देर रिकॉर्ड करें, ताकि आख़िरी अक्षर न कटे।",
   "setting.recording.silence_ms.label": "रोकने वाला ठहराव (ms)",
   "setting.recording.silence_ms.help": "केवल आवाज़-गतिविधि मोड में: इतनी चुप्पी के बाद रिकॉर्डिंग अपने आप रुक जाती है।",
+  "setting.recording.no_voice_stop_s.label": "कोई न बोले तो रोकें (सेकंड)",
+  "setting.recording.no_voice_stop_s.help": "अगर इतनी देर तक कोई आवाज़ सुनाई न दे (शुरू में या बोलने के बाद), तो रिकॉर्डिंग अपने आप रुक जाती है और आवाज़ वापस आ जाती है। जो बोला गया वह फिर भी लिखा जाता है। 0 = कभी नहीं।",
   "setting.recording.min_duration_ms.label": "न्यूनतम अवधि (ms)",
   "setting.recording.min_duration_ms.help": "इससे छोटी रिकॉर्डिंग बिना लिखे हटा दी जाती है।",
   "setting.transcription.backend.label": "इंजन",

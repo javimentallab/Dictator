@@ -135,7 +135,7 @@ class Controller(QObject):
         device = audio_devices.resolve_input_device(rec_cfg('input_device_name'), rec_cfg('input_device_index'))
         recorder = Recorder(rec_cfg('sample_rate'), device=device, mode=rec_cfg('mode'),
                             lead_in_ms=rec_cfg('lead_in_ms'), trailing_ms=rec_cfg('trailing_ms'),
-                            silence_ms=rec_cfg('silence_ms'))
+                            silence_ms=rec_cfg('silence_ms'), no_voice_stop_s=rec_cfg('no_voice_stop_s'))
         ducking.start()
         self._recorder = recorder
         if self._stop.is_set():
@@ -143,8 +143,11 @@ class Controller(QObject):
         self._set_state(RECORDING)
         config.log('Recording...')
         audio = recorder.record()
-        self._stop_feedback()                          # voice_activity mode ends by itself
+        self._stop_feedback()                          # voice_activity / no voice: it ended by itself
         ducking.stop()
+        if recorder.stopped_for_no_voice and not len(audio):
+            config.log('Nothing was said: dictation discarded, audio restored.')
+            return
 
         seconds = len(audio) / recorder.sample_rate
         if seconds * 1000 < rec_cfg('min_duration_ms'):

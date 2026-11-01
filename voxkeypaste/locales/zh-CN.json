@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "停止后再多录一小会儿，避免截断最后一个音节。",
   "setting.recording.silence_ms.label": "结束停顿 (毫秒)",
   "setting.recording.silence_ms.help": "仅用于语音活动模式：静音持续这么久后录音自动停止。",
+  "setting.recording.no_voice_stop_s.label": "无人说话时停止 (秒)",
+  "setting.recording.no_voice_stop_s.help": "如果这么久都没有听到人声（开始时或说完之后），录音会自动停止并恢复声音。已说的内容照常转写。0 = 从不。",
   "setting.recording.min_duration_ms.label": "最短时长 (毫秒)",
   "setting.recording.min_duration_ms.help": "更短的录音会被丢弃，不做转写。",
   "setting.transcription.backend.label": "引擎",

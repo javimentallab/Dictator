@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "Continuar a gravar um pouco depois de parar, para não cortar a última sílaba.",
   "setting.recording.silence_ms.label": "Pausa que termina (ms)",
   "setting.recording.silence_ms.help": "Só no modo por atividade de voz: silêncio após o qual a gravação para sozinha.",
+  "setting.recording.no_voice_stop_s.label": "Parar se ninguém falar (s)",
+  "setting.recording.no_voice_stop_s.help": "Se não se ouvir voz durante este tempo (no início ou depois de falar), a gravação para sozinha e o áudio volta. O que disse é transcrito na mesma. 0 = nunca.",
   "setting.recording.min_duration_ms.label": "Duração mínima (ms)",
   "setting.recording.min_duration_ms.help": "Gravações mais curtas são descartadas sem as transcrever.",
   "setting.transcription.backend.label": "Motor",

@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "Na het stoppen nog even doorgaan met opnemen, zodat de laatste lettergreep niet wordt afgekapt.",
   "setting.recording.silence_ms.label": "Pauze die afsluit (ms)",
   "setting.recording.silence_ms.help": "Alleen in de spraakactiviteitsmodus: stilte waarna de opname vanzelf stopt.",
+  "setting.recording.no_voice_stop_s.label": "Stoppen zonder spraak (s)",
+  "setting.recording.no_voice_stop_s.help": "Is er zo lang geen stem te horen (aan het begin of na het spreken), dan stopt de opname vanzelf en komt het geluid terug. Wat je zei wordt toch uitgeschreven. 0 = nooit.",
   "setting.recording.min_duration_ms.label": "Minimale lengte (ms)",
   "setting.recording.min_duration_ms.help": "Kortere opnames worden zonder transcriptie weggegooid.",
   "setting.transcription.backend.label": "Engine",

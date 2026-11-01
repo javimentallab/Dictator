@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+- **Stop if nobody speaks** (Recording, default 15 s, 0 = off): in any mode, if no voice is heard for that
+  long (from the start or after the last words), the recording ends by itself, the audio comes back and the
+  stop sound plays. Before, a single press that was never followed by a second one left the computer muted
+  until the safety limit (5 minutes). With no voice at all nothing is transcribed; otherwise what was said is
+  transcribed without the trailing silence. Voice detection is stricter than webrtcvad alone, which takes
+  clicks and background noise for speech.
+
 ### Fixed
 - Right after logon (or whenever the audio device list changes, e.g. Voicemeeter starting late), the first
   hotkey press re-initialised PortAudio before the start sound; a second press during that delay cancelled

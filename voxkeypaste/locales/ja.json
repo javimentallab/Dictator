@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "停止後も少しだけ録音を続け、最後の音節が切れないようにします。",
   "setting.recording.silence_ms.label": "終了とみなす無音 (ms)",
   "setting.recording.silence_ms.help": "音声検出モードのみ: この長さの無音で録音が自動停止します。",
+  "setting.recording.no_voice_stop_s.label": "無音で停止 (秒)",
+  "setting.recording.no_voice_stop_s.help": "この時間声が聞こえないと（開始時または話し終えた後）、録音は自動で止まり音声が戻ります。話した内容はそのまま文字起こしされます。0 = しない。",
   "setting.recording.min_duration_ms.label": "最短の長さ (ms)",
   "setting.recording.min_duration_ms.help": "これより短い録音は文字起こしせずに破棄します。",
   "setting.transcription.backend.label": "エンジン",

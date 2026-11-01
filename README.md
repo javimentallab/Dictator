@@ -14,7 +14,8 @@ It records while you hold or toggle a hotkey, transcribes with [Whisper](https:/
 ## Features
 
 - **Global hotkey** (`f8`, `ctrl+shift+space`…) in three modes: press to start / press to stop, hold to talk,
-  or stop by itself after a pause.
+  or stop by itself after a pause. In any mode, if nobody speaks for 15 seconds the recording ends by itself,
+  so a press you forgot to follow with a second one does not leave the computer muted.
 - **Local or server transcription**: [faster-whisper](https://github.com/SYSTRAN/faster-whisper) on your CPU/GPU,
   OpenAI, or your own OpenAI-compatible server (e.g. [Speaches](https://github.com/speaches-ai/speaches)).
 - **Pastes the whole text at once** through the clipboard (and puts back what you had there), or types it key by key.

@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "Nagrywać jeszcze chwilę po zatrzymaniu, aby nie uciąć ostatniej sylaby.",
   "setting.recording.silence_ms.label": "Przerwa kończąca (ms)",
   "setting.recording.silence_ms.help": "Tylko w trybie aktywności głosowej: cisza, po której nagranie kończy się samo.",
+  "setting.recording.no_voice_stop_s.label": "Stop bez głosu (s)",
+  "setting.recording.no_voice_stop_s.help": "Jeśli przez ten czas nie słychać głosu (na początku lub po mówieniu), nagranie kończy się samo i dźwięk wraca. To, co zostało powiedziane, i tak zostanie przepisane. 0 = nigdy.",
   "setting.recording.min_duration_ms.label": "Minimalna długość (ms)",
   "setting.recording.min_duration_ms.help": "Krótsze nagrania są odrzucane bez transkrypcji.",
   "setting.transcription.backend.label": "Silnik",

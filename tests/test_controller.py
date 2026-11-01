@@ -15,6 +15,8 @@ class FakeRecorder:
     def __init__(self, sample_rate, **kw):
         self.sample_rate = sample_rate
         self._stop = threading.Event()
+        self.kw = kw
+        self.stopped_for_no_voice = False
         FakeRecorder.instances.append(self)
 
     def request_stop(self):
@@ -56,6 +58,22 @@ def test_toggle_dictation(controller):
     assert wait_for(lambda: controller.written == ['hola mundo '])
     assert wait_for(lambda: controller.state == app_module.IDLE)
     assert controller.played.count('start') == 1 and controller.played.count('stop') == 1
+
+
+def test_nothing_said_ends_by_itself_without_transcribing(controller, monkeypatch):
+    """One press and no voice: the recording ends by itself, the audio comes back (stop sound) and
+    nothing is transcribed or typed; the next press starts a new dictation."""
+    def silent_record(self):
+        self.stopped_for_no_voice = True
+        return np.zeros(0, dtype=np.int16)
+
+    monkeypatch.setattr(FakeRecorder, 'record', silent_record)
+    controller.transcriber.transcribe = lambda audio, sr: pytest.fail('nothing should be transcribed')
+    controller._on_press()
+    assert wait_for(lambda: controller.played.count('stop') == 1)
+    assert wait_for(lambda: controller.state == app_module.IDLE)
+    assert controller.written == []
+    assert FakeRecorder.instances[0].kw['no_voice_stop_s'] == 15
 
 
 def test_hold_mode_stops_on_release(controller, cfg):

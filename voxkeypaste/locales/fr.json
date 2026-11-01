@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "Continuer à enregistrer un peu après l'arrêt, pour ne pas couper la dernière syllabe.",
   "setting.recording.silence_ms.label": "Pause qui termine (ms)",
   "setting.recording.silence_ms.help": "Uniquement en mode activité vocale : silence après lequel l'enregistrement s'arrête seul.",
+  "setting.recording.no_voice_stop_s.label": "Arrêt sans voix (s)",
+  "setting.recording.no_voice_stop_s.help": "Si aucune voix n'est entendue pendant ce temps (au début ou après avoir parlé), l'enregistrement s'arrête seul et le son revient. Ce que vous avez dit est quand même transcrit. 0 = jamais.",
   "setting.recording.min_duration_ms.label": "Durée minimale (ms)",
   "setting.recording.min_duration_ms.help": "Les enregistrements plus courts sont ignorés sans être transcrits.",
   "setting.transcription.backend.label": "Moteur",

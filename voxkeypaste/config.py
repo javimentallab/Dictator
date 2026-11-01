@@ -47,6 +47,7 @@ SCHEMA = [
         Setting('lead_in_ms', 'int', 150, minimum=0, maximum=2000),
         Setting('trailing_ms', 'int', 300, minimum=0, maximum=2000),
         Setting('silence_ms', 'int', 900, minimum=100, maximum=10000),
+        Setting('no_voice_stop_s', 'int', 15, minimum=0, maximum=600),
         Setting('min_duration_ms', 'int', 300, minimum=0, maximum=10000),
     ]),
     ('transcription', [

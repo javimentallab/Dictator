@@ -51,6 +51,8 @@
   "setting.recording.trailing_ms.help": "Keep recording a little after you stop, so the last syllable is not cut off.",
   "setting.recording.silence_ms.label": "Pause that ends it (ms)",
   "setting.recording.silence_ms.help": "Only in the voice-activity mode: silence after which the recording stops by itself.",
+  "setting.recording.no_voice_stop_s.label": "Stop if nobody speaks (s)",
+  "setting.recording.no_voice_stop_s.help": "If no voice is heard for this long (at the start or after you finish speaking), the recording stops by itself and the audio comes back. What you said is still transcribed. 0 = never.",
   "setting.recording.min_duration_ms.label": "Minimum length (ms)",
   "setting.recording.min_duration_ms.help": "Shorter recordings are discarded without transcribing them.",
   "setting.transcription.backend.label": "Engine",
