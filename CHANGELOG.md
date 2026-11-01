@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.1 — 2026-11-01
 
 ### Added
 - **Stop if nobody speaks** (Recording, default 15 s, 0 = off): in any mode, if no voice is heard for that
