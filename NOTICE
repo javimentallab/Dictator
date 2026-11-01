@@ -27,8 +27,29 @@ uses the following packages, each under its own licence:
   pycaw (Windows)                      MIT                                 https://github.com/AndreMiras/pycaw
   comtypes (Windows)                   MIT                                 https://github.com/enthought/comtypes
 
+pip installs these along with them, as their dependencies:
+
+  certifi                              MPL-2.0                             https://github.com/certifi/python-certifi
+  tqdm                                 MPL-2.0 AND MIT                     https://tqdm.github.io
+  shiboken6 (part of PySide6)          LGPL-3.0-only / GPL-2.0 / GPL-3.0   https://pyside.org
+  av (PyAV, for faster-whisper)        BSD-3-Clause                        https://github.com/PyAV-Org/PyAV
+    Its wheels include FFmpeg (LGPL-3.0-or-later) and the video encoders libx264 and
+    libx265 (GPL-2.0-or-later), which VoxKeyPaste never uses.
+
+  MIT:          anyio, ctranslate2, filelock, h11, onnxruntime, six, truststore
+  MIT-0:        cffi
+  BSD:          click, colorama, fsspec, httpcore, httpcore2, httpx2, idna, protobuf,
+                psutil, pycparser
+  Apache-2.0:   flatbuffers, hf-xet, huggingface-hub, tokenizers
+  Dual:         packaging (Apache-2.0 OR BSD-2-Clause)
+  PSF-2.0:      typing-extensions
+
 The Whisper models downloaded by faster-whisper are released by OpenAI under the MIT
 License (https://github.com/openai/whisper).
 
 PySide6 and pynput are used as unmodified, dynamically imported libraries, as the LGPL
-allows; you can replace them with any compatible version.
+allows; you can replace them with any compatible version. The same goes for certifi and
+tqdm under the MPL.
+
+Development only (requirements-dev.txt, never installed with the app): pytest (MIT),
+pluggy (MIT), iniconfig (MIT), Pygments (BSD-2-Clause) and Pillow (MIT-CMU).
