@@ -52,6 +52,10 @@ need. PyAV is optional and not installed by default, only with requirements-av.t
     Its wheels bring FFmpeg (LGPL-3.0-or-later) and the video encoders libx264 and
     libx265 (GPL-2.0-or-later). Install it only knowingly.
 
+The ctranslate2 wheel for Windows also carries cudnn64_9.dll, the NVIDIA cuDNN Library, which
+is NVIDIA's own software and not under ctranslate2's MIT License. VoxKeyPaste does not ship
+it: pip downloads it from PyPI along with ctranslate2.
+
 The Whisper models downloaded by faster-whisper are released by OpenAI under the MIT
 License (https://github.com/openai/whisper).
 
