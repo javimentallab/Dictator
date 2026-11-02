@@ -140,6 +140,10 @@ VoxKeyPaste nació inspirado por [WhisperWriter](https://github.com/savbell/whis
 programa independiente escrito desde cero y no contiene código suyo. Los componentes de terceros y sus
 licencias están en [NOTICE](NOTICE).
 
+## Contribuir
+
+Consulta [CONTRIBUTING](CONTRIBUTING.md), en inglés. Para avisar en privado de un problema de seguridad, consulta [SECURITY](SECURITY.md).
+
 ## Licencia
 
 [MIT](LICENSE)

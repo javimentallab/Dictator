@@ -138,6 +138,10 @@ VoxKeyPaste was inspired by [WhisperWriter](https://github.com/savbell/whisper-w
 independent program written from scratch and contains no code from it. Third-party components and their
 licences are listed in [NOTICE](NOTICE).
 
+## Contributing
+
+See [CONTRIBUTING](CONTRIBUTING.md). To report a security problem privately, see [SECURITY](SECURITY.md).
+
 ## License
 
 [MIT](LICENSE)
