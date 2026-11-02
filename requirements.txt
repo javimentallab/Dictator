@@ -6,9 +6,15 @@ soundfile==0.14.0
 pynput==1.8.2
 pyperclip==1.11.0
 webrtcvad-wheels==2.0.14
-faster-whisper==1.2.1
 httpx==0.28.1
 PyYAML==6.0.3
+# What faster-whisper needs, except PyAV, which this app does not use. faster-whisper itself is installed
+# afterwards, without its own dependencies: pip install --no-deps faster-whisper==1.2.1 (see the README).
+ctranslate2==4.8.2
+huggingface-hub==1.33.0
+tokenizers==0.23.2
+onnxruntime==1.30.0
+tqdm==4.70.1
 # Windows only: muting the audio while dictating
 pycaw==20251023; sys_platform == "win32"
 comtypes==1.4.16; sys_platform == "win32"

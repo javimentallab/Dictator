@@ -1,0 +1,4 @@
+# Optional, and not part of the normal install: VoxKeyPaste does not need PyAV.
+# Its wheels bring FFmpeg and the x264 and x265 video encoders, under the GPL: install it only knowingly.
+#   pip install -r requirements-av.txt
+av==18.1.0

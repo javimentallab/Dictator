@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- The install no longer brings PyAV (`av`), and with it FFmpeg and the x264 and x265 encoders: faster-whisper only uses it to decode audio files and VoxKeyPaste hands it arrays. faster-whisper now goes in a second command with `--no-deps` (see the README), its other dependencies are pinned in `requirements.txt`, and PyAV stays as an option in `requirements-av.txt`.
+
 ## 1.0.1 — 2026-11-01
 
 ### Added

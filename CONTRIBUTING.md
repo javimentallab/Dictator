@@ -14,6 +14,7 @@ For anything big, open an issue first so we can agree on the approach.
 
 ```sh
 python -m pip install -r requirements-dev.txt
+python -m pip install --no-deps faster-whisper==1.2.1
 python -m pytest
 ```
 

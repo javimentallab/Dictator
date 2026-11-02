@@ -48,11 +48,18 @@ git clone https://github.com/javimentallab/VoxKeyPaste.git
 cd VoxKeyPaste
 py -3.11 -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt
+.venv\Scripts\python -m pip install --no-deps faster-whisper==1.2.1
 .venv\Scripts\pythonw -m voxkeypaste
 ```
 
-On Linux use `python3.11 -m venv .venv`, `.venv/bin/pip install -r requirements.txt` and
-`.venv/bin/python -m voxkeypaste`.
+On Linux use `python3.11 -m venv .venv`, `.venv/bin/pip install -r requirements.txt`,
+`.venv/bin/pip install --no-deps faster-whisper==1.2.1` and `.venv/bin/python -m voxkeypaste`.
+
+`--no-deps` leaves out PyAV (`av`), which faster-whisper only uses to decode audio files: VoxKeyPaste hands it
+the recorded samples directly. So `pip check` saying that faster-whisper requires `av` is expected.
+
+PyAV is optional: `.venv\Scripts\python -m pip install -r requirements-av.txt` adds it. VoxKeyPaste does not need
+it, and it brings the x264 and x265 video encoders, under the GPL, so install it only knowingly.
 
 The first time, the settings window opens. With the defaults it uses the local `base` model,
 which is downloaded once (about 150 MB). Pick your microphone, your language and a hotkey, and save.

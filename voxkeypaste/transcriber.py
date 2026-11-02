@@ -2,8 +2,10 @@
 (OpenAI itself, or a self-hosted server such as faster-whisper-server/speaches)."""
 import io
 import os
+import sys
 import threading
 import time
+import types
 
 import numpy as np
 import soundfile as sf
@@ -13,6 +15,22 @@ from . import config
 
 class TranscriptionError(Exception):
     pass
+
+
+def _whisper_model_class():
+    """faster-whisper's WhisperModel, with or without PyAV (the `av` package) installed.
+
+    faster-whisper imports PyAV at the top of its audio module but only uses it to decode audio files, and this
+    app always hands it arrays of samples. So PyAV is left out of the normal install (requirements-av.txt has it
+    as an option) and, when it cannot be imported, an empty module takes its place. A PyAV that can be imported is
+    used as it is. This relies on faster-whisper 1.2.1, the pinned version: later ones also read av.__version__.
+    """
+    try:
+        import av  # noqa: F401
+    except ImportError:
+        sys.modules['av'] = types.ModuleType('av')
+    from faster_whisper import WhisperModel
+    return WhisperModel
 
 
 class Transcriber:
@@ -35,7 +53,7 @@ class Transcriber:
 
     def _load_model(self):
         try:
-            from faster_whisper import WhisperModel
+            WhisperModel = _whisper_model_class()
             model, device, compute = self._t('local_model'), self._t('local_device'), self._t('local_compute_type')
             config.log(f'Loading local model {model} ({device}, {compute})...')
             started = time.time()
