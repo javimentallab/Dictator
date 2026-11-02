@@ -3,6 +3,7 @@
 ## Unreleased
 
 - The install no longer brings PyAV (`av`), and with it FFmpeg and the x264 and x265 encoders: faster-whisper only uses it to decode audio files and VoxKeyPaste hands it arrays. faster-whisper now goes in a second command with `--no-deps` (see the README), its other dependencies are pinned in `requirements.txt`, and PyAV stays as an option in `requirements-av.txt`.
+- Development only: Pillow 13.0.0, for the scripts that draw the icons and the cover, which only open images they generate themselves. It fixes the 39 vulnerabilities reported against 12.3.0 (CVE-2026-96636 to 96644, CVE-2026-96778, CVE-2026-112390 to 112406, CVE-2026-112891 to 112897, CVE-2026-112899 to 112901, CVE-2026-114501 and GHSA-78g4-xqwv-q3g8). It is younger than the usual wait for a new release: accepted on purpose.
 
 ## 1.0.1 — 2026-11-01
 

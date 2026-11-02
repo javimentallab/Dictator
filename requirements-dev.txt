@@ -1,5 +1,6 @@
 -r requirements.txt
 pytest==9.1.1
 # Only for tools/make_icons.py and tools/make_screenshots.py, which open nothing but the PNGs
-# they generate themselves. Stays on 12.3 until 13.x has matured (13.0.0 came out on 2026-10-16).
-Pillow==12.3.0
+# they generate themselves. 13.0.0 (2026-10-16) is younger than the usual wait for a new release:
+# accepted on purpose, because it fixes the vulnerabilities reported against 12.3.0.
+Pillow==13.0.0
