@@ -15,12 +15,14 @@ It records while you hold or toggle a hotkey, transcribes with [Whisper](https:/
 
 - **Global hotkey** (`f8`, `ctrl+shift+space`…) in three modes: press to start / press to stop, hold to talk,
   or stop by itself after a pause. In any mode, if nobody speaks for 15 seconds the recording ends by itself,
-  so a press you forgot to follow with a second one does not leave the computer muted.
+  so a press you forgot to follow with a second one does not leave the computer muted. On Windows, a single
+  key such as F8 does not reach the program you are typing in.
 - **Local or server transcription**: [faster-whisper](https://github.com/SYSTRAN/faster-whisper) on your CPU/GPU,
   OpenAI, or your own OpenAI-compatible server (e.g. [Speaches](https://github.com/speaches-ai/speaches)).
 - **Pastes the whole text at once** through the clipboard (and puts back what you had there), or types it key by key.
 - **Start and stop sounds** so you know when to speak — the stop sound plays the moment you press the key,
-  without waiting for the transcription.
+  without waiting for the transcription. You can also turn on a note for when the text has been written, or
+  use your own WAV files.
 - **Silences the computer while you dictate** (Windows) so the microphone does not pick up music or videos:
   mutes the system output and/or Voicemeeter strips, and unmutes them the moment you stop — even after a crash.
   Programs' own volumes are never touched.
@@ -33,8 +35,8 @@ It records while you hold or toggle a hotkey, transcribes with [Whisper](https:/
   with an optional command to send them to another machine.
 - **Interface in 15 languages**: English, Español, Português, Français, Deutsch, Italiano, Nederlands, Polski,
   Русский, Українська, 简体中文, 日本語, 한국어, ไทย, हिन्दी.
-- Tray icon that shows the state (red ring = recording, amber = transcribing), **Restart** from the tray menu,
-  and only one instance at a time.
+- Tray icon that shows the state (red ring = recording, amber = transcribing), a small status window while
+  recording and transcribing, **Restart** from the tray menu, and only one instance at a time.
 
 ## Install
 
@@ -84,8 +86,9 @@ List the audio devices with `python -m voxkeypaste --list-devices`.
 ### Using your own Whisper server
 
 Set **Transcription → Engine** to *API server*, **Server URL** to your server (ending in `/v1`, e.g.
-`http://192.168.1.10:8000/v1`) and **Server model** to the model it serves (e.g. `large-v3`). The API key can
-stay empty: most self-hosted servers ignore it.
+`http://192.168.1.10:8000/v1`) and **Server model** to the model it serves (e.g. `large-v3`). **Test** asks the
+server for its models and fills the list with them. The API key can stay empty: most self-hosted servers
+ignore it.
 
 ### Correction dictionary
 

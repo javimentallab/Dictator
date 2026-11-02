@@ -16,12 +16,13 @@ OpenAI) y pega el texto de golpe.
 
 - **Tecla global** (`f8`, `ctrl+shift+space`…) en tres modos: pulsar para empezar / pulsar para parar,
   mantener pulsada para hablar, o parar sola tras una pausa. En cualquier modo, si nadie habla en 15 segundos
-  la grabación termina sola, así que una pulsación sin la segunda no deja el ordenador silenciado.
+  la grabación termina sola, así que una pulsación sin la segunda no deja el ordenador silenciado. En Windows,
+  una tecla sola como F8 no llega al programa en el que escribes.
 - **Transcripción local o en servidor**: [faster-whisper](https://github.com/SYSTRAN/faster-whisper) en tu
   CPU/GPU, OpenAI o tu propio servidor compatible con OpenAI (p. ej. [Speaches](https://github.com/speaches-ai/speaches)).
 - **Pega todo el texto de golpe** por el portapapeles (y devuelve lo que hubiera), o lo teclea tecla a tecla.
 - **Sonidos de inicio y fin** para saber cuándo hablar; el de fin suena en el momento de pulsar, sin esperar a
-  la transcripción.
+  la transcripción. También puedes activar una nota para cuando el texto ya está escrito, o usar tus propios WAV.
 - **Calla el ordenador mientras dictas** (Windows) para que el micrófono no recoja música ni vídeos: silencia la
   salida del sistema y/o canales de Voicemeeter, y los devuelve en cuanto paras, aunque la app se haya cerrado a
   medias. Nunca toca el volumen de cada programa.
@@ -35,8 +36,8 @@ OpenAI) y pega el texto de golpe.
   un comando opcional para mandarlas a otra máquina.
 - **Interfaz en 15 idiomas**: English, Español, Português, Français, Deutsch, Italiano, Nederlands, Polski,
   Русский, Українська, 简体中文, 日本語, 한국어, ไทย, हिन्दी.
-- Icono de bandeja que enseña el estado (aro rojo = grabando, ámbar = transcribiendo), **Reiniciar** desde el
-  menú y una sola instancia a la vez.
+- Icono de bandeja que enseña el estado (aro rojo = grabando, ámbar = transcribiendo), una ventanita de estado
+  mientras graba y transcribe, **Reiniciar** desde el menú y una sola instancia a la vez.
 
 ## Instalación
 
@@ -86,8 +87,9 @@ Para ver los dispositivos de audio: `python -m voxkeypaste --list-devices`.
 ### Con tu propio servidor de Whisper
 
 Pon **Transcripción → Motor** en *Servidor API*, **URL del servidor** con la de tu servidor (acabada en `/v1`,
-p. ej. `http://192.168.1.10:8000/v1`) y **Modelo del servidor** con el que sirva (p. ej. `large-v3`). La clave
-puede quedarse vacía: la mayoría de servidores propios la ignoran.
+p. ej. `http://192.168.1.10:8000/v1`) y **Modelo del servidor** con el que sirva (p. ej. `large-v3`). **Probar**
+le pregunta al servidor por sus modelos y rellena la lista con ellos. La clave puede quedarse vacía: la mayoría
+de servidores propios la ignoran.
 
 ### Diccionario de correcciones
 
