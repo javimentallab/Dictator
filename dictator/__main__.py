@@ -1,4 +1,4 @@
-"""python -m voxkeypaste [--config PATH] [--list-devices]"""
+"""python -m dictator [--config PATH] [--list-devices]"""
 import argparse
 import sys
 
@@ -14,7 +14,7 @@ def _utf8_console():
 
 def main():
     _utf8_console()
-    parser = argparse.ArgumentParser(prog='voxkeypaste', description='Dictate anywhere with a hotkey.')
+    parser = argparse.ArgumentParser(prog='dictator', description='Dictate anywhere with a hotkey.')
     parser.add_argument('--config', help='settings file to use instead of the default one')
     parser.add_argument('--list-devices', action='store_true', help='list the audio devices and exit')
     args, _ = parser.parse_known_args()

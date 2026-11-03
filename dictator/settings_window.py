@@ -202,7 +202,7 @@ class SettingsWindow(QDialog):
             models = list_models(url, key)
         except Exception as e:
             QApplication.restoreOverrideCursor()
-            QMessageBox.warning(self, 'VoxKeyPaste', i18n.tr('ui.settings.server_error', error=str(e)[:300]))
+            QMessageBox.warning(self, 'Dictator', i18n.tr('ui.settings.server_error', error=str(e)[:300]))
             return
         QApplication.restoreOverrideCursor()
         combo = self.widgets[('transcription', 'api_model')][1]
@@ -210,7 +210,7 @@ class SettingsWindow(QDialog):
         combo.clear()
         combo.addItems(models)
         combo.setCurrentText(current or (models[0] if models else ''))
-        QMessageBox.information(self, 'VoxKeyPaste',
+        QMessageBox.information(self, 'Dictator',
                                 i18n.tr('ui.settings.server_ok', models=', '.join(models) if models else '—'))
 
     def _browse(self, edit):

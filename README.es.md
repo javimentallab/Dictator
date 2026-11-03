@@ -1,13 +1,13 @@
-<p align="center"><img src="voxkeypaste/assets/icon.png" width="96" alt="Icono de VoxKeyPaste"></p>
+<p align="center"><img src="dictator/assets/icon.png" width="96" alt="Icono de Dictator"></p>
 
-<h1 align="center">VoxKeyPaste</h1>
+<h1 align="center">Dictator</h1>
 
 <p align="center"><b>Pulsa una tecla, habla y el texto aparece donde tengas el cursor.</b><br>
 <a href="README.md">English</a> · Español</p>
 
-![VoxKeyPaste: ventana de ajustes, menú de la bandeja e indicador de estado](docs/cover.png)
+![Dictator: ventana de ajustes, menú de la bandeja e indicador de estado](docs/cover.png)
 
-VoxKeyPaste es una pequeña app de la bandeja del sistema para dictar en cualquier programa: un editor, un chat,
+Dictator es una pequeña app de la bandeja del sistema para dictar en cualquier programa: un editor, un chat,
 una terminal, un formulario. Graba mientras mantienes o activas una tecla, transcribe con
 [Whisper](https://github.com/openai/whisper) (en tu propio ordenador o en cualquier servidor compatible con
 OpenAI) y pega el texto de golpe.
@@ -41,25 +41,25 @@ OpenAI) y pega el texto de golpe.
 
 ## Instalación
 
-VoxKeyPaste está hecho y probado en **Windows 10/11**. También funciona en Linux con sesión X11, pero ahí
+Dictator está hecho y probado en **Windows 10/11**. También funciona en Linux con sesión X11, pero ahí
 no se prueba habitualmente. Necesitas **Python 3.11** y Git.
 
 ```powershell
-git clone https://github.com/javimentallab/VoxKeyPaste.git
-cd VoxKeyPaste
+git clone https://github.com/javimentallab/Dictator.git
+cd Dictator
 py -3.11 -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt
 .venv\Scripts\python -m pip install --no-deps faster-whisper==1.2.1
-.venv\Scripts\pythonw -m voxkeypaste
+.venv\Scripts\pythonw -m dictator
 ```
 
 En Linux: `python3.11 -m venv .venv`, `.venv/bin/pip install -r requirements.txt`,
-`.venv/bin/pip install --no-deps faster-whisper==1.2.1` y `.venv/bin/python -m voxkeypaste`.
+`.venv/bin/pip install --no-deps faster-whisper==1.2.1` y `.venv/bin/python -m dictator`.
 
-`--no-deps` deja fuera PyAV (`av`), que faster-whisper solo usa para descodificar ficheros de audio: VoxKeyPaste
+`--no-deps` deja fuera PyAV (`av`), que faster-whisper solo usa para descodificar ficheros de audio: Dictator
 le pasa directamente las muestras grabadas. Por eso es normal que `pip check` diga que faster-whisper pide `av`.
 
-PyAV es opcional: `.venv\Scripts\python -m pip install -r requirements-av.txt` lo añade. VoxKeyPaste no lo
+PyAV es opcional: `.venv\Scripts\python -m pip install -r requirements-av.txt` lo añade. Dictator no lo
 necesita, y trae los codificadores de vídeo x264 y x265, bajo GPL, así que instálalo solo a sabiendas.
 
 La primera vez se abre la ventana de ajustes. Con lo predeterminado usa el modelo local `base`, que se
@@ -67,7 +67,7 @@ descarga una sola vez (unos 150 MB). Elige micrófono, idioma y tecla, y guarda.
 
 El motor local funciona con el procesador. Para usar una tarjeta gráfica NVIDIA hay que instalar las
 librerías CUDA 12 y cuDNN 9 [como explica faster-whisper](https://github.com/SYSTRAN/faster-whisper#gpu); si
-no están, VoxKeyPaste lo detecta y sigue con el procesador.
+no están, Dictator lo detecta y sigue con el procesador.
 
 ### Arrancar con Windows
 
@@ -85,11 +85,11 @@ lleva su explicación debajo. Los ajustes se guardan en un fichero YAML fuera de
 
 | Sistema | Fichero |
 |---------|---------|
-| Windows | `%APPDATA%\VoxKeyPaste\config.yaml` |
-| Linux   | `~/.config/voxkeypaste/config.yaml` |
+| Windows | `%APPDATA%\Dictator\config.yaml` |
+| Linux   | `~/.config/dictator/config.yaml` |
 
-Para usar otro fichero: `python -m voxkeypaste --config ruta\al\config.yaml`.
-Para ver los dispositivos de audio: `python -m voxkeypaste --list-devices`.
+Para usar otro fichero: `python -m dictator --config ruta\al\config.yaml`.
+Para ver los dispositivos de audio: `python -m dictator --list-devices`.
 
 ### Con tu propio servidor de Whisper
 
@@ -104,7 +104,7 @@ Crea un fichero de texto así y elígelo en **Texto → Fichero de correcciones*
 
 ```text
 # mal=bien, uno por línea
-box quei peist=VoxKeyPaste
+box quei peist=Dictator
 git hub=GitHub
 ```
 
@@ -125,11 +125,11 @@ dictado.
 
 ## Si algo falla
 
-- **No escribe en algunas ventanas**: están abiertas como administrador. Arranca VoxKeyPaste elevado
+- **No escribe en algunas ventanas**: están abiertas como administrador. Arranca Dictator elevado
   (`install-autostart.ps1 -Elevated`).
 - **Graba silencio**: revisa el nombre del micrófono en **Grabación → Micrófono**; con `--list-devices` ves los
   nombres exactos.
-- **Registro**: arrancada sin consola (`pythonw`), la app escribe `voxkeypaste.log` junto a `config.yaml`.
+- **Registro**: arrancada sin consola (`pythonw`), la app escribe `dictator.log` junto a `config.yaml`.
 - **Linux**: la tecla global y el tecleo simulado necesitan una sesión X11 (Wayland los bloquea).
 
 ## Desarrollo
@@ -141,11 +141,11 @@ dictado.
 
 `tools/make_sounds.py` vuelve a generar los sonidos (sintetizados, sin audio de terceros),
 `tools/make_icons.py` los iconos y `tools/make_screenshots.py` las imágenes de este README.
-Las traducciones están en `voxkeypaste/locales/<idioma>.json`; un test comprueba que no falte ninguna clave.
+Las traducciones están en `dictator/locales/<idioma>.json`; un test comprueba que no falte ninguna clave.
 
 ## Créditos
 
-VoxKeyPaste nació inspirado por [WhisperWriter](https://github.com/savbell/whisper-writer), de savbell. Es un
+Dictator nació inspirado por [WhisperWriter](https://github.com/savbell/whisper-writer), de savbell. Es un
 programa independiente escrito desde cero y no contiene código suyo. Los componentes de terceros y sus
 licencias están en [NOTICE](NOTICE).
 

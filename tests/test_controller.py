@@ -5,8 +5,8 @@ import time
 import numpy as np
 import pytest
 
-from voxkeypaste import app as app_module
-from voxkeypaste import cues, ducking
+from dictator import app as app_module
+from dictator import cues, ducking
 
 
 class FakeRecorder:
@@ -125,7 +125,7 @@ def test_cancel_while_starting_skips_start_sound(controller, monkeypatch):
 
 
 def test_device_refresh_skipped_unless_idle(monkeypatch):
-    from voxkeypaste import audio_devices
+    from dictator import audio_devices
     calls = []
     monkeypatch.setattr(audio_devices, '_device_signature', lambda: calls.append(1) or ('changed',))
     assert audio_devices.refresh_if_changed(only_if=lambda: False) is False

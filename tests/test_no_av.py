@@ -1,4 +1,4 @@
-"""VoxKeyPaste installs faster-whisper without PyAV (av), because it only ever hands it arrays.
+"""Dictator installs faster-whisper without PyAV (av), because it only ever hands it arrays.
 
 What gets imported first matters here, so each dictation runs in its own Python process (this same file, see
 _worker). Only the part that needs the model's weights is simulated, so nothing is downloaded and no GPU is used:
@@ -69,8 +69,8 @@ def _worker(mode, folder, vad):
     import ctranslate2
     import numpy as np
 
-    from voxkeypaste import config
-    from voxkeypaste.transcriber import Transcriber
+    from dictator import config
+    from dictator.transcriber import Transcriber
 
     ctranslate2.models.Whisper = _FakeEngine
     _write_fake_model(folder)
@@ -140,14 +140,14 @@ def _imports(path):
 def test_only_the_transcriber_imports_av_and_faster_whisper():
     """They have to go through _whisper_model_class, or the empty module would come too late."""
     found = {}
-    for folder in ('voxkeypaste', 'tools'):
+    for folder in ('dictator', 'tools'):
         for base, _, files in os.walk(os.path.join(ROOT, folder)):
             for name in files:
                 if name.endswith('.py'):
                     path = os.path.join(base, name)
                     for module in {'av', 'faster_whisper'} & set(_imports(path)):
                         found.setdefault(module, set()).add(os.path.relpath(path, ROOT).replace(os.sep, '/'))
-    assert found == {'av': {'voxkeypaste/transcriber.py'}, 'faster_whisper': {'voxkeypaste/transcriber.py'}}
+    assert found == {'av': {'dictator/transcriber.py'}, 'faster_whisper': {'dictator/transcriber.py'}}
 
 
 def _pinned(name):

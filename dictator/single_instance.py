@@ -1,4 +1,4 @@
-"""Make sure only one VoxKeyPaste runs at a time (two would fight over the hotkey).
+"""Make sure only one Dictator runs at a time (two would fight over the hotkey).
 
 Windows: a named mutex in the session namespace (shared by elevated and
 non-elevated processes). Elsewhere: an exclusive lock on a file.
@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 _handle = None
-_NAME = 'VoxKeyPasteSingleton'
+_NAME = 'DictatorSingleton'
 
 
 def acquire():

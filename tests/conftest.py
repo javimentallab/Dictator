@@ -5,7 +5,7 @@ import pytest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from voxkeypaste import config  # noqa: E402
+from dictator import config  # noqa: E402
 
 
 @pytest.fixture

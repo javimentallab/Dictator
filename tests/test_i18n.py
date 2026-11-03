@@ -2,7 +2,7 @@ import json
 import os
 import re
 
-from voxkeypaste import config, i18n
+from dictator import config, i18n
 
 PLACEHOLDER = re.compile(r'\{[a-z_]+\}')
 

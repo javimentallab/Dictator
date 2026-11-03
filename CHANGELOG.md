@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+- **VoxKeyPaste is now Dictator**: the name, the icon (a red D), the Python package (`python -m dictator`), the settings folder (`%APPDATA%\Dictator`, `~/.config/dictator`), the log (`dictator.log`) and the `DICTATOR_CONFIG` variable, which replaces `VOXKEYPASTE_CONFIG`. Your settings, dictionary and log move to the new folder by themselves the first time it starts.
+- If you start it with Windows, replace the old task: `tools\windows\install-autostart.ps1 -TaskName VoxKeyPaste -Remove`, then run the script again as the README says.
+
 ## 1.0.2 — 2026-11-02
 
 - The install no longer brings PyAV (`av`), and with it FFmpeg and the x264 and x265 encoders: faster-whisper only uses it to decode audio files and VoxKeyPaste hands it arrays. faster-whisper now goes in a second command with `--no-deps` (see the README), its other dependencies are pinned in `requirements.txt`, and PyAV stays as an option in `requirements-av.txt`.

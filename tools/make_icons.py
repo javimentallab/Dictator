@@ -1,8 +1,8 @@
-"""Draw the app icon: a red V on a black circle (plus tray variants).
+"""Draw the app icon: a red D on a black circle (plus tray variants).
 
     python tools/make_icons.py
 
-Writes into voxkeypaste/assets/:
+Writes into dictator/assets/:
   icon.png / icon.ico      the app icon (idle state)
   tray-recording.png       red ring = recording
   tray-transcribing.png    amber ring = transcribing
@@ -12,7 +12,7 @@ import os
 
 from PIL import Image, ImageDraw
 
-OUT = os.path.join(os.path.dirname(__file__), '..', 'voxkeypaste', 'assets')
+OUT = os.path.join(os.path.dirname(__file__), '..', 'dictator', 'assets')
 RED = (229, 40, 45, 255)
 AMBER = (255, 179, 0, 255)
 BLACK = (17, 17, 17, 255)
@@ -30,13 +30,21 @@ def draw(size, ring=None):
         d.ellipse([inner, inner, s - inner, s - inner], fill=BLACK)
     else:
         d.ellipse([pad, pad, s - pad, s - pad], fill=BLACK)
-    # The V: two thick strokes meeting at the bottom, with flat tops
-    top, bottom = s * 0.27, s * 0.76
-    left, right, mid = s * 0.25, s * 0.75, s * 0.5
-    w = s * 0.135                      # stroke width (horizontal)
-    d.polygon([(left, top), (left + w, top), (mid, bottom - s * 0.16), (right - w, top), (right, top),
-               (mid + w * 0.42, bottom), (mid - w * 0.42, bottom)], fill=RED)
+    # The D: a thick stem and a round bowl, with the counter cut out in black
+    top, bottom = s * 0.25, s * 0.75
+    left, right = s * 0.28, s * 0.74
+    stem, bar = s * 0.135, s * 0.115   # stroke width, vertical and horizontal
+    half(d, left, right, top, bottom, RED)
+    half(d, left + stem, right - stem, top + bar, bottom - bar, BLACK)
     return img.resize((size, size), Image.LANCZOS)
+
+
+def half(d, left, right, top, bottom, fill):
+    """A D shape: straight on the left, a half ellipse on the right."""
+    radius = (bottom - top) / 2
+    mid = right - radius
+    d.rectangle([left, top, mid, bottom], fill=fill)
+    d.pieslice([mid - radius, top, right, bottom], -90, 90, fill=fill)
 
 
 def main():

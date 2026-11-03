@@ -4,7 +4,7 @@ import time
 import pytest
 from pynput.keyboard import Key, KeyCode
 
-from voxkeypaste import hotkey
+from dictator import hotkey
 
 
 def test_parse():

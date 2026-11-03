@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS
-  Start VoxKeyPaste automatically when you sign in to Windows (scheduled task).
+  Start Dictator automatically when you sign in to Windows (scheduled task).
 
 .DESCRIPTION
-  Registers a scheduled task that runs "pythonw -m voxkeypaste" from this repository's
+  Registers a scheduled task that runs "pythonw -m dictator" from this repository's
   virtual environment when you sign in.
 
   -Elevated  runs it with administrator rights (no UAC prompt). Needed only if you want to
@@ -19,7 +19,7 @@
   powershell -ExecutionPolicy Bypass -File tools\windows\install-autostart.ps1 -Elevated -Start
 #>
 param(
-    [string]$TaskName = 'VoxKeyPaste',
+    [string]$TaskName = 'Dictator',
     [string]$Config = '',
     [switch]$Elevated,
     [switch]$NoLogon,
@@ -40,7 +40,7 @@ if (-not (Test-Path $pythonw)) {
     Write-Error "Not found: $pythonw. Create the virtual environment first (see README)."
 }
 
-$arguments = '-m voxkeypaste'
+$arguments = '-m dictator'
 if ($Config) { $arguments += " --config `"$Config`"" }
 
 $user = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name

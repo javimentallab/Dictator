@@ -1,7 +1,7 @@
 """Picking the sound output: Windows full names against PortAudio's (MME cuts them to 31 characters)."""
 import pytest
 
-from voxkeypaste import audio_devices, cues
+from dictator import audio_devices, cues
 
 HOSTAPIS = [{'name': 'MME'}, {'name': 'Windows WASAPI'}]
 DEVICES = [

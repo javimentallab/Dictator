@@ -1,4 +1,4 @@
-"""VoxKeyPaste: tray app, status window and the dictation controller."""
+"""Dictator: tray app, status window and the dictation controller."""
 import os
 import queue
 import subprocess
@@ -265,12 +265,12 @@ class TrayApp(QObject):
         else:
             text = i18n.tr('ui.status.ready', hotkey=hotkey.upper())
         self.state_action.setText(text)
-        self.tray.setToolTip(f'VoxKeyPaste — {text}')
+        self.tray.setToolTip(f'Dictator — {text}')
         if self.status is not None:
             self.status.show_state(state)
 
     def on_error(self, message):
-        self.tray.showMessage('VoxKeyPaste', i18n.tr('ui.error.dictation', error=message),
+        self.tray.showMessage('Dictator', i18n.tr('ui.error.dictation', error=message),
                               QSystemTrayIcon.Warning, 8000)
 
     def toggle_pause(self, paused):
@@ -288,7 +288,7 @@ class TrayApp(QObject):
         self.settings.activateWindow()
 
     def on_settings_saved(self):
-        answer = QMessageBox.question(None, 'VoxKeyPaste', i18n.tr('ui.settings.restart_question'),
+        answer = QMessageBox.question(None, 'Dictator', i18n.tr('ui.settings.restart_question'),
                                       QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
         if answer == QMessageBox.Yes:
             self.restart()
@@ -303,7 +303,7 @@ class TrayApp(QObject):
         """Start a fresh copy (same interpreter, same arguments, same privileges) and exit this one."""
         self._shutdown()
         single_instance.release()
-        args = [sys.executable, '-m', 'voxkeypaste'] + list(self.argv)
+        args = [sys.executable, '-m', 'dictator'] + list(self.argv)
         flags = subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP if sys.platform == 'win32' else 0
         subprocess.Popen(args, cwd=os.getcwd(), creationflags=flags, close_fds=True)
         os._exit(0)
@@ -318,12 +318,12 @@ def run(argv, config_path=None):
     i18n.set_language(cfg.get('general', 'language'))
     app = QApplication.instance() or QApplication(sys.argv[:1])
     app.setQuitOnLastWindowClosed(False)
-    app.setApplicationName('VoxKeyPaste')
+    app.setApplicationName('Dictator')
     app.setWindowIcon(tray_icon('icon.png'))
     if not single_instance.acquire():
-        config.log('VoxKeyPaste is already running.')
+        config.log('Dictator is already running.')
         return 0
     tray = TrayApp(app, cfg, argv)
     tray.start()
-    config.log(f'VoxKeyPaste ready. Hotkey: {cfg.get("recording", "hotkey")}. Settings: {cfg.path}')
+    config.log(f'Dictator ready. Hotkey: {cfg.get("recording", "hotkey")}. Settings: {cfg.path}')
     return app.exec()

@@ -139,7 +139,7 @@ class HotkeyListener:
 
     def _win32_filter(self, msg, data):
         """Runs inside the Windows keyboard hook: must be instant. Keeps the hotkey (and its auto-repeat)
-        away from the focused program, while still telling VoxKeyPaste about it."""
+        away from the focused program, while still telling Dictator about it."""
         if data.vkCode != self._swallow_vk or self.paused:
             return True
         name = next(iter(self.state.chord))

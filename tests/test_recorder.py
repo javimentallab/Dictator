@@ -3,7 +3,7 @@ import time
 
 import numpy as np
 
-from voxkeypaste.recorder import Recorder
+from dictator.recorder import Recorder
 
 SR = 16000
 
@@ -139,7 +139,7 @@ def test_no_voice_also_stops_a_device_that_delivers_nothing(monkeypatch):
 
 def test_words_then_silence_keep_the_words_and_cut_the_silence(monkeypatch):
     import webrtcvad
-    from voxkeypaste import recorder as recorder_module
+    from dictator import recorder as recorder_module
     monkeypatch.setattr(webrtcvad, 'Vad', LoudMeansVoice)
     words = [5000] * 20                                       # 20 blocks of 30 ms = 0.6 s of "voice"
     recorder = Recorder(SR, lead_in_ms=0, trailing_ms=0, no_voice_stop_s=0.4, stream_factory=scripted(words))

@@ -1,4 +1,4 @@
-"""Generate the built-in sounds (voxkeypaste/assets/start.wav, stop.wav, done.wav).
+"""Generate the built-in sounds (dictator/assets/start.wav, stop.wav, done.wav).
 
 They are synthesised here, so the project owns them (no third-party audio).
 Low marimba-like tones: a woody fundamental plus the marimba's quiet 4th and
@@ -49,7 +49,7 @@ def write(path, mono, peak=0.4):
 
 
 def main():
-    out_dir = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), '..', 'voxkeypaste', 'assets')
+    out_dir = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), '..', 'dictator', 'assets')
     c4, g4 = 261.63, 392.0
     write(os.path.join(out_dir, 'start.wav'), sequence([marimba(c4) * .8, marimba(g4)], gap=0.09))
     write(os.path.join(out_dir, 'stop.wav'), sequence([marimba(g4), marimba(c4) * .8], gap=0.09))

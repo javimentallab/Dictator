@@ -3,8 +3,8 @@ import sys
 
 import numpy as np
 
-from voxkeypaste import clip_saver, dictionary
-from voxkeypaste.transcriber import Transcriber, post_process
+from dictator import clip_saver, dictionary
+from dictator.transcriber import Transcriber, post_process
 
 
 def test_dictionary_rules(tmp_path, cfg):
@@ -87,7 +87,7 @@ def test_short_clips_are_not_saved(cfg, tmp_path):
 
 def test_list_models_rejects_bad_urls():
     import pytest
-    from voxkeypaste.transcriber import TranscriptionError, list_models
+    from dictator.transcriber import TranscriptionError, list_models
     for url in ('', 'ftp://x', 'file:///etc/passwd', '192.168.1.10:8000/v1'):
         with pytest.raises(TranscriptionError):
             list_models(url)

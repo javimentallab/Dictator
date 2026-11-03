@@ -1,9 +1,9 @@
 """Settings: schema, defaults, loading and saving.
 
 The user's settings live OUTSIDE the program folder, in a YAML file:
-  Windows: %APPDATA%\\VoxKeyPaste\\config.yaml
-  Linux:   ~/.config/voxkeypaste/config.yaml   (or $XDG_CONFIG_HOME)
-It can be overridden with the VOXKEYPASTE_CONFIG environment variable or --config.
+  Windows: %APPDATA%\\Dictator\\config.yaml
+  Linux:   ~/.config/dictator/config.yaml   (or $XDG_CONFIG_HOME)
+It can be overridden with the DICTATOR_CONFIG environment variable or --config.
 
 Labels and help texts are not here: they are translated in locales/<lang>.json
 under setting.<section>.<key>.label / .help.
@@ -101,9 +101,30 @@ _BY_KEY = {(section, s.key): s for section, settings in SCHEMA for s in settings
 def config_dir():
     if sys.platform == 'win32':
         base = os.environ.get('APPDATA') or os.path.expanduser('~')
-        return os.path.join(base, 'VoxKeyPaste')
+        return os.path.join(base, 'Dictator')
     base = os.environ.get('XDG_CONFIG_HOME') or os.path.expanduser('~/.config')
-    return os.path.join(base, 'voxkeypaste')
+    return os.path.join(base, 'dictator')
+
+
+def move_old_settings(new_dir):
+    """The app used to be called VoxKeyPaste: bring its settings folder along, once."""
+    parent, name = os.path.split(new_dir)
+    old_dir = os.path.join(parent, 'VoxKeyPaste' if name == 'Dictator' else 'voxkeypaste')
+    if os.path.exists(new_dir) or not os.path.isdir(old_dir):
+        return
+    try:
+        os.rename(old_dir, new_dir)
+        old_log = os.path.join(new_dir, 'voxkeypaste.log')
+        if os.path.exists(old_log):
+            os.rename(old_log, os.path.join(new_dir, 'dictator.log'))
+    except OSError:
+        pass        # the defaults still work, and the old folder stays where it was
+
+
+def default_path():
+    directory = config_dir()
+    move_old_settings(directory)
+    return os.path.join(directory, 'config.yaml')
 
 
 def defaults():
@@ -141,7 +162,7 @@ def coerce(setting, value):
 
 class Config:
     def __init__(self, path=None):
-        self.path = path or os.environ.get('VOXKEYPASTE_CONFIG') or os.path.join(config_dir(), 'config.yaml')
+        self.path = path or os.environ.get('DICTATOR_CONFIG') or default_path()
         self.values = defaults()
         self.loaded_from_file = False
         self.load()
@@ -218,7 +239,7 @@ LOG_MAX_BYTES = 1_000_000
 
 
 def log(message):
-    """Print to the console; without one (pythonw) append to voxkeypaste.log next to the settings."""
+    """Print to the console; without one (pythonw) append to dictator.log next to the settings."""
     try:
         if _current is not None and not _current.values['general']['log_to_console']:
             return
@@ -226,7 +247,7 @@ def log(message):
             if sys.stdout is not None:
                 print(message, flush=True)
                 return
-            path = os.path.join(current().directory, 'voxkeypaste.log')
+            path = os.path.join(current().directory, 'dictator.log')
             if os.path.exists(path) and os.path.getsize(path) > LOG_MAX_BYTES:
                 os.replace(path, path + '.1')
             import time

@@ -11,15 +11,15 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 # A generic, non-existent path: the real one would show the user name in the pictures.
-os.environ['VOXKEYPASTE_CONFIG'] = r'C:\Users\you\AppData\Roaming\VoxKeyPaste\config.yaml'
+os.environ['DICTATOR_CONFIG'] = r'C:\Users\you\AppData\Roaming\Dictator\config.yaml'
 
 from PySide6.QtCore import Qt  # noqa: E402
 from PySide6.QtGui import QAction  # noqa: E402
 from PySide6.QtWidgets import QApplication, QMenu  # noqa: E402
 
-from voxkeypaste import config, i18n  # noqa: E402
-from voxkeypaste.app import RECORDING, TRANSCRIBING, StatusWindow  # noqa: E402
-from voxkeypaste.settings_window import SettingsWindow  # noqa: E402
+from dictator import config, i18n  # noqa: E402
+from dictator.app import RECORDING, TRANSCRIBING, StatusWindow  # noqa: E402
+from dictator.settings_window import SettingsWindow  # noqa: E402
 
 OUT = os.path.join(ROOT, 'docs')
 

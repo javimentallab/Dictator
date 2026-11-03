@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-Please don't open a public issue for a security problem. Report it privately through GitHub: [Report a vulnerability](https://github.com/javimentallab/VoxKeyPaste/security/advisories/new).
+Please don't open a public issue for a security problem. Report it privately through GitHub: [Report a vulnerability](https://github.com/javimentallab/Dictator/security/advisories/new).
 
 Say what you found, how to reproduce it and which version you used. English or Spanish are both fine.
 

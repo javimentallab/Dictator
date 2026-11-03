@@ -1,17 +1,17 @@
-VoxKeyPaste
+Dictator
 Copyright (c) 2026 javimentallab
 Licensed under the MIT License (see LICENSE).
 
-VoxKeyPaste was inspired by WhisperWriter (https://github.com/savbell/whisper-writer,
+Dictator was inspired by WhisperWriter (https://github.com/savbell/whisper-writer,
 GPL-3.0) by savbell. It is an independent implementation written from scratch and
 contains no code from WhisperWriter.
 
-The built-in sounds (voxkeypaste/assets/*.wav) are synthesised by tools/make_sounds.py
+The built-in sounds (dictator/assets/*.wav) are synthesised by tools/make_sounds.py
 and the icons by tools/make_icons.py; both are part of this project (MIT).
 
 Third-party software
 --------------------
-VoxKeyPaste does not include third-party code in this repository. At install time it
+Dictator does not include third-party code in this repository. At install time it
 uses the following packages, each under its own licence:
 
   PySide6-Essentials (Qt for Python)  LGPL-3.0-only / GPL-2.0 / GPL-3.0   https://pyside.org
@@ -45,7 +45,7 @@ pip installs these along with them, as their dependencies:
   PSF-2.0:      typing-extensions
 
 faster-whisper is installed without its own dependencies (pip's --no-deps), and the ones
-it needs are listed above. That leaves out PyAV, which it asks for and VoxKeyPaste does not
+it needs are listed above. That leaves out PyAV, which it asks for and Dictator does not
 need. PyAV is optional and not installed by default, only with requirements-av.txt:
 
   av (PyAV)                            BSD-3-Clause                        https://github.com/PyAV-Org/PyAV
@@ -53,7 +53,7 @@ need. PyAV is optional and not installed by default, only with requirements-av.t
     libx265 (GPL-2.0-or-later). Install it only knowingly.
 
 The ctranslate2 wheel for Windows also carries cudnn64_9.dll, the NVIDIA cuDNN Library, which
-is NVIDIA's own software and not under ctranslate2's MIT License. VoxKeyPaste does not ship
+is NVIDIA's own software and not under ctranslate2's MIT License. Dictator does not ship
 it: pip downloads it from PyPI along with ctranslate2.
 
 The Whisper models downloaded by faster-whisper are released by OpenAI under the MIT
