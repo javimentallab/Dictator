@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 — 2026-11-03
 
 ### Changed
 - **VoxKeyPaste is now Dictator**: the name, the icon (a red D), the Python package (`python -m dictator`), the settings folder (`%APPDATA%\Dictator`, `~/.config/dictator`), the log (`dictator.log`) and the `DICTATOR_CONFIG` variable, which replaces `VOXKEYPASTE_CONFIG`. Your settings, dictionary and log move to the new folder by themselves the first time it starts.
