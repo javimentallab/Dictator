@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.2.0 — 2026-11-07
 
 ### Added
 - **Check for updates**, in the tray menu and at the bottom of the settings window, next to the installed version. Only when you click it, it asks GitHub for the latest release (a single HTTPS request with the User-Agent `Dictator-updater/<version>` and no personal data) and compares the versions semantically. If there is a newer one and Dictator was installed with `git clone`, it asks first, then fetches the release tag from the official repository, moves the copy forward to it (fast-forward only), installs `requirements.txt` again if it has changed and offers to restart. Your settings do not change. Copies with changed program files or commits of their own, or not installed with Git, are left alone and the release page opens instead.

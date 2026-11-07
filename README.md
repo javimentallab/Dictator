@@ -10,6 +10,7 @@ English · <a href="README.es.md">Español</a></p>
 Dictator is a small tray app for dictating into any program: an editor, a chat, a terminal, a form.
 It records while you hold or toggle a hotkey, transcribes with [Whisper](https://github.com/openai/whisper)
 (on your own computer or on any OpenAI-compatible server) and pastes the text in one go.
+**Check for updates** brings each new version from GitHub when you ask for it.
 
 ## Features
 
@@ -33,10 +34,13 @@ It records while you hold or toggle a hotkey, transcribes with [Whisper](https:/
 - **Correction dictionary**: a plain text file of `wrong=right` lines for words Whisper keeps mishearing.
 - **Keep your recordings** (optional): every dictation saved as FLAC + text, e.g. to train a voice model,
   with an optional command to send them to another machine.
+- **Check for updates**: one click asks GitHub for the latest release and, if there is a newer one and you
+  agree, installs it in your copy and offers to restart. Your settings stay as they are. It only connects when you
+  click it.
 - **Interface in 15 languages**: English, Español, Português, Français, Deutsch, Italiano, Nederlands, Polski,
   Русский, Українська, 简体中文, 日本語, 한국어, ไทย, हिन्दी.
 - Tray icon that shows the state (red ring = recording, amber = transcribing), a small status window while
-  recording and transcribing, **Check for updates** and **Restart** from the tray menu, and only one instance at a time.
+  recording and transcribing, **Restart** from the tray menu, and only one instance at a time.
 
 ## Install
 

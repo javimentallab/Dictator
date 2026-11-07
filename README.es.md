@@ -10,7 +10,8 @@
 Dictator es una pequeña app de la bandeja del sistema para dictar en cualquier programa: un editor, un chat,
 una terminal, un formulario. Graba mientras mantienes o activas una tecla, transcribe con
 [Whisper](https://github.com/openai/whisper) (en tu propio ordenador o en cualquier servidor compatible con
-OpenAI) y pega el texto de golpe.
+OpenAI) y pega el texto de golpe. **Buscar actualizaciones** trae cada versión nueva desde GitHub cuando tú lo
+pides.
 
 ## Qué hace
 
@@ -34,10 +35,13 @@ OpenAI) y pega el texto de golpe.
   entiende mal una y otra vez.
 - **Guarda tus grabaciones** (opcional): cada dictado en FLAC + texto, por ejemplo para entrenar una voz, con
   un comando opcional para mandarlas a otra máquina.
+- **Buscar actualizaciones**: con un clic pregunta a GitHub cuál es la última versión y, si hay una más nueva
+  y das el visto bueno, la instala en tu copia y ofrece reiniciar. Tus ajustes no cambian. Solo se conecta cuando lo
+  pulsas.
 - **Interfaz en 15 idiomas**: English, Español, Português, Français, Deutsch, Italiano, Nederlands, Polski,
   Русский, Українська, 简体中文, 日本語, 한국어, ไทย, हिन्दी.
 - Icono de bandeja que enseña el estado (aro rojo = grabando, ámbar = transcribiendo), una ventanita de estado
-  mientras graba y transcribe, **Buscar actualizaciones** y **Reiniciar** desde el menú y una sola instancia a la vez.
+  mientras graba y transcribe, **Reiniciar** desde el menú y una sola instancia a la vez.
 
 ## Instalación
 

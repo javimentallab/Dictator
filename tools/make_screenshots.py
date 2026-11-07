@@ -52,7 +52,7 @@ def main():
     menu.addSeparator()
     pause = QAction(i18n.tr('ui.tray.pause'), menu, checkable=True)
     menu.addAction(pause)
-    for key in ('ui.tray.settings', None, 'ui.tray.restart', 'ui.tray.quit'):
+    for key in ('ui.tray.settings', 'ui.update.button', None, 'ui.tray.restart', 'ui.tray.quit'):
         menu.addSeparator() if key is None else menu.addAction(QAction(i18n.tr(key), menu))
     shots.append(grab(menu, 'tray-menu.png'))
 
