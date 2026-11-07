@@ -16,6 +16,7 @@ from . import (audio_devices, clip_saver, config, cues, dictionary, ducking, i18
 from .hotkey import HotkeyListener
 from .recorder import Recorder
 from .transcriber import Transcriber, post_process
+from .update_flow import UpdateFlow
 
 ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets')
 IDLE, STARTING, RECORDING, TRANSCRIBING = 'idle', 'starting', 'recording', 'transcribing'
@@ -227,11 +228,15 @@ class TrayApp(QObject):
         self.pause_action.toggled.connect(self.toggle_pause)
         settings_action = QAction(i18n.tr('ui.tray.settings'), self.menu)
         settings_action.triggered.connect(self.open_settings)
+        self.updates = UpdateFlow(self.restart)
+        update_action = QAction(i18n.tr('ui.update.button'), self.menu)
+        update_action.triggered.connect(lambda: self.updates.start(self.settings))
         restart_action = QAction(i18n.tr('ui.tray.restart'), self.menu)
         restart_action.triggered.connect(self.restart)
         quit_action = QAction(i18n.tr('ui.tray.quit'), self.menu)
         quit_action.triggered.connect(self.quit)
-        for action in (self.state_action, None, self.pause_action, settings_action, None, restart_action, quit_action):
+        for action in (self.state_action, None, self.pause_action, settings_action, update_action, None,
+                       restart_action, quit_action):
             self.menu.addSeparator() if action is None else self.menu.addAction(action)
         self.tray.setContextMenu(self.menu)
         self.tray.activated.connect(self._on_tray_click)
@@ -282,6 +287,7 @@ class TrayApp(QObject):
         if self.settings is None:
             self.settings = SettingsWindow(self.cfg)
             self.settings.saved.connect(self.on_settings_saved)
+            self.settings.update_requested.connect(lambda: self.updates.start(self.settings))
             self.settings.finished.connect(lambda _: setattr(self, 'settings', None))
         self.settings.show()
         self.settings.raise_()

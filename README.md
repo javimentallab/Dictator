@@ -36,7 +36,7 @@ It records while you hold or toggle a hotkey, transcribes with [Whisper](https:/
 - **Interface in 15 languages**: English, Español, Português, Français, Deutsch, Italiano, Nederlands, Polski,
   Русский, Українська, 简体中文, 日本語, 한국어, ไทย, हिन्दी.
 - Tray icon that shows the state (red ring = recording, amber = transcribing), a small status window while
-  recording and transcribing, **Restart** from the tray menu, and only one instance at a time.
+  recording and transcribing, **Update** and **Restart** from the tray menu, and only one instance at a time.
 
 ## Install
 
@@ -76,6 +76,24 @@ powershell -ExecutionPolicy Bypass -File tools\windows\install-autostart.ps1
 
 Add `-Elevated` (from an administrator PowerShell) if you also want to dictate into programs running as
 administrator: Windows does not let a normal program type into an elevated one. `-Remove` deletes the task.
+
+### Updating
+
+**Update…** (in the tray menu, or the button at the bottom of the settings window) asks GitHub for the latest
+release and compares it with the version you have. It only connects when you click it. If there is a newer
+one, it asks before changing anything; then it fetches that release's tag from this repository with Git,
+moves your copy forward to it, installs `requirements.txt` again if it has changed, and offers to restart.
+Your settings are outside the program folder and do not change.
+
+Copies that cannot be updated safely are left alone: those not installed with `git clone`, and those with
+changed program files or commits of their own. In those cases the release page opens instead. To do the same
+by hand (with the new version's tag):
+
+```powershell
+git fetch --tags
+git merge --ff-only v1.2.0
+.venv\Scripts\python -m pip install -r requirements.txt
+```
 
 ## Settings
 

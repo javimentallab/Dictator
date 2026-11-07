@@ -37,7 +37,7 @@ OpenAI) y pega el texto de golpe.
 - **Interfaz en 15 idiomas**: English, Español, Português, Français, Deutsch, Italiano, Nederlands, Polski,
   Русский, Українська, 简体中文, 日本語, 한국어, ไทย, हिन्दी.
 - Icono de bandeja que enseña el estado (aro rojo = grabando, ámbar = transcribiendo), una ventanita de estado
-  mientras graba y transcribe, **Reiniciar** desde el menú y una sola instancia a la vez.
+  mientras graba y transcribe, **Actualizar** y **Reiniciar** desde el menú y una sola instancia a la vez.
 
 ## Instalación
 
@@ -77,6 +77,24 @@ powershell -ExecutionPolicy Bypass -File tools\windows\install-autostart.ps1
 
 Añade `-Elevated` (desde un PowerShell de administrador) si también quieres dictar en programas abiertos como
 administrador: Windows no deja que un programa normal escriba en uno elevado. `-Remove` borra la tarea.
+
+### Actualizar
+
+**Actualizar…** (en el menú de la bandeja o en el botón de abajo de la ventana de ajustes) pregunta a GitHub
+cuál es la última versión publicada y la compara con la que tienes. Solo se conecta cuando lo pulsas. Si hay
+una más nueva, pregunta antes de tocar nada; después baja con Git la etiqueta de esa versión desde este
+repositorio, avanza tu copia hasta ella, vuelve a instalar `requirements.txt` si ha cambiado y ofrece
+reiniciar. Los ajustes están fuera de la carpeta del programa y no cambian.
+
+No toca las copias que no puede actualizar con seguridad: las que no se instalaron con `git clone` y las que
+tienen ficheros del programa cambiados o commits propios. En esos casos abre la página de la versión. A mano,
+lo mismo es (con la etiqueta de la versión nueva):
+
+```powershell
+git fetch --tags
+git merge --ff-only v1.2.0
+.venv\Scripts\python -m pip install -r requirements.txt
+```
 
 ## Ajustes
 

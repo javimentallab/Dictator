@@ -7,7 +7,7 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog, QDia
                                QFileDialog, QGridLayout, QHBoxLayout, QLabel, QLineEdit, QMessageBox, QPushButton,
                                QScrollArea, QSizePolicy, QSpinBox, QTabWidget, QVBoxLayout, QWidget)
 
-from . import config, i18n
+from . import __version__, config, i18n
 
 
 def device_names(kind):
@@ -33,6 +33,7 @@ LABEL_WIDTH = 200
 
 class SettingsWindow(QDialog):
     saved = Signal()
+    update_requested = Signal()
 
     def __init__(self, cfg):
         super().__init__(None, Qt.Window)
@@ -65,7 +66,16 @@ class SettingsWindow(QDialog):
         cancel = buttons.addButton(i18n.tr('ui.settings.cancel'), QDialogButtonBox.RejectRole)
         self.save_button.clicked.connect(self.save)
         cancel.clicked.connect(self.reject)
-        layout.addWidget(buttons)
+        bottom = QHBoxLayout()
+        version = QLabel(f'Dictator {__version__}')
+        version.setForegroundRole(QPalette.PlaceholderText)
+        self.update_button = QPushButton(i18n.tr('ui.update.button'))
+        self.update_button.clicked.connect(self.update_requested)
+        bottom.addWidget(version)
+        bottom.addWidget(self.update_button)
+        bottom.addStretch(1)
+        bottom.addWidget(buttons)
+        layout.addLayout(bottom)
 
     def _build_tab(self, section, settings):
         # One grid: [name | control] and below it [ | description], so every description gets the full
