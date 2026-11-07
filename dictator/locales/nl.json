@@ -18,7 +18,7 @@
   "ui.settings.server_error": "Kan de server niet bereiken: {error}",
   "ui.settings.default_device": "(standaardapparaat)",
   "ui.settings.restart_question": "Instellingen opgeslagen. Dictator nu herstarten om ze toe te passen?",
-  "ui.update.button": "Bijwerken…",
+  "ui.update.button": "Controleren op updates",
   "ui.update.up_to_date": "Je hebt al de nieuwste versie van Dictator ({version}).",
   "ui.update.check_failed": "Kan niet controleren of er een nieuwe versie is. Controleer je internetverbinding en probeer het opnieuw.\n\n{error}",
   "ui.update.available": "Er is een nieuwe versie beschikbaar: Dictator {latest}. Je hebt versie {current}.",

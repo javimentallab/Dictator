@@ -18,7 +18,7 @@
   "ui.settings.server_error": "Не вдалося під'єднатися до сервера: {error}",
   "ui.settings.default_device": "(пристрій за замовчуванням)",
   "ui.settings.restart_question": "Налаштування збережено. Перезапустити Dictator зараз, щоб застосувати їх?",
-  "ui.update.button": "Оновити…",
+  "ui.update.button": "Перевірити оновлення",
   "ui.update.up_to_date": "У вас уже найновіша версія Dictator ({version}).",
   "ui.update.check_failed": "Не вдалося перевірити, чи є нова версія. Перевірте підключення до інтернету та спробуйте ще раз.\n\n{error}",
   "ui.update.available": "Доступна нова версія: Dictator {latest}. У вас встановлено версію {current}.",

@@ -18,7 +18,7 @@
   "ui.settings.server_error": "No se pudo conectar con el servidor: {error}",
   "ui.settings.default_device": "(dispositivo predeterminado)",
   "ui.settings.restart_question": "Ajustes guardados. ¿Reiniciar Dictator ahora para aplicarlos?",
-  "ui.update.button": "Actualizar…",
+  "ui.update.button": "Buscar actualizaciones",
   "ui.update.up_to_date": "Ya tienes la última versión de Dictator ({version}).",
   "ui.update.check_failed": "No se ha podido comprobar si hay una versión nueva. Revisa la conexión a internet y vuelve a intentarlo.\n\n{error}",
   "ui.update.available": "Hay una versión nueva: Dictator {latest}. Tienes la {current}.",

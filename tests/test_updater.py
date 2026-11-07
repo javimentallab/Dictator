@@ -1,4 +1,4 @@
-"""The Update… button: version comparison, the GitHub check with a fake network, the git update against
+"""The Check for updates button: version comparison, the GitHub check with a fake network, the git update against
 local repositories in tmp_path, and the dialog flow with fake dialogs. Nothing goes to the internet."""
 import os
 import shutil

@@ -18,7 +18,7 @@
   "ui.settings.server_error": "Nie można połączyć się z serwerem: {error}",
   "ui.settings.default_device": "(urządzenie domyślne)",
   "ui.settings.restart_question": "Ustawienia zapisane. Uruchomić ponownie Dictator, aby je zastosować?",
-  "ui.update.button": "Aktualizuj…",
+  "ui.update.button": "Sprawdź aktualizacje",
   "ui.update.up_to_date": "Masz już najnowszą wersję programu Dictator ({version}).",
   "ui.update.check_failed": "Nie można sprawdzić, czy jest nowa wersja. Sprawdź połączenie z internetem i spróbuj ponownie.\n\n{error}",
   "ui.update.available": "Dostępna jest nowa wersja: Dictator {latest}. Masz wersję {current}.",

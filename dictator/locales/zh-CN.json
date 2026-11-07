@@ -18,7 +18,7 @@
   "ui.settings.server_error": "无法连接服务器：{error}",
   "ui.settings.default_device": "（默认设备）",
   "ui.settings.restart_question": "设置已保存。现在重新启动 Dictator 以应用设置吗？",
-  "ui.update.button": "更新…",
+  "ui.update.button": "检查更新",
   "ui.update.up_to_date": "当前已是最新版本：Dictator {version}。",
   "ui.update.check_failed": "无法检查是否有新版本。请检查网络连接后重试。\n\n{error}",
   "ui.update.available": "有新版本可用：Dictator {latest}。当前版本为 {current}。",

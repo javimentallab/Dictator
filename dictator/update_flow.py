@@ -1,4 +1,4 @@
-"""The Update… button: check GitHub, ask, update the git clone, offer to restart. Only when clicked."""
+"""The Check for updates button: check GitHub, ask, update the git clone, offer to restart. Only when clicked."""
 import threading
 
 from PySide6.QtCore import QObject, Qt, QUrl, Signal

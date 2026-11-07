@@ -18,7 +18,7 @@
   "ui.settings.server_error": "서버에 연결할 수 없습니다: {error}",
   "ui.settings.default_device": "(기본 장치)",
   "ui.settings.restart_question": "설정을 저장했습니다. 적용하려면 지금 Dictator를 다시 시작할까요?",
-  "ui.update.button": "업데이트…",
+  "ui.update.button": "업데이트 확인",
   "ui.update.up_to_date": "이미 최신 버전입니다: Dictator {version}.",
   "ui.update.check_failed": "새 버전이 있는지 확인할 수 없습니다. 인터넷 연결을 확인한 후 다시 시도하세요.\n\n{error}",
   "ui.update.available": "새 버전이 있습니다: Dictator {latest}. 현재 버전은 {current}입니다.",

@@ -36,7 +36,7 @@ It records while you hold or toggle a hotkey, transcribes with [Whisper](https:/
 - **Interface in 15 languages**: English, Español, Português, Français, Deutsch, Italiano, Nederlands, Polski,
   Русский, Українська, 简体中文, 日本語, 한국어, ไทย, हिन्दी.
 - Tray icon that shows the state (red ring = recording, amber = transcribing), a small status window while
-  recording and transcribing, **Update** and **Restart** from the tray menu, and only one instance at a time.
+  recording and transcribing, **Check for updates** and **Restart** from the tray menu, and only one instance at a time.
 
 ## Install
 
@@ -79,7 +79,7 @@ administrator: Windows does not let a normal program type into an elevated one. 
 
 ### Updating
 
-**Update…** (in the tray menu, or the button at the bottom of the settings window) asks GitHub for the latest
+**Check for updates** (in the tray menu, or the button at the bottom of the settings window) asks GitHub for the latest
 release and compares it with the version you have. It only connects when you click it. If there is a newer
 one, it asks before changing anything; then it fetches that release's tag from this repository with Git,
 moves your copy forward to it, installs `requirements.txt` again if it has changed, and offers to restart.

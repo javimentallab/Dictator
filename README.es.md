@@ -37,7 +37,7 @@ OpenAI) y pega el texto de golpe.
 - **Interfaz en 15 idiomas**: English, Español, Português, Français, Deutsch, Italiano, Nederlands, Polski,
   Русский, Українська, 简体中文, 日本語, 한국어, ไทย, हिन्दी.
 - Icono de bandeja que enseña el estado (aro rojo = grabando, ámbar = transcribiendo), una ventanita de estado
-  mientras graba y transcribe, **Actualizar** y **Reiniciar** desde el menú y una sola instancia a la vez.
+  mientras graba y transcribe, **Buscar actualizaciones** y **Reiniciar** desde el menú y una sola instancia a la vez.
 
 ## Instalación
 
@@ -80,7 +80,7 @@ administrador: Windows no deja que un programa normal escriba en uno elevado. `-
 
 ### Actualizar
 
-**Actualizar…** (en el menú de la bandeja o en el botón de abajo de la ventana de ajustes) pregunta a GitHub
+**Buscar actualizaciones** (en el menú de la bandeja o en el botón de abajo de la ventana de ajustes) pregunta a GitHub
 cuál es la última versión publicada y la compara con la que tienes. Solo se conecta cuando lo pulsas. Si hay
 una más nueva, pregunta antes de tocar nada; después baja con Git la etiqueta de esa versión desde este
 repositorio, avanza tu copia hasta ella, vuelve a instalar `requirements.txt` si ha cambiado y ofrece

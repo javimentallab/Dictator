@@ -18,7 +18,7 @@
   "ui.settings.server_error": "เชื่อมต่อเซิร์ฟเวอร์ไม่ได้: {error}",
   "ui.settings.default_device": "(อุปกรณ์เริ่มต้น)",
   "ui.settings.restart_question": "บันทึกการตั้งค่าแล้ว เริ่ม Dictator ใหม่ตอนนี้เพื่อใช้การตั้งค่าเลยไหม",
-  "ui.update.button": "อัปเดต…",
+  "ui.update.button": "ตรวจหาอัปเดต",
   "ui.update.up_to_date": "คุณใช้ Dictator เวอร์ชันล่าสุดอยู่แล้ว ({version})",
   "ui.update.check_failed": "ตรวจสอบเวอร์ชันใหม่ไม่ได้ โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตแล้วลองอีกครั้ง\n\n{error}",
   "ui.update.available": "มีเวอร์ชันใหม่: Dictator {latest} เวอร์ชันที่คุณใช้อยู่คือ {current}",

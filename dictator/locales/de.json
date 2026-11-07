@@ -18,7 +18,7 @@
   "ui.settings.server_error": "Server nicht erreichbar: {error}",
   "ui.settings.default_device": "(Standardgerät)",
   "ui.settings.restart_question": "Einstellungen gespeichert. Dictator jetzt neu starten, um sie zu übernehmen?",
-  "ui.update.button": "Aktualisieren…",
+  "ui.update.button": "Nach Updates suchen",
   "ui.update.up_to_date": "Sie haben bereits die neueste Version von Dictator ({version}).",
   "ui.update.check_failed": "Es konnte nicht geprüft werden, ob es eine neue Version gibt. Prüfen Sie die Internetverbindung und versuchen Sie es erneut.\n\n{error}",
   "ui.update.available": "Eine neue Version ist verfügbar: Dictator {latest}. Installiert ist Version {current}.",

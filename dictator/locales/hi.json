@@ -18,7 +18,7 @@
   "ui.settings.server_error": "सर्वर से जुड़ नहीं सका: {error}",
   "ui.settings.default_device": "(डिफ़ॉल्ट डिवाइस)",
   "ui.settings.restart_question": "सेटिंग्स सहेज ली गईं। इन्हें लागू करने के लिए Dictator अभी फिर से शुरू करें?",
-  "ui.update.button": "अपडेट करें…",
+  "ui.update.button": "अपडेट की जाँच करें",
   "ui.update.up_to_date": "आपके पास पहले से Dictator का नवीनतम संस्करण ({version}) है।",
   "ui.update.check_failed": "नए संस्करण की जाँच नहीं हो सकी। इंटरनेट कनेक्शन जाँचें और फिर से कोशिश करें।\n\n{error}",
   "ui.update.available": "नया संस्करण उपलब्ध है: Dictator {latest}। आपके पास संस्करण {current} है।",

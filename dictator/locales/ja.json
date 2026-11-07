@@ -18,7 +18,7 @@
   "ui.settings.server_error": "サーバーに接続できません: {error}",
   "ui.settings.default_device": "（既定のデバイス）",
   "ui.settings.restart_question": "設定を保存しました。反映するために今すぐ Dictator を再起動しますか？",
-  "ui.update.button": "アップデート…",
+  "ui.update.button": "更新を確認",
   "ui.update.up_to_date": "Dictator はすでに最新バージョン（{version}）です。",
   "ui.update.check_failed": "新しいバージョンを確認できませんでした。インターネット接続を確認して、もう一度お試しください。\n\n{error}",
   "ui.update.available": "新しいバージョンがあります: Dictator {latest}（現在のバージョンは {current}）。",
